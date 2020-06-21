@@ -82,6 +82,8 @@ CREATE TABLE `formulario` (
   `fin` date DEFAULT NULL,
   `rango` tinyint(4) NOT NULL,
   `reportes` smallint(13) DEFAULT '0',
+  `inicio_hora` time DEFAULT NULL,
+  `fin_hora` time DEFAULT NULL,
   PRIMARY KEY (`id_form`),
   KEY `FK_id_categoria` (`id_categoria`),
   KEY `FK_rango` (`rango`),
@@ -268,4 +270,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-06-21  1:06:50
+-- Dump completed on 2020-06-21 11:05:15
