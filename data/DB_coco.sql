@@ -110,10 +110,12 @@ DROP TABLE IF EXISTS `opcion`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `opcion` (
   `id_opcion` int(32) NOT NULL AUTO_INCREMENT,
-  `id_form` varchar(6) NOT NULL,
+  `id_pregunta` int(20) NOT NULL,
   `valor` text NOT NULL,
   `apoyo` varchar(255) DEFAULT NULL,
-  PRIMARY KEY (`id_opcion`)
+  PRIMARY KEY (`id_opcion`),
+  KEY `FK_id_pregunta` (`id_pregunta`),
+  CONSTRAINT `FK_id_pregunta` FOREIGN KEY (`id_pregunta`) REFERENCES `pregunta` (`id_pregunta`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -270,4 +272,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-06-21 11:05:15
+-- Dump completed on 2020-06-21 12:25:57
