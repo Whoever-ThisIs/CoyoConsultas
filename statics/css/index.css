@@ -52,6 +52,7 @@ body {
 header {
 	width:100%;
 	background:#272626;
+	cursor: pointer;
 }
 }
  
@@ -230,20 +231,51 @@ footer{
 		height: 300px;
 	}
 
-    #galreg {
-        width: 95%;
-        max-width: 65em; 
-        }
-         
-    .grid-item1 {
-        width: 50%; 
-        }
-         
-	.grid-item2 {
-        width: 33.33333%; 
-        }
-
-    #center {
-	columns: 1;
-    }
+    #galreg{
+		display: flex;
+		flex-wrap: wrap-reverse;
+		width: 100%;
+	}
+	
+	.grid-item1{
+		padding: 10px;
+		background: #2C2A2A;
+		margin: 1px;
+	}
+	
+	.grid-item2{
+		padding: 10px;
+		margin: 1px;
+		width: 100%;
+	}
+	
+	.center{
+		margin-right: 20px;
+		margin-left:  20px;
+		text-align: center;
+		color: white;
+		font-size: 20px;
+	}
+	
+	.image{
+		padding: 10px;
+		width: 250px;
+		height: 250px;
+	}
+	
+	
+	#register{
+		background: #0B0B0B;
+		height: 600px;
+		text-align: center;
+		color: white;
+		font-size: 20px;
+	}
+	
+	.form{
+		width: 80%;
+		margin-right: auto;
+		margin-left:  auto;
+		text-align: center;
+	}
 }
