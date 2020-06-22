@@ -1,3 +1,31 @@
+class Opcion{
+  constructor(id) {
+    this.id = id;
+    this.valor = "Opción" + id;
+  }
+}
+
+class Pregunta{
+  constructor(id) {
+    this.id = id;
+    this.opciones = [
+      new Opcion(1),
+      new Opcion(2)
+    ];
+    this.cOpciones = 2;
+  }
+}
+
+class Formulario {
+  constructor() {
+    this.titulo = "Formulario";
+    this.preguntas = new Array(
+      new Pregunta(1)
+    );
+    this.cPreguntas = 1;
+  }
+}
+
 function añadirPreg() {
   //Se crea el contenedor de la nueva pregunta
   let newPreg = $("<div>")
