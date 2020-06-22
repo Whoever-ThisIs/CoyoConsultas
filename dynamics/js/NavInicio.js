@@ -39,18 +39,24 @@ function askInicio(file){
         let entretenimiento = document.querySelector("#entretenimiento");
         let politica = document.querySelector("#politica");
         let cultura = document.querySelector("#cultura");
+        let cardFeed = document.querySelector("#cardFeed");
+        createCards(16);
         deportes.addEventListener("click",()=>{
+            cardFeed.innerHTML = "";
             createCards(8);
         })
         entretenimiento.addEventListener("click",()=>{
+            cardFeed.innerHTML = "";
             createCards(3);
         })
 
         politica.addEventListener("click",()=>{
+            cardFeed.innerHTML = "";
             createCards(3);
         })
 
         cultura.addEventListener("click",()=>{
+            cardFeed.innerHTML = "";
             createCards(2);
         })
 /*      Este for es el que se ocuparia, lode arriba es provisional para checar el funcionamiento
@@ -69,6 +75,7 @@ fetch('Inicio.html')
     })
     .then((then)=>{
         content.innerHTML = then;
+        askInicio('Inicio.html');
         crear.addEventListener("click",()=>{
             ask('Crear.html');
         })
