@@ -1,7 +1,7 @@
 <?php
   define("KENNWORT","DagehtmeinSchlafrhythmuslos");
-  define("HASH","blake2s256");
-  define("METHOD","seed-ofb");
+  define("HASH","sha256");
+  define("METHOD","SEED-OFB");
 
 
   function cifrar($text){
