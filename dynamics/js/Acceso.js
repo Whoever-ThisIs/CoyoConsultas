@@ -6,12 +6,13 @@ function acceso() {
     method: 'POST',
     body: data
   }).then((response) => {
+    console.log(response);
     return response.json();
   }).then((respuesta) => {
     console.log(respuesta);
     if (respuesta) {
       console.log("si entraste");
-      window.location = "../../../index.html"
+      window.location = "../index.html"
     }
   })
   .catch((message) =>
