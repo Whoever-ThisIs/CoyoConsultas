@@ -4,7 +4,7 @@
  */
 define('servidor', '127.0.0.1');
 define('user', 'root');
-define('password', 'root');
+define('password', '');
 define('db', 'coco');
 
 function connect()
