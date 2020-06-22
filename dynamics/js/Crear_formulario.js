@@ -22,37 +22,43 @@ class Formulario {
     this.preguntas = new Array(
       new Pregunta(1)
     );
-    this.cPreguntas = 1;
+    this.cPreguntas = 0;
+  }
+  addPreg() {
+    this.cPreguntas++;
+    if (this.cPreguntas > 5){
+      this.cPreguntas--;
+      alert("Se ha alcanzado el número máximo de preguntas")
+    }else{
+      //Se crea el contenedor de la nueva pregunta
+      let newPreg = $("<div>")
+      newPreg.addClass("Pregunta")
+      let numPreg = this.cPreguntas;//Se obtiene su numero de pregunta
+      newPreg.attr('id', ("P-"+numPreg));//Se agrega su id
+      newPreg.append("<h2>Pregunta "+numPreg+"</h2>")
+      newPreg.append("<input type='text' name='P-"+numPreg+"' placeholder='Ingrese su pregunta' required>")//Su pregunta
+      newPreg.append("<h3>Opciones de respuesta</h3>")
+      ////**  Opciones de respuesta  **////
+      //Boton para añadir una opcion extra
+      let btnAñadirOpc = $("<button type='button' class='Añadir_Opc'>Añadir Opcion</button>")
+      btnAñadirOpc.click(()=>{
+        opciones.append(añadirResp(numPreg))
+      });
+      //Contenedor de las opciones
+      let opciones = $("<div>");
+      opciones.addClass("Opciones")
+      opciones.append(btnAñadirOpc)
+      newPreg.append(opciones)
+      $("body").append(newPreg)
+      //Se añade las dos primeras respuestas
+      for (var i = 0; i < 2; i++) {
+        console.log(numPreg);
+        opciones.append(añadirResp(numPreg ))
+      }
+    }
   }
 }
 
-function añadirPreg() {
-  //Se crea el contenedor de la nueva pregunta
-  let newPreg = $("<div>")
-  newPreg.addClass("Pregunta")
-  let numPreg = ($(".Pregunta").length+1);//Se calcula su numero de pregunta
-  newPreg.attr('id', ("P-"+numPreg));//Se agrega su id
-  newPreg.append("<h2>Pregunta "+numPreg+"</h2>")
-  newPreg.append("<input type='text' name='P-"+numPreg+"' placeholder='Ingrese su pregunta' required>")//Su pregunta
-  newPreg.append("<h3>Opciones de respuesta</h3>")
-  ////**  Opciones de respuesta  **////
-  //Boton para añadir una opcion extra
-  let btnAñadirOpc = $("<button type='button' class='Añadir_Opc'>Añadir Opcion</button>")
-  btnAñadirOpc.click(()=>{
-    opciones.append(añadirResp(numPreg))
-  });
-  //Contenedor de las opciones
-  let opciones = $("<div>");
-  opciones.addClass("Opciones")
-  opciones.append(btnAñadirOpc)
-  newPreg.append(opciones)
-  $("body").append(newPreg)
-  //Se añade las dos primeras respuestas
-  for (var i = 0; i < 2; i++) {
-    console.log(numPreg);
-    opciones.append(añadirResp(numPreg ))
-  }
-}
 function añadirResp(numPregunta) {
   /*Aqui se calcula cuantos hijos (respuestas) hay en las opciones
     El valor de numero de pregunta es igual A sus hijos(total adentro)
@@ -72,9 +78,10 @@ function añadirResp(numPregunta) {
   }
   return newOpc
 }
+//Añade la primera pregunta
+let form = new Formulario();
+form.addPreg();
 //Boton para añadir preguntas
 $("#Anadir_preg").click(()=>{
-  añadirPreg();
+  form.addPreg();
 })
-//Añade la primera pregunta
-añadirPreg();
