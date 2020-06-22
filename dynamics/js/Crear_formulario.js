@@ -8,28 +8,45 @@ class Opcion{
 class Pregunta{
   constructor(id) {
     this.id = id;
-    this.opciones = [
-      new Opcion(1),
-      new Opcion(2)
-    ];
-    this.cOpciones = 2;
+    this.opciones = new Array();
+    this.cOpciones = 0;
+  }
+  addResp() {
+    /*Aqui se calcula cuantos hijos (respuestas) hay en las opciones
+      El valor de numero de pregunta es igual A sus hijos(total adentro)
+      -1(El boton de añadir)+1(La respuesta actual) por eso lo siguiente*/
+    if (this.cOpciones < 10){
+      this.cOpciones++;
+      this.opciones.push( new Opcion(this.cOpciones));
+      let numOpc = this.cOpciones;
+      //Se crea el p donde se guarda esto
+      let newOpc = $("<p>")
+      newOpc.append("<input type='text' placeholder='Ingrese su respuesta' required>")
+      //Si hay mas de dos opciones en esa pregunta puedes eliminar esa opcion
+      if (numOpc>2) {
+        //Boton para eliminar esa opcion
+        let btnElimOpc = $("<button type='button' class='Elim_Opc'>Eliminar</button>")
+        btnElimOpc.click(()=>{
+          newOpc.empty()
+        });
+        newOpc.append(btnElimOpc)
+      }
+      return newOpc
+    }
   }
 }
 
 class Formulario {
   constructor() {
     this.titulo = "Formulario";
-    this.preguntas = new Array(
-      new Pregunta(1)
-    );
+    this.preguntas = new Array();
     this.cPreguntas = 0;
   }
   addPreg() {
-    this.cPreguntas++;
-    if (this.cPreguntas > 5){
-      this.cPreguntas--;
-      alert("Se ha alcanzado el número máximo de preguntas")
-    }else{
+    if (this.cPreguntas < 5){
+      let indexPregunta = this.cPreguntas;
+      this.cPreguntas++;
+      this.preguntas.push(new Pregunta(this.cPreguntas));
       //Se crea el contenedor de la nueva pregunta
       let newPreg = $("<div>")
       newPreg.addClass("Pregunta")
@@ -42,7 +59,7 @@ class Formulario {
       //Boton para añadir una opcion extra
       let btnAñadirOpc = $("<button type='button' class='Añadir_Opc'>Añadir Opcion</button>")
       btnAñadirOpc.click(()=>{
-        opciones.append(añadirResp(numPreg))
+        opciones.append(this.preguntas[indexPregunta].addResp())
       });
       //Contenedor de las opciones
       let opciones = $("<div>");
@@ -53,31 +70,14 @@ class Formulario {
       //Se añade las dos primeras respuestas
       for (var i = 0; i < 2; i++) {
         console.log(numPreg);
-        opciones.append(añadirResp(numPreg ))
+        opciones.append(this.preguntas[indexPregunta].addResp())
       }
+    }else{
+      alert("Se ha alcanzado el número máximo de preguntas")
     }
   }
 }
 
-function añadirResp(numPregunta) {
-  /*Aqui se calcula cuantos hijos (respuestas) hay en las opciones
-    El valor de numero de pregunta es igual A sus hijos(total adentro)
-    -1(El boton de añadir)+1(La respuesta actual) por eso lo siguiente*/
-  let numOpc = ($("#P-"+numPregunta).children()[3].children.length);
-  //Se crea el p donde se guarda esto
-  let newOpc = $("<p>")
-  newOpc.append("<input type='text' placeholder='Ingrese su respuesta' required>")
-  //Si hay mas de dos opciones en esa pregunta puedes eliminar esa opcion
-  if (numOpc>2) {
-    //Boton para eliminar esa opcion
-    let btnElimOpc = $("<button type='button' class='Elim_Opc'>Eliminar</button>")
-    btnElimOpc.click(()=>{
-      newOpc.empty()
-    });
-    newOpc.append(btnElimOpc)
-  }
-  return newOpc
-}
 //Añade la primera pregunta
 let form = new Formulario();
 form.addPreg();
