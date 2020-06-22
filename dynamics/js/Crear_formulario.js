@@ -7,7 +7,7 @@ function añadirPreg() {
   let nomPreg =$("<h2>Pregunta "+numPreg+"</h2>")
   let btnElimPreg = $("<button type='button' class='Elim_Preg'>Eliminar</button>")
   btnElimPreg.click(()=>{
-    newPreg.empty()
+    newPreg.remove()
   });
   if (numPreg>1) {
     nomPreg.append(btnElimPreg)
@@ -47,7 +47,7 @@ function añadirResp(numPregunta) {
     //Boton para eliminar esa opcion
     let btnElimOpc = $("<button type='button' class='Elim_Opc'>Eliminar</button>")
     btnElimOpc.click(()=>{
-      newOpc.empty()
+      newOpc.remove()
     });
     newOpc.append(btnElimOpc)
   }
