@@ -6,9 +6,9 @@ function acceso() {
     method: 'POST',
     body: data
   }).then((response) => {
-    return Promise.resolve(response.json());
+    return response.json();
   }).then((respuesta) => {
-    console.log("uwu");
+    console.log(respuesta);
     if (respuesta) {
       console.log("si entraste");
       window.location = "../../../index.html"
