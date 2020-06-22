@@ -1,5 +1,6 @@
 <?php
-  include "Config.php";
+  include("Config.php");
+  include("Des-cifrado.php");
   // Falta validación de variables
   $conexion = connect();
   if(!$conexion) {
@@ -17,9 +18,9 @@
     $correo = $_POST['correo'];
     $id1 = $_POST['id1'];
     $id2 = $_POST['id2'];
-    $password = $_POST['password'];
+    $password = registro($_POST['password'], salt());
     $tipo = $_POST['tipo'];
-  
+
     if($tipo == "alumno"){
       $tipo = 1;
     }elseif ($tipo == "profesor") {
@@ -30,7 +31,7 @@
 
     $SQL_usr = "INSERT INTO usuario(id_usuario, id_tipo, password, nacimiento, correo, extra, nombre, paterno, materno) VALUES ('$id1', $tipo, '$password', '$fecha', '$correo', '$id2', '$nombre', '$paterno', '$materno')";
     $query_usr = mysqli_query($conexion,$SQL_usr);
-  
+
     echo $SQL_usr;
   }
 ?>
