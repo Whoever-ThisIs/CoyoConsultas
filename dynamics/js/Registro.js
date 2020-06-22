@@ -14,25 +14,9 @@ function registro() {
       alert(message);
     });
 }
-
 /////Añadimos un manejador de eventos para cuando el formulario se envíe/////
 document.getElementById('miForm').addEventListener('submit', (e) => {
   e.preventDefault();
   registro();
 })
 
-//-----------Acceso------------//
-
-function acceso() {
-  fetch(`../dynamics/php/Acceso.php`, {
-    method: 'POST',
-    body: data
-  }).then((response) => {
-    return response.json();
-  }).then((data) => {
-    if (data) {
-      console.log("si entraste");
-    }
-  }).catch((message)=>
-  console.log(message))
-}

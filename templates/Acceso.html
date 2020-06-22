@@ -8,28 +8,15 @@
 <body>
   <h1>Inicio de sesión</h1>
   <fieldset>
-    <legend>Datos</legend>
-    <form action="../dynamics/php/Registro.php" method="post" id="miForm">
-      <label for="nombre">Nombre:</label>
-      <input type="text" name="nombre" required><br>
-      <label for="paterno">Apellido paterno:</label>
-      <input type="text" name="paterno" required><br>
-      <label for="materno">Apellido materno:</label>
-      <input type="text" name="materno" required><br>
-      <label for="fecha">Fecha de nacimiento:</label>
-      <input type="date" name="fecha" required><br>
-      <label for="correo">Correo electrónico:</label>
-      <input type="email" name="correo" required><br>
-      <label for="id1">Identificador primario:</label>
-      <input type="text" name="id1" placeholder="Núm. de cuenta" required><br>
-      <label for="id2">Identificador secundario:</label>
-      <input type="text" name="id2" placeholder="CURP" required><br>
-      <label for="password">Contraseña:</label>
+    <legend>Ingresa los siguientes datos</legend>
+    <form action="../dynamics/php/Registro.php" method="post" id="formAcceso">
+      <label for="nombre">N. cuenta, RFC o correo: </label>
+      <input type="text" name="id" required><br>
+      <label for="nombre">Contraseña: </label>
       <input type="password" name="password" required><br>
-      <input type="hidden" name="tipo" value="alumno">
-      <input type="submit" value="Registrarme">
+      <input type="submit" value="Iniciar sesión">
     </form>
   </fieldset>
-  <script src="../dynamics/js/Registro-acceso.js"></script>
+  <script src="../dynamics/js/Acceso.js"></script>
 </body>
 </html>
