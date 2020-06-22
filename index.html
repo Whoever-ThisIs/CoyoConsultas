@@ -12,34 +12,50 @@
 <div class="menu_bar">
   <a href="#" class="bt-menu"><span class="fas fa-bars"></span></a>
 </div>
-    <a id="logoHeader" href="index.html"><img src="#" class="logo"></a>
+<a id="logoHeader" href="index.html"><img src="#" class="logo"></a>
 <nav>
   <ul>
     <li><a href="#"><span class="fas fa-chart-bar"></span> Resultados</a></li>
-            <li><a href="#"><span class="fas fa-file-signature"></span> Encuestas</a></li>
-            <li><a href="#"><form>
-            <input class="search" type="text" placeholder="Ingresar código">
-            <input class="searchButton" type="button" value="Ir" />
-                </form></a></li>
+    <li><a href="#"><span class="fas fa-file-signature"></span> Encuestas</a></li>
+    <li><a href="#"><form>
+      <input class="search" type="text" placeholder="Ingresar código">
+      <button class="searchButton"><span class="fas fa-search"></span></button>
+    </form></a></li>
   </ul>
 </nav>
 </header>
+<section id="foto">
+  <div>
+    <p>Holaaa</p>
+  </div>
+</section>
+<br>
+<br>
+<div>
+<section id="galeria">
+  <article>
+      <figure>
+          <img src="imagenes/curso-angular.jpg"> <figcaption>Curso online de Angular</figcaption>
+      </figure>
+  </article>
+</section>
+</div>
     <script src="http://code.jquery.com/jquery-latest.js"></script>
     <script>
       $(document).ready(main);
  
-      var contador = 1;
+      var count = 1;
   
              function main(){
                $('.menu_bar').click(function(){
   
-              if(contador == 1){
+              if(count == 1){
               $('nav').animate({
                 left: '0'
               });
-              contador = 0;
+              count = 0;
               } else {
-              contador = 1;
+              count = 1;
               $('nav').animate({
                 left: '-100%'
               });
@@ -49,5 +65,5 @@
   
     };
     </script>
-</body>
+    </body>
 </html>
