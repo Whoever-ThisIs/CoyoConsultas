@@ -248,6 +248,7 @@ CREATE TABLE `usuario` (
   `nombre` varchar(30) NOT NULL,
   `paterno` varchar(20) NOT NULL,
   `materno` varchar(20) NOT NULL,
+  `sal` text,
   PRIMARY KEY (`id_usuario`),
   KEY `FK_id_tipo` (`id_tipo`),
   CONSTRAINT `FK_id_tipo` FOREIGN KEY (`id_tipo`) REFERENCES `tipo` (`id_tipo`)
@@ -260,6 +261,7 @@ CREATE TABLE `usuario` (
 
 LOCK TABLES `usuario` WRITE;
 /*!40000 ALTER TABLE `usuario` DISABLE KEYS */;
+INSERT INTO `usuario` VALUES ('319014217',1,'uwu','2020-06-10','uwu@example.com',0,'pal','Lenin','Pavón','Alvarez',NULL);
 /*!40000 ALTER TABLE `usuario` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -272,4 +274,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-06-21 12:25:57
+-- Dump completed on 2020-06-21 16:06:59
