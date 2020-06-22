@@ -1,0 +1,72 @@
+/* NAVBAR */
+@font-face{
+    src: url('https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap');
+    font-family: 'Roboto Condensed', sans-serif;
+} 
+.nav nav{
+    padding-top:10px;
+    height: 60px;
+}
+.nav nav{
+    background: #272626;
+}
+.nav nav ul{
+    position: relative;
+    padding-left: 45%;
+    padding-top: 1%;
+    list-style: none;
+    margin: 0 auto;    
+}
+.nav nav ul li{
+    display: inline;
+    padding-left: 5%;
+    font-size: 16px;
+}
+.nav ul li a {
+    text-decoration: none;
+    font-weight: 500;
+    position: relative;
+    padding: 25px;
+    color: #ffffff;
+    font-size: 20px;
+}
+body{
+    background-color:#393939;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+/*PAGINA PRINCIPAL */
+.CoyoConsultasTitle{
+    width:100%;
+    height:291px;
+    background: linear-gradient(90deg, #E25050 11.84%, rgba(0, 192, 158, 0.53) 78.99%);
+}
+.CoyoConsultasTitle span{
+    position: relative;
+    top:30%;
+    left:35%;
+    color: #DCDBDB;
+    font-size: 80px;
+}
+#categories ul li{
+    display: inline;
+    padding-left: 20px;
+    color: #CBCBCB;
+    font-size: 15px;
+}
+#categories ul li:hover{
+    color:rgba(7, 196, 161, 0.925);
+}
+#categories{
+    padding:5px;
+    background: #6F6B6B;
+}
+/* PERFIL*/
+.perfilCover{
+    display: block;
+    width:100%;
+    height:291px;
+    background: linear-gradient(90deg, #E25050 11.84%, rgba(0, 192, 158, 0.53) 78.99%);
+}
