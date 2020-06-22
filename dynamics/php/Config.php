@@ -2,7 +2,7 @@
 /**
  * Este documento configura la conexión con la base de datos
  */
-define('servidor', '127.0.0.1');
+define('servidor', 'localhost');
 define('user', 'root');
 define('password', '');
 define('db', 'coco');
