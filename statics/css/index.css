@@ -13,8 +13,8 @@
 	}
 
   .logo{
-    width: 70px;
-    height: 60px;
+    width: 50px;
+    height: 50px;
     float: left;
   }
 
@@ -32,14 +32,16 @@
     height:20px;
     width:20px;
     border:none;
-  }
-  .searchButton{
-    outline:none;
-    background-color: #e9420f;
-    color:white;
+	outline:none;
+	background-color: #e9420f;
+	color:white;
   }
   .searchButton:hover,.searchButton:focus,.searchButton:active{
   background-color: #d31e1e;
+  }
+  .fa-search{  
+	margin-left: auto;
+	margin-right: auto;
   }
  
 body {
@@ -74,32 +76,47 @@ header nav ul li {
  
 header nav ul li a {
 	color:#fff;
-	padding:20px;
+	padding:25px;
 	display:block;
 	text-decoration:none;
 }
  
 header nav ul li span {
-	margin-right:10px;
+	margin-right:20px;
 }
 
-header nav ul :nth-child(1) :hover{
+header nav ul li:nth-child(1) :hover{
 	background:#037E8C;
 }
   
-  header nav ul :nth-child(2) :hover{
+  header nav ul li:nth-child(2) :hover{
 	background:#037E8C;
 }
-  
-  header nav ul :nth-child(3) :hover{
-	background:#037E8C;
+
+#foto{
+	width: 1440px;
+	height: 450px;
+	left: 0px;
+	top: 60px;
+	background: linear-gradient(180deg, #0C0B0B 0%, rgba(56, 55, 55, 0.83) 100%);
+}
+
+#galeria {
+	margin: 1rem auto;
+	width:100%;
+	max-width:1000px;
+	column-count: 3;
+	-moz-column-rule: 1px solid #bbb;
+    -webkit-column-rule: 1px solid #bbb;
+	column-rule: 1px solid #bbb;
 }
  
 @media screen and (max-width:800px ) {
+
 	header nav {
 		background:#272626;
 		width:100%;
-		height:400px;
+		height:220px;
 		left:-100%;
 		margin:0;
 		position: fixed;
@@ -108,19 +125,19 @@ header nav ul :nth-child(1) :hover{
 	header nav ul li {
 		display:block;
 		float:none;
-		border-bottom:1px solid rgba(255,255,255, .3);
+		border-bottom:1px solid #272626;
 	}
  
 	.menu_bar {
 		display:block;
 		width:100%;
-		background:#ccc;
-		height: 50px;
+		background:#272626;
+		height: 35px;
 	}
  
 	.menu_bar .bt-menu {
 		display:block;
-		padding:20px;
+		padding:5px;
 		background:#272626;
 		color:#fff;
 		text-decoration:none;
@@ -133,6 +150,18 @@ header nav ul :nth-child(1) :hover{
  
 	.menu_bar span {
 		float:right;
-		font-size:30px;
+		font-size:25px;
 	}
+
+	#foto{
+		display:block;
+		width:100%;
+		background: linear-gradient(180deg, #0C0B0B 0%, rgba(56, 55, 55, 0.83) 100%);
+		height: 450px;
+	}
+    #galeria {
+	columns: 1;
+    }
 }
+
+
