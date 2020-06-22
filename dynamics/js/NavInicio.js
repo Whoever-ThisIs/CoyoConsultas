@@ -15,6 +15,18 @@ function ask(file){
         console.log(error.mesage)
     })
 }
+function createCards(a){
+    let cardFeed = document.querySelector("#cardFeed");
+    for(let i=0;i<a;i++){
+        let card = document.createElement("div");
+        card.classList.add("card")
+        let link = document.createElement("a");
+        link.setAttribute("href","#");
+        link.classList.add("link");
+        card.appendChild(link);
+        cardFeed.appendChild(card);
+    }
+}
 /* Genera feed principal */
 function askInicio(file){
     fetch(file)
@@ -23,17 +35,33 @@ function askInicio(file){
     })
     .then((convert)=>{
         content.innerHTML = convert;
-        let cardFeed = document.querySelector("#cardFeed");
-        for(let i=0;i<9;i++){
-            let card = document.createElement("div");
-            card.classList.add("card")
-            let link = document.createElement("a");
-            link.setAttribute("href","#");
-            link.classList.add("link");
-            card.appendChild(link);
-            cardFeed.appendChild(card);
+        let deportes = document.querySelector("#deportes");
+        let entretenimiento = document.querySelector("#entretenimiento");
+        let politica = document.querySelector("#politica");
+        let cultura = document.querySelector("#cultura");
+        deportes.addEventListener("click",()=>{
+            createCards(8);
+        })
+        entretenimiento.addEventListener("click",()=>{
+            createCards(3);
+        })
+
+        politica.addEventListener("click",()=>{
+            createCards(3);
+        })
+
+        cultura.addEventListener("click",()=>{
+            createCards(2);
+        })
+/*      Este for es el que se ocuparia, lode arriba es provisional para checar el funcionamiento
+        for(let j=0;j<9;j++){
+            let catego = 
+            catego.addEventListener("click",()=>{
+                createCards(a);
+            })
         }
-    })
+        createCards();*/
+        })
 }
 fetch('Inicio.html')
     .then((response)=>{
