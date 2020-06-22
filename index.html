@@ -5,25 +5,104 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CoyoConsultas</title>
     <link rel="stylesheet" href="statics/css/index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css">
 </head>
 <body>
-    <header>
-        <a id="logoHeader" href="index.html"><img src="#" class="logo">
-          </a>
-         <nav>
-            <ul>
-              <li><a href="index.html">Inicio</a></li>
-                <li><a href="#">Resultados</a></li>
-                <li><a href="#">Encuestas</a></li>
-                <li><a href="#"><form>
-                  <input class="search" type="text" placeholder="Ingresar código">
-                  <input class="searchButton" type="button" value="Ir" />
-                  </form></a></li>
-            </ul>
-        </nav>
-        <div class="mainHeader">
-            
-        </div>
-     </header>   
-</body>
+<header>
+<div class="menu_bar">
+  <a href="#" class="bt-menu"><span class="fas fa-bars"></span></a>
+</div>
+<a id="logoHeader" href="index.html"><img src="#" class="logo"></a>
+<nav>
+  <ul>
+    <li><a href="#"><span class="fas fa-chart-bar"></span> Resultados</a></li>
+    <li><a href="#"><span class="fas fa-file-signature"></span> Encuestas</a></li>
+    <li><a href="#"><form>
+      <input class="search" type="text" placeholder="Ingresar código">
+      <button class="searchButton"><span class="fas fa-search"></span></button>
+    </form></a></li>
+  </ul>
+</nav>
+</header>
+<section id="photo">
+  <div>
+    <p>Holaaa</p>
+  </div>
+</section>
+<div id="galreg">
+<div class="grid-item1">
+  <div class="center">
+    <br>
+    <h3>GALERÍA</h3>
+    <img src="statics/media/img/photo11.png" class="image"> 
+    <img src="statics/media/img/photo23.png" class="image"> 
+    <img src="statics/media/img/photo25.png" class="image"> 
+    <img src="statics/media/img/photo14.png" class="image"> 
+    <img src="statics/media/img/photo24.png" class="image"> 
+    <img src="statics/media/img/photo22.png" class="image">
+  </div>
+</div>
+<div class="grid-item2">
+  <div id="register">
+    <br>
+    <br>
+    <br>
+    <form class="form" action="#" method="POST">
+      <fieldset>
+        <legend>INICIO/REGISTRO</legend>
+        <br>
+        <span>Usuario</span>
+        <input type="text" name="user">
+        <br>
+        <br>
+        <span>Contraseña</span>
+        <input type="password" name="pass">
+        <br>
+        <br>
+        <input type="submit" value="Entrar">
+        <br>
+        <br>
+      </fieldset>
+    </form>
+  </div>
+</div>
+</div>
+<footer>
+  <div class="all-footer">
+  <div class="footer">
+    ©2020  Todos los derechos reservados.
+  </div>
+  <div class="social">
+    <a href="#"><span class="fab fa-facebook-f"></span></a>
+    <a href="#"><span class="fab fa-twitter"></span></a>
+    <a href="#"><span class="fas fa-envelope"></span></a>
+  </div>
+  </div>
+</footer>
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script>
+      $(document).ready(main);
+ 
+      var count = 1;
+  
+             function main(){
+               $('.menu_bar').click(function(){
+  
+              if(count == 1){
+              $('nav').animate({
+                left: '0'
+              });
+              count = 0;
+              } else {
+              count = 1;
+              $('nav').animate({
+                left: '-100%'
+              });
+          }
+  
+       });
+  
+    };
+    </script>
+    </body>
 </html>
