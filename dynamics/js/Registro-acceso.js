@@ -1,14 +1,14 @@
 //---------Registro---------//
 function registro() {
   let data = new FormData(document.getElementById('miForm'));
-  fetch('dynamics/registro.php', {
+  fetch('../dynamics/php/Registro.php', {
       method: 'POST',
       body: data
     })
     .then((response) => {
-      return response.json();
+      return response.text();
     }).then((data) => {
-      alert("Se ha creado el perfil con éxito");
+      alert(data);
       document.getElementById('miForm').reset();
     }).catch((message)=>{
       alert(message);
@@ -24,7 +24,7 @@ document.getElementById('miForm').addEventListener('submit', (e) => {
 //-----------Acceso------------//
 
 function acceso() {
-  fetch(`dynamics/Acceso.php`, {
+  fetch(`../dynamics/php/Acceso.php`, {
     method: 'POST',
     body: data
   }).then((response) => {
