@@ -4,7 +4,15 @@ function añadirPreg() {
   newPreg.addClass("Pregunta")
   let numPreg = ($(".Pregunta").length+1);//Se calcula su numero de pregunta
   newPreg.attr('id', ("P-"+numPreg));//Se agrega su id
-  newPreg.append("<h2>Pregunta "+numPreg+"</h2>")
+  let nomPreg =$("<h2>Pregunta "+numPreg+"</h2>")
+  let btnElimPreg = $("<button type='button' class='Elim_Preg'>Eliminar</button>")
+  btnElimPreg.click(()=>{
+    newPreg.empty()
+  });
+  if (numPreg>1) {
+    nomPreg.append(btnElimPreg)
+  }
+  newPreg.append(nomPreg)
   newPreg.append("<input type='text' name='P-"+numPreg+"' placeholder='Ingrese su pregunta' required>")//Su pregunta
   newPreg.append("<h3>Opciones de respuesta</h3>")
   ////**  Opciones de respuesta  **////
@@ -18,11 +26,12 @@ function añadirPreg() {
   opciones.addClass("Opciones")
   opciones.append(btnAñadirOpc)
   newPreg.append(opciones)
-  $("body").append(newPreg)
-  //Se añade las dos primeras respuestas
-  for (var i = 0; i < 2; i++) {
-    console.log(numPreg);
-    opciones.append(añadirResp(numPreg ))
+  if (numPreg<=5) {
+    $("body").append(newPreg)
+    //Se añade las dos primeras respuestas
+    for (var i = 0; i < 2; i++) {
+      opciones.append(añadirResp(numPreg ))
+    }
   }
 }
 function añadirResp(numPregunta) {
@@ -42,7 +51,9 @@ function añadirResp(numPregunta) {
     });
     newOpc.append(btnElimOpc)
   }
-  return newOpc
+  if (numOpc<=10) {
+    return newOpc
+  }
 }
 //Boton para añadir preguntas
 $("#Anadir_preg").click(()=>{
