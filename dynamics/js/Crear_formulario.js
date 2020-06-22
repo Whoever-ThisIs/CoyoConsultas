@@ -1,3 +1,30 @@
+fetch('../php/getRangos.php')
+  .then((response) => {
+    return response.json();
+  }).then((data) => {
+    let select = document.getElementById('rango');
+    data.forEach(element => {
+      let new_option = document.createElement("option");
+      new_option.value = element.id;
+      new_option.innerText = element.name;
+      select.appendChild(new_option);
+    });
+  });
+
+  fetch('../php/getCategorias.php')
+    .then((response) => {
+      return response.json();
+    }).then((data) => {
+      let select = document.getElementById('categoria');
+      data.forEach(element => {
+        let new_option = document.createElement("option");
+        new_option.value = element.id;
+        new_option.innerText = element.name;
+        select.appendChild(new_option);
+      });
+    });
+
+
 function añadirPreg() {
   //Se crea el contenedor de la nueva pregunta
   let newPreg = $("<div>")
