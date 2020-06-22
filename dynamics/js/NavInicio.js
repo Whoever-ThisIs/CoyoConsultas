@@ -10,6 +10,39 @@ function ask(file){
     })
     .then((convert)=>{
         content.innerHTML = convert;
+        if(file=="Inicio.html"){
+            let todo = document.querySelector("#todo");
+            let deportes = document.querySelector("#deportes");
+            let entretenimiento = document.querySelector("#entretenimiento");
+            let politica = document.querySelector("#politica");
+            let cultura = document.querySelector("#cultura");
+            createCards(16);
+            todo.addEventListener("click",()=>{
+                createCards(16);
+            })
+            deportes.addEventListener("click",()=>{
+                createCards(8);
+            })
+            entretenimiento.addEventListener("click",()=>{
+                createCards(3);
+            })
+    
+            politica.addEventListener("click",()=>{
+                createCards(3);
+            })
+    
+            cultura.addEventListener("click",()=>{
+                createCards(2);
+            })
+    /*      Este for es el que se ocuparia, lode arriba es provisional para checar el funcionamiento
+            for(let j=0;j<9;j++){
+                let catego = 
+                catego.addEventListener("click",()=>{
+                    createCards(a);
+                })
+            }
+            createCards();*/
+        }
     })
     .catch((error)=>{
         console.log(error.mesage)
@@ -17,6 +50,7 @@ function ask(file){
 }
 function createCards(a){
     let cardFeed = document.querySelector("#cardFeed");
+    cardFeed.innerHTML = "";
     for(let i=0;i<a;i++){
         let card = document.createElement("div");
         card.classList.add("card")
@@ -28,59 +62,18 @@ function createCards(a){
     }
 }
 /* Genera feed principal */
-function askInicio(file){
-    fetch(file)
-    .then((result)=>{
-        return result.text();
-    })
-    .then((convert)=>{
-        content.innerHTML = convert;
-        let deportes = document.querySelector("#deportes");
-        let entretenimiento = document.querySelector("#entretenimiento");
-        let politica = document.querySelector("#politica");
-        let cultura = document.querySelector("#cultura");
-        let cardFeed = document.querySelector("#cardFeed");
-        createCards(16);
-        deportes.addEventListener("click",()=>{
-            cardFeed.innerHTML = "";
-            createCards(8);
-        })
-        entretenimiento.addEventListener("click",()=>{
-            cardFeed.innerHTML = "";
-            createCards(3);
-        })
-
-        politica.addEventListener("click",()=>{
-            cardFeed.innerHTML = "";
-            createCards(3);
-        })
-
-        cultura.addEventListener("click",()=>{
-            cardFeed.innerHTML = "";
-            createCards(2);
-        })
-/*      Este for es el que se ocuparia, lode arriba es provisional para checar el funcionamiento
-        for(let j=0;j<9;j++){
-            let catego = 
-            catego.addEventListener("click",()=>{
-                createCards(a);
-            })
-        }
-        createCards();*/
-        })
-}
 fetch('Inicio.html')
     .then((response)=>{
         return response.text();
     })
     .then((then)=>{
         content.innerHTML = then;
-        askInicio('Inicio.html');
+        ask('Inicio.html');
         crear.addEventListener("click",()=>{
             ask('Crear.html');
         })
         inicio.addEventListener("click",()=>{
-            askInicio('Inicio.html');
+            ask('Inicio.html');
         })
         perfil.addEventListener("click",()=>{
             ask('Perfil.html');
