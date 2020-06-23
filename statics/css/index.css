@@ -2,11 +2,18 @@
 	margin:0;
 	padding:0;
 }
-
+#formIngreso:hover,#formRegistro:hover{
+	color: #e9420f;
+	cursor: pointer;
+}
 #logo-header {
 	float: left;
 	padding: 3px 0 0 20px;
 	text-decoration: none;
+}
+#formularioPublico{
+	width:300px;
+	height:500px;
 }
 	#logo-header:hover {
 		color: #0b76a6;
@@ -54,7 +61,7 @@ header {
 	background:#272626;
 	cursor: pointer;
 }
-}
+
 
 header nav {
 	width:100%;
