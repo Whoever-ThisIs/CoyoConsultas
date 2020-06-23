@@ -1,73 +1,25 @@
-* {
-	margin:0;
-	padding:0;
-}
-#formIngreso:hover,#formRegistro:hover{
-	color: #e9420f;
-	cursor: pointer;
-}
-#logo-header {
-	float: left;
-	padding: 3px 0 0 20px;
-	text-decoration: none;
-}
-#formularioPublico{
-	width:300px;
-	height:500px;
-}
-	#logo-header:hover {
-		color: #0b76a6;
-	}
+    * {
+	  margin:0;
+	  padding:0;
+    }
 
-  .logo{
-    width: 50px;
-    height: 50px;
-    float: left;
-  }
-
-.search{
-    height:20px;
-    border:none;
-    border-bottom:4px solid rgb(248, 248, 248);
-    background-color:rgb(32, 32, 32);
-    color:white;
-  }
-  .search:hover,.search:focus,.search:active{
-    outline:none;
-  }
-  .searchButton{
-    height:20px;
-    width:20px;
-    border:none;
-	outline:none;
-	background-color: #e9420f;
-	color:white;
-  }
-
-  .searchButton:hover,.searchButton:focus,.searchButton:active{
-  background-color: #d31e1e;
-  }
-  .fa-search{
-	margin-left: auto;
-	margin-right: auto;
-  }
-
-body {
-	background-color: #2C2A2A;
+	
+    body {
+		background-color: #2C2A2A;
+    }
+	
+    header {
+		background:#272626;
+		cursor: pointer;
+		width:100%;
+    }
 }
-
-header {
-	width:100%;
-	background:#272626;
-	cursor: pointer;
-}
-
 
 header nav {
-	width:100%;
-	max-width:1000px;
-	margin:20px auto;
 	background:#272626;
+	margin:20px auto;
+	max-width:1000px;
+	width:100%;
 }
 
 .menu_bar {
@@ -75,8 +27,8 @@ header nav {
 }
 
 header nav ul {
-	overflow:hidden;
 	list-style:none;
+	overflow:hidden;
 }
 
 header nav ul li {
@@ -85,10 +37,10 @@ header nav ul li {
 
 header nav ul li a {
 	color:#fff;
-	padding:25px;
 	display:block;
-	text-decoration:none;
 	font-size: 20px;
+	padding:25px;
+	text-decoration:none;
 }
 
 header nav ul li span {
@@ -99,22 +51,49 @@ header nav ul li:nth-child(1) :hover{
 	background:#037E8C;
 }
 
-  header nav ul li:nth-child(2) :hover{
+header nav ul li:nth-child(2) :hover{
 	background:#037E8C;
 }
-
-#photo{
+footer{
+	background-color: #373535;
 	width: 100%;
-	height: 300px;
-	left: 0px;
-	top: 60px;
-	background: linear-gradient(180deg, #0C0B0B 0%, rgba(56, 55, 55, 0.83) 100%);
 }
 
-#galreg{
-	display: grid;
-	grid-template-columns: repeat(3, 1fr);
-	grid-gap: 10px;
+
+.logo{
+	float: left;
+	height: 50px;
+	width: 50px;
+}
+
+.search{
+	background-color:rgb(32, 32, 32);
+	border:none;
+	border-bottom:4px solid rgb(248, 248, 248);
+	color:white;
+	height:20px;
+}
+
+.search:hover,.search:focus,.search:active{
+	outline:none;
+}
+
+.searchButton{
+	background-color: #e9420f;
+	border:none;
+	color:white;
+	height:20px;
+	outline:none;
+	width:20px;
+}
+
+.searchButton:hover,.searchButton:focus,.searchButton:active{
+	background-color: #d31e1e;
+}
+
+.fa-search{  
+	margin-left: auto;
+	margin-right: auto;
 }
 
 .grid-item1{
@@ -126,48 +105,35 @@ header nav ul li:nth-child(1) :hover{
 }
 
 .center{
-	margin-right: 20px;
-	margin-left:  20px;
-	text-align: center;
 	color: white;
 	font-size: 20px;
+	margin-left:  20px;
+	margin-right: 20px;
+	text-align: center;
 }
 
 .image{
+	height: 250px;
 	padding: 10px;
 	width: 250px;
-	height: 250px;
 }
 
-
-#register{
-	background: #0B0B0B;
-	width:100%;
-	height: 600px;
-	text-align: center;
-	color: white;
-	font-size: 20px;
-}
 
 .form{
-	width: 80%;
-	margin-right: auto;
 	margin-left:  auto;
+	margin-right: auto;
 	text-align: center;
+	width: 80%;
 }
 
-footer{
-	background-color: #373535;
-	width: 100%;
-}
 
 .all-footer{
-	width:100%;
-	max-width:1000px;
 	display: flex;
 	justify-content: space-between;
-	padding: 20px;
 	margin: auto;
+	max-width:1000px;
+	padding: 20px;
+	width:100%;
 }
 
 .footer{
@@ -176,66 +142,132 @@ footer{
 }
 
 .social span{
-	text-decoration: none;
 	color: white;
+	text-decoration: none;
 	padding:20px;
 }
 
+#logo-header {
+	float: left;
+	padding: 3px 0 0 20px;
+	text-decoration: none;
+}
+
+#logo-header:hover {
+	color: #0b76a6;
+}
+
+#photo{
+	background: linear-gradient(180deg, #0C0B0B 0%, rgba(56, 55, 55, 0.83) 100%);
+	height: 300px;
+	left: 0px;
+	top: 60px;
+	width: 100%;
+}
+
+#galreg{
+	display: grid;
+	grid-gap: 10px;
+	grid-template-columns: repeat(3, 1fr);
+}
+
+#register{
+	background: #0B0B0B;
+	color: white;
+	font-size: 20px;
+	height: 600px;
+	text-align: center;
+	width:100%;
+}
+
 @media screen and (max-width:800px ) {
-
-	#logo-header{
-		display: none;
-	}
-
-	.logo{
-		display: none;
-	}
-
+	
 	header nav {
 		background:#272626;
 		width:100%;
 		height:220px;
 		left:-100%;
 		margin:0;
-		position: fixed;
+		position: absolute;
 	}
-
+	
 	header nav ul li {
+		border-bottom:1px solid #272626;
 		display:block;
 		float:none;
-		border-bottom:1px solid #272626;
+	}
+	
+	.logo{
+		display: none;
 	}
 
 	.menu_bar {
-		display:block;
-		width:100%;
 		background:#272626;
+		display:block;
 		height: 35px;
+		width:100%;
 	}
-
+	
 	.menu_bar .bt-menu {
-		display:block;
-		padding:5px;
 		background:#272626;
+		box-sizing:border-box;
 		color:#fff;
-		text-decoration:none;
+		display:block;
 		font-weight: bold;
 		font-size:25px;
+		padding:5px;
+		text-decoration:none;
 		-webkit-box-sizing:border-box;
 		-moz-box-sizing:border-box;
-		box-sizing:border-box;
 	}
-
+	
 	.menu_bar span {
 		float:right;
 		font-size:25px;
 	}
+	
+	.grid-item1{
+		background: #2C2A2A;
+		margin: 1px;
+		padding: 10px;
+	}
+
+	.grid-item2{
+		margin: 1px;
+		padding: 10px;
+		width: 100%;
+	}
+
+	.center{
+		color: white;
+		font-size: 20px;
+		margin-left:  20px;
+		margin-right: 20px;
+		text-align: center;
+	}
+
+	.image{
+		height: 250px;
+		padding: 10px;
+		width: 250px;
+	}
+	
+	.form{
+		margin-left:  auto;
+		margin-right: auto;
+		text-align: center;
+		width: 80%;
+	}
+	
+	#logo-header{
+		display: none;
+	}
 
 	#photo{
-		display:block;
-		width:100%;
 		background: linear-gradient(180deg, #0C0B0B 0%, rgba(56, 55, 55, 0.83) 100%);
+		display:block;
 		height: 300px;
+		width:100%;
 	}
 
     #galreg{
@@ -243,46 +275,13 @@ footer{
 		flex-wrap: wrap-reverse;
 		width: 100%;
 	}
-
-	.grid-item1{
-		padding: 10px;
-		background: #2C2A2A;
-		margin: 1px;
-	}
-
-	.grid-item2{
-		padding: 10px;
-		margin: 1px;
-		width: 100%;
-	}
-
-	.center{
-		margin-right: 20px;
-		margin-left:  20px;
-		text-align: center;
-		color: white;
-		font-size: 20px;
-	}
-
-	.image{
-		padding: 10px;
-		width: 250px;
-		height: 250px;
-	}
-
-
+	
 	#register{
 		background: #0B0B0B;
-		height: 600px;
-		text-align: center;
 		color: white;
 		font-size: 20px;
-	}
-
-	.form{
-		width: 80%;
-		margin-right: auto;
-		margin-left:  auto;
+		height: 600px;
 		text-align: center;
 	}
+	
 }
