@@ -62,6 +62,8 @@ class Formulario {
     })
     this.preguntas = new Array();
     this.cPreguntas = 0;
+    this.categoria = 1;
+    this.rango = 1;
     // Crea un id único
     let simbolos = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
     var id_form = "";
@@ -121,25 +123,20 @@ class Formulario {
    * opciones por primera vez en la base de datos.
    */
   guardarForm() {
-    //Insercion de datos del formulario
-    console.log("id_form = " + this.id);
-    console.log("Titulo = " + this.titulo);
-    console.log("reportes = " + 0);
-    let id_form = this.id;
-    for (var i = 0; i < form.cPreguntas; i++) {
-      //Se crea una pregunta
-      // Id de pregunta de la base de datos
-      let id_preg = id_form + "-P" + (i + 1);
-      let tituloPreg = this.preguntas[i].texto;
-      //"INSERT INTO pregunta (id_pregunta, id_form, titulo) VALUES ('id_preg','id_form', 'tituloPreg')"
-      for (var n = 0; n < form.preguntas[i].cOpciones; n++) {
-        //Aqui se crean las opciones de esa pregunta
-        //Se crea el id_de la opcion
-        let id_opc = id_preg + "-" + (n + 1)
-        //Obtiene el valor del input de esa opcion
-        let valorOpc = this.preguntas[i].opciones[n].valor;
-        //"INSERT INTO opcion (id_opcion, id_pregunta, valor) VALUES ('id_opc','id_preg', 'valorOpc')"
-        console.log("Pregunta " + id_preg + ", opcion:" + (n + 1));
+    fetch("../dynamics/php/Guardar-form.php", {
+      method: 'POST',
+      body: {
+        tipo: 1,
+        idForm: this.id,
+        categoria: this.categoria,
+        titulo: this.titulo,
+        rango: this.rango
+      }
+    })
+    for (let i = 0; i < this.cPreguntas; i++) {
+      // Creación de preguntas
+      for (let j = 0; j < this.preguntas[i].cOpciones; j++) {
+        // Creación de respuestas        
       }
     }
   }
@@ -250,5 +247,7 @@ var btnCrear = $("<button type='button' name='button' id='Crear_form'>Crear Form
 btnCrear.click(()=>{
   console.log("Yamete kudasai")
 })
+let buttonGuardar = $("<button id='Guardar' onclick='form.guardarForm()'>Guardar formulario</button>");
+$('#Form_config').append(buttonGuardar)
 $('#Form_config').append("<br><br>")
 $('#Form_config').append(btnCrear)

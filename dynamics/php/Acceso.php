@@ -4,8 +4,6 @@
   //Puse de input del post un "usuario". Cambienlo a lo que pongan bien en el formulario.
   $id = $_POST['id'];
   $psw = $_POST['password'];
-  // $id = "rfc";
-  // $psw = "CacaFeliz7_";
   if (preg_match('/.+\@.+\..+/',$id)) {
     $preresult = "SELECT password, sal FROM usuario WHERE correo LIKE '%$id%'";
   }
