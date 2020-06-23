@@ -37,6 +37,14 @@ class Pregunta{
 }
 
 class Formulario {
+  crearId(){
+    //Generador de id Para el formulario
+    let simbolos = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+    var id_form = "";
+    for (var i = 0; i < 6; i++) {
+      id_form += simbolos.substr(Math.round(Math.random() * simbolos.length), 1);
+    }
+  }
   constructor() {
     this.titulo = "Formulario";
     this.preguntas = new Array();
@@ -75,6 +83,30 @@ class Formulario {
       alert("Se ha alcanzado el número máximo de preguntas")
     }
   }
+  guardarForm() {
+    //Insercion de datos del formulario
+    console.log("id_form = " + id_form);
+    console.log("Titulo = " + $("input[name='Titulo']").val());
+    console.log("reportes = " + 0);
+    for (var i = 0; i < form.cPreguntas; i++) {
+      //Se crea una pregunta
+      let id_preg = id_form + "-P" + (i + 1)
+      let tituloPreg = $("input[name='P-" + (i + 1) + "']").val()
+      //"INSERT INTO pregunta (id_pregunta, id_form, titulo) VALUES ('id_preg','id_form', 'tituloPreg')"
+      for (var n = 0; n < form.preguntas[i].cOpciones; n++) {
+        //Aqui se crean las opciones de esa pregunta
+        //Se crea el id_de la opcion
+        let id_opc = id_preg + "-" + (n + 1)
+        //Obtiene el valor del input de esa opcion
+        let valorOpc = $("#P-" + (i + 1))[0].children[3].children[n + 1].getElementsByTagName("input")[0].value
+        //"INSERT INTO opcion (id_opcion, id_pregunta, valor) VALUES ('id_opc','id_preg', 'valorOpc')"
+        console.log("Pregunta " + id_preg + ", opcion:" + (n + 1));
+      }
+    }
+  }
+  modForm() {
+
+  }
 }
 
 //Añade la primera pregunta
@@ -96,30 +128,3 @@ $("#Eliminar_preg").click(()=>{
   }
 })
 
-$("#Crear_form").click(()=>{
-  //Generador de id Para el formulario
-  let simbolos ="ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
-  var id_form = ""
-  for (var i = 0; i < 6; i++) {
-    id_form+=simbolos.substr(Math.round(Math.random()*simbolos.length), 1);
-  }
-  //Insercion de datos del formulario
-  console.log("id_form = "+id_form);
-  console.log("Titulo = "+ $("input[name='Titulo']").val());
-  console.log("reportes = "+ 0);
-  for (var i = 0; i < form.cPreguntas; i++) {
-    //Se crea una pregunta
-    let id_preg = id_form+"-P"+(i+1)
-    let tituloPreg = $("input[name='P-"+(i+1)+"']").val()
-    //"INSERT INTO pregunta (id_pregunta, id_form, titulo) VALUES ('id_preg','id_form', 'tituloPreg')"
-    for (var n = 0; n < form.preguntas[i].cOpciones; n++) {
-      //Aqui se crean las opciones de esa pregunta
-      //Se crea el id_de la opcion
-      let id_opc = id_preg+"-"+(n+1)
-      //Obtiene el valor del input de esa opcion
-      let valorOpc = $("#P-"+(i+1))[0].children[3].children[n+1].getElementsByTagName("input")[0].value
-      //"INSERT INTO opcion (id_opcion, id_pregunta, valor) VALUES ('id_opc','id_preg', 'valorOpc')"
-      console.log("Pregunta "+id_preg+", opcion:"+(n+1));
-    }
-  }
-})
