@@ -40,42 +40,42 @@
   .searchButton:hover,.searchButton:focus,.searchButton:active{
   background-color: #d31e1e;
   }
-  .fa-search{  
+  .fa-search{
 	margin-left: auto;
 	margin-right: auto;
   }
- 
+
 body {
 	background-color: #2C2A2A;
 }
- 
+
 header {
 	width:100%;
 	background:#272626;
 	cursor: pointer;
 }
 }
- 
+
 header nav {
 	width:100%;
 	max-width:1000px;
 	margin:20px auto;
 	background:#272626;
 }
- 
+
 .menu_bar {
 	display:none;
 }
- 
+
 header nav ul {
 	overflow:hidden;
 	list-style:none;
 }
- 
+
 header nav ul li {
 	float:right;
 }
- 
+
 header nav ul li a {
 	color:#fff;
 	padding:25px;
@@ -83,7 +83,7 @@ header nav ul li a {
 	text-decoration:none;
 	font-size: 20px;
 }
- 
+
 header nav ul li span {
 	margin-right:20px;
 }
@@ -91,7 +91,7 @@ header nav ul li span {
 header nav ul li:nth-child(1) :hover{
 	background:#037E8C;
 }
-  
+
   header nav ul li:nth-child(2) :hover{
 	background:#037E8C;
 }
@@ -192,20 +192,20 @@ footer{
 		margin:0;
 		position: fixed;
 	}
- 
+
 	header nav ul li {
 		display:block;
 		float:none;
 		border-bottom:1px solid #272626;
 	}
- 
+
 	.menu_bar {
 		display:block;
 		width:100%;
 		background:#272626;
 		height: 35px;
 	}
- 
+
 	.menu_bar .bt-menu {
 		display:block;
 		padding:5px;
@@ -218,7 +218,7 @@ footer{
 		-moz-box-sizing:border-box;
 		box-sizing:border-box;
 	}
- 
+
 	.menu_bar span {
 		float:right;
 		font-size:25px;
@@ -236,19 +236,19 @@ footer{
 		flex-wrap: wrap-reverse;
 		width: 100%;
 	}
-	
+
 	.grid-item1{
 		padding: 10px;
 		background: #2C2A2A;
 		margin: 1px;
 	}
-	
+
 	.grid-item2{
 		padding: 10px;
 		margin: 1px;
 		width: 100%;
 	}
-	
+
 	.center{
 		margin-right: 20px;
 		margin-left:  20px;
@@ -256,14 +256,14 @@ footer{
 		color: white;
 		font-size: 20px;
 	}
-	
+
 	.image{
 		padding: 10px;
 		width: 250px;
 		height: 250px;
 	}
-	
-	
+
+
 	#register{
 		background: #0B0B0B;
 		height: 600px;
@@ -271,7 +271,7 @@ footer{
 		color: white;
 		font-size: 20px;
 	}
-	
+
 	.form{
 		width: 80%;
 		margin-right: auto;

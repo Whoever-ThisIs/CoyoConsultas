@@ -1,25 +1,26 @@
-fetch('../php/getRangos.php')
+fetch('../dynamics/php/getRangos.php')
   .then((response) => {
     return response.json();
   }).then((data) => {
     let select = document.getElementById('rango');
     data.forEach(element => {
+      console.log(element);
       let new_option = document.createElement("option");
-      new_option.value = element.id;
-      new_option.innerText = element.name;
+      new_option.value = element.id_rango;
+      new_option.innerText = element.rango;
       select.appendChild(new_option);
     });
   });
 
-  fetch('../php/getCategorias.php')
+  fetch('../dynamics/php/getCategorias.php')
     .then((response) => {
       return response.json();
     }).then((data) => {
       let select = document.getElementById('categoria');
       data.forEach(element => {
         let new_option = document.createElement("option");
-        new_option.value = element.id;
-        new_option.innerText = element.name;
+        new_option.value = element.id_categoria;
+        new_option.innerText = element.categoria;
         select.appendChild(new_option);
       });
     });
