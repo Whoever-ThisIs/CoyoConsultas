@@ -3,12 +3,14 @@ let inicio = document.querySelector("#inicio");
 let perfil = document.querySelector("#perfil");
 let cerrar = document.querySelector("#cerrar");
 let content = document.querySelector("#content");
+let body = document.querySelector("body");
 function ask(file){
     fetch(file)
     .then((result)=>{
         return result.text();
     })
     .then((convert)=>{
+        content.innerHTML = "";
         content.innerHTML = convert;
         if(file=="Inicio.html"){
             let todo = document.querySelector("#todo");
@@ -43,10 +45,10 @@ function ask(file){
             }
             createCards();*/
         }
-        if(file=="Crear_formulario.html"){
-            $.getScript("Crear_formulario.js", function(){
-                crearFormulario();
-            })
+        if(file=="Crear_formulario.js"){
+            let scriptCreate = document.createElement("script");
+            scriptCreate.setAttribute("src","../dynamics/js/NavInicio.js")
+            body.appendChild(scriptCreate);
         }
     })
     .catch((error)=>{
