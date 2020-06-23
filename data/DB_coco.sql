@@ -109,8 +109,8 @@ DROP TABLE IF EXISTS `opcion`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `opcion` (
-  `id_opcion` int(32) NOT NULL AUTO_INCREMENT,
-  `id_pregunta` int(20) NOT NULL,
+  `id_opcion` varchar(12) NOT NULL,
+  `id_pregunta` varchar(9) NOT NULL,
   `valor` text NOT NULL,
   `apoyo` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id_opcion`),
@@ -136,7 +136,7 @@ DROP TABLE IF EXISTS `pregunta`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `pregunta` (
-  `id_pregunta` int(20) NOT NULL AUTO_INCREMENT,
+  `id_pregunta` varchar(9) NOT NULL,
   `id_form` varchar(6) NOT NULL,
   `titulo` varchar(255) NOT NULL,
   PRIMARY KEY (`id_pregunta`),
@@ -187,13 +187,13 @@ DROP TABLE IF EXISTS `respuesta`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `respuesta` (
   `id_respuesta` int(20) NOT NULL AUTO_INCREMENT,
-  `id_pregunta` int(20) NOT NULL,
-  `respuesta` int(32) NOT NULL,
+  `id_pregunta` varchar(9) NOT NULL,
+  `respuesta` varchar(12) NOT NULL,
   PRIMARY KEY (`id_respuesta`),
-  KEY `id_pregunta` (`id_pregunta`),
+  KEY `FK_id_pregunta_1` (`id_pregunta`),
   KEY `FK_respuesta` (`respuesta`),
-  CONSTRAINT `FK_respuesta` FOREIGN KEY (`respuesta`) REFERENCES `opcion` (`id_opcion`),
-  CONSTRAINT `respuesta_ibfk_1` FOREIGN KEY (`id_pregunta`) REFERENCES `pregunta` (`id_pregunta`)
+  CONSTRAINT `FK_id_pregunta_1` FOREIGN KEY (`id_pregunta`) REFERENCES `pregunta` (`id_pregunta`),
+  CONSTRAINT `FK_respuesta` FOREIGN KEY (`respuesta`) REFERENCES `opcion` (`id_opcion`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -274,4 +274,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-06-21 16:06:59
+-- Dump completed on 2020-06-23 13:18:48
