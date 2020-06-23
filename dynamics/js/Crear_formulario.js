@@ -51,6 +51,9 @@ class Pregunta{
 class Formulario {
   constructor() {
     this.titulo = "Formulario";
+    $("#tituloForm").on('input', (e) => {
+      this.titulo = $("#tituloForm").val();
+    })
     this.preguntas = new Array();
     this.cPreguntas = 0;
     let simbolos = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
