@@ -26,22 +26,27 @@ function ask(file){
             entretenimiento.addEventListener("click",()=>{
                 createCards(3);
             })
-    
+
             politica.addEventListener("click",()=>{
                 createCards(3);
             })
-    
+
             cultura.addEventListener("click",()=>{
                 createCards(2);
             })
-    /*      Este for es el que se ocuparia, lode arriba es provisional para checar el funcionamiento
+            /*Este for es el que se ocuparia, lode arriba es provisional para checar el funcionamiento
             for(let j=0;j<9;j++){
-                let catego = 
+                let catego =
                 catego.addEventListener("click",()=>{
                     createCards(a);
                 })
             }
             createCards();*/
+        }
+        if(file=="Crear_formulario.html"){
+            $.getScript("Crear_formulario.js", function(){
+                crearFormulario();
+            })
         }
     })
     .catch((error)=>{
@@ -54,10 +59,9 @@ function createCards(a){
     for(let i=0;i<a;i++){
         let card = document.createElement("div");
         card.classList.add("card")
-        let link = document.createElement("a");
-        link.setAttribute("href","#");
-        link.classList.add("link");
-        card.appendChild(link);
+        card.addEventListener("click",()=>{
+            ask('Perfil.html');
+        })
         cardFeed.appendChild(card);
     }
 }
@@ -70,7 +74,7 @@ fetch('Inicio.html')
         content.innerHTML = then;
         ask('Inicio.html');
         crear.addEventListener("click",()=>{
-            ask('Crear.html');
+            ask('Crear_formulario.html');
         })
         inicio.addEventListener("click",()=>{
             ask('Inicio.html');
