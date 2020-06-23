@@ -15,7 +15,7 @@
   </div>
   <fieldset>
     <legend>Datos</legend>
-    <form action="../dynamics/php/Registro.php" method="post">
+    <form action="../dynamics/php/Registro.php" method="post" id="miForm">
       <label for="nombre">Nombre:</label>
       <input type="text" name="nombre" required><br>
       <label for="paterno">Apellido paterno:</label>
@@ -27,9 +27,9 @@
       <label for="correo">Correo electrónico:</label>
       <input type="email" name="correo" required><br>
       <label for="id1">Identificador primario:</label>
-      <input type="text" name="id1" placeholder="Núm. de cuenta" required><br>
+      <input type="text" name="id1" placeholder="Núm. de cuenta" required maxlength="9"><br>
       <label for="id2">Identificador secundario:</label>
-      <input type="text" name="id2" placeholder="CURP" required><br>
+      <input type="text" name="id2" placeholder="CURP" required maxlength="18"><br>
       <label for="password">Contraseña:</label>
       <input type="password" name="password" required><br>
       <input type="hidden" name="tipo" value="alumno">
