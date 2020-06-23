@@ -4,16 +4,16 @@ function eventlis(){
     let perfil = document.querySelector("#perfil");
     let cerrar = document.querySelector("#cerrar");
     crear.addEventListener("click",()=>{
-        window.location = '../../templates/Crear_formulario.html'
+        window.location = './Crear_formulario.html'
     })
     inicio.addEventListener("click",()=>{
-        window.location = '../../templates/Inicio.html'
+        window.location = './Inicio.html'
     })
     perfil.addEventListener("click",()=>{
-        window.location = '../../templates/Perfil.html'
+        window.location = './Perfil.html'
     })
     cerrar.addEventListener("click",()=>{
-        window.location = '../../index.html'
+        window.location = './index.html'
     })
 }
 fetch('NavInicio.html')
