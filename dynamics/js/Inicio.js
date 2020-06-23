@@ -5,7 +5,7 @@ function createCards(a){
         let card = document.createElement("div");
         card.classList.add("card")
         card.addEventListener("click",()=>{
-            ask('Perfil.html');
+            window.location = '../../templates/Perfil.html'
         })
         cardFeed.appendChild(card);
     }

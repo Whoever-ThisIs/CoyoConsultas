@@ -1,9 +1,8 @@
-let crear = document.querySelector("#crear");
-let inicio = document.querySelector("#inicio");
-let perfil = document.querySelector("#perfil");
-let cerrar = document.querySelector("#cerrar");
-let navBar = document.querySelector(".navBar");
 function eventlis(){
+    let crear = document.querySelector("#crear");
+    let inicio = document.querySelector("#inicio");
+    let perfil = document.querySelector("#perfil");
+    let cerrar = document.querySelector("#cerrar");
     crear.addEventListener("click",()=>{
         window.location = '../../templates/Crear_formulario.html'
     })
@@ -22,6 +21,7 @@ fetch('NavInicio.html')
     return respuesta.text();
 })
 .then((text)=>{
+    let navBar = document.querySelector(".navBar");
     navBar.innerHTML = text;
     eventlis();
 })
