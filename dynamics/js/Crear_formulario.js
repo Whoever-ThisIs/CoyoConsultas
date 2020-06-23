@@ -1,4 +1,5 @@
-fetch('../php/getRangos.php')
+
+  fetch('../php/getRangos.php')
   .then((response) => {
     return response.json();
   }).then((data) => {
