@@ -8,6 +8,7 @@ class Opcion{
 class Pregunta{
   constructor(id) {
     this.id = id;
+    this.texto = "¿?";
     this.opciones = new Array();
     this.cOpciones = 0;
   }
@@ -16,12 +17,23 @@ class Pregunta{
       El valor de numero de pregunta es igual A sus hijos(total adentro)
       -1(El boton de añadir)+1(La respuesta actual) por eso lo siguiente*/
     if (this.cOpciones < 10){
+      let index = this.cOpciones;
       this.cOpciones++;
       this.opciones.push( new Opcion(this.cOpciones));
       let numOpc = this.cOpciones;
       //Se crea el p donde se guarda esto
       let newOpc = $("<p>")
-      newOpc.append("<input type='text' placeholder='Ingrese su respuesta' required>")
+      let input = $("<input>");
+      input.attr('type', 'text');
+      input.attr('name', "P-" + this.id + "-" + this.cOpciones);
+      input.attr('placeholder', 'Ingrese su respuesta');
+      input.attr('required');
+
+      input.on('input', (e) => {
+        this.opciones[index].valor = input.val();
+      })
+      newOpc.append(input);
+
       //Si hay mas de dos opciones en esa pregunta puedes eliminar esa opcion
       if (numOpc>2) {
         //Boton para eliminar esa opcion
@@ -37,18 +49,16 @@ class Pregunta{
 }
 
 class Formulario {
-  crearId(){
-    //Generador de id Para el formulario
+  constructor() {
+    this.titulo = "Formulario";
+    this.preguntas = new Array();
+    this.cPreguntas = 0;
     let simbolos = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
     var id_form = "";
     for (var i = 0; i < 6; i++) {
       id_form += simbolos.substr(Math.round(Math.random() * simbolos.length), 1);
     }
-  }
-  constructor() {
-    this.titulo = "Formulario";
-    this.preguntas = new Array();
-    this.cPreguntas = 0;
+    this.id = id_form;
   }
   addPreg() {
     if (this.cPreguntas < 5){
@@ -85,27 +95,29 @@ class Formulario {
   }
   guardarForm() {
     //Insercion de datos del formulario
-    console.log("id_form = " + id_form);
-    console.log("Titulo = " + $("input[name='Titulo']").val());
+    console.log("id_form = " + this.id);
+    console.log("Titulo = " + this.titulo);
     console.log("reportes = " + 0);
+    let id_form = this.id;
     for (var i = 0; i < form.cPreguntas; i++) {
       //Se crea una pregunta
-      let id_preg = id_form + "-P" + (i + 1)
-      let tituloPreg = $("input[name='P-" + (i + 1) + "']").val()
+      // Id de pregunta de la base de datos
+      let id_preg = id_form + "-P" + (i + 1);
+      let tituloPreg = this.preguntas[i].texto;
       //"INSERT INTO pregunta (id_pregunta, id_form, titulo) VALUES ('id_preg','id_form', 'tituloPreg')"
       for (var n = 0; n < form.preguntas[i].cOpciones; n++) {
         //Aqui se crean las opciones de esa pregunta
         //Se crea el id_de la opcion
         let id_opc = id_preg + "-" + (n + 1)
         //Obtiene el valor del input de esa opcion
-        let valorOpc = $("#P-" + (i + 1))[0].children[3].children[n + 1].getElementsByTagName("input")[0].value
+        let valorOpc = this.preguntas[i].opciones[n].valor;
         //"INSERT INTO opcion (id_opcion, id_pregunta, valor) VALUES ('id_opc','id_preg', 'valorOpc')"
         console.log("Pregunta " + id_preg + ", opcion:" + (n + 1));
       }
     }
   }
   modForm() {
-
+    console.log("Do se puede")
   }
 }
 
