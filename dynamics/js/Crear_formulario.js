@@ -172,14 +172,14 @@ class Formulario {
     .then((response) => {
       return response.json();
     }).then((data) => {
-      let select = document.getElementById('categoria');
+      let select = $("#categoria");
       data.forEach(element => {
-        let new_option = document.createElement("option");
-        new_option.value = element.id_categoria;
-        new_option.innerText = element.categoria;
-        select.appendChild(new_option);
+        let new_option = $("<option>");
+        new_option.attr("value", element.id_categoria);
+        new_option.text(element.categoria);
+        select.append(new_option);
       });
-      document.getElementById('Form_config').appendChild(select)
+      $("#Form_config").append(select)
     });
   }
   addDate () {
