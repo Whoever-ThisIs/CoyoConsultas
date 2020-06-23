@@ -179,6 +179,17 @@ footer{
 	width:100%;
 }
 
+#publicForm{
+	width:500px;
+	height:500px;
+	background-color: seagreen;
+}
+#formRegistro:hover{
+	color: #e9420f;
+}
+#formIngreso:hover{
+	color: #e9420f;
+}
 @media screen and (max-width:800px ) {
 	
 	header nav {
