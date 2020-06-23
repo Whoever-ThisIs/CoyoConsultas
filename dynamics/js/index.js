@@ -16,7 +16,7 @@ var count = 1;
         }
     });
 };
-function pedir(file){
+/* function pedir(file){
     let form = document.querySelector("#formularioPublico")
     fetch(file)
     .then((respuestita)=>{
@@ -34,3 +34,4 @@ ingreso.addEventListener("click",()=>{
 registro.addEventListener("click",()=>{
     pedir('Registro.html');
 })
+ */
