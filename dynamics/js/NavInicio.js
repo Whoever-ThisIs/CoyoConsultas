@@ -26,17 +26,17 @@ function ask(file){
             entretenimiento.addEventListener("click",()=>{
                 createCards(3);
             })
-    
+
             politica.addEventListener("click",()=>{
                 createCards(3);
             })
-    
+
             cultura.addEventListener("click",()=>{
                 createCards(2);
             })
             /*Este for es el que se ocuparia, lode arriba es provisional para checar el funcionamiento
             for(let j=0;j<9;j++){
-                let catego = 
+                let catego =
                 catego.addEventListener("click",()=>{
                     createCards(a);
                 })
