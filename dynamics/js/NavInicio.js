@@ -13,7 +13,7 @@ function eventlis(){
         window.location = './Perfil.html'
     })
     cerrar.addEventListener("click",()=>{
-        window.location = './index.html'
+        window.location = '../index.html'
     })
 }
 fetch('NavInicio.html')
