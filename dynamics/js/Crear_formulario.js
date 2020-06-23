@@ -71,7 +71,15 @@ class Formulario {
       let numPreg = this.cPreguntas;//Se obtiene su numero de pregunta
       newPreg.attr('id', ("P-"+numPreg));//Se agrega su id
       newPreg.append("<h2>Pregunta "+numPreg+"</h2>")
-      newPreg.append("<input type='text' name='P-"+numPreg+"' placeholder='Ingrese su pregunta' required>")//Su pregunta
+      let input = $("<input>");
+      input.attr('type', 'text');
+      input.attr('name', "P-" + numPreg);
+      input.attr('placeholder', 'Ingrese su pregunta');
+      input.attr('required');
+      input.on('input', (e) => {
+        this.preguntas[indexPregunta].texto = input.val();
+      })
+      newPreg.append(input)//Su pregunta
       newPreg.append("<h3>Opciones de respuesta</h3>")
       ////**  Opciones de respuesta  **////
       //Boton para añadir una opcion extra
