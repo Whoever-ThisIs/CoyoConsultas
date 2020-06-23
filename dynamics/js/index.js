@@ -18,7 +18,7 @@ var count = 1;
 };
 function acceso() {
     let data = new FormData(document.getElementById('formAcceso'));
-    fetch(`../dynamics/php/Acceso.php`, {
+    fetch('../dynamics/php/Acceso.php', {
       method: 'POST',
       body: data
     }).then((response) => {
@@ -28,39 +28,12 @@ function acceso() {
       console.log(respuesta);
       if (respuesta) {
         console.log("si entraste");
-        window.location = "../index.html"
+        window.location = "../index.html";
       }
     })
     .catch((message) =>
       console.log(message))
   }
-  function alumno(){
-    tipo.value = "alumno"
-    labelId1.innerText = "Núm. de cuenta"
-    id1.placeholder = "Ingrese su Núm. de cuenta"
-    id1.maxLength = "9"
-    labelId2.innerText = "CURP"
-    id2.placeholder = "Ingrese su CURP"
-    id2.maxLength = "18"
-    }
-    function profesor(){
-    tipo.value = "profesor"
-    labelId1.innerText = "Núm. de RFC"
-    id1.placeholder = "Ingrese su RFC"
-    id1.maxLength = "13"
-    labelId2.innerText = "Núm. de Trabajador"
-    id2.placeholder = "Ingrese su Núm. de Trab"
-    id2.maxLength = "6"
-    }
-    function funcionario(){
-    tipo.value = "funcionario"
-    labelId1.innerText = "Núm. de RFC"
-    id1.placeholder = "Ingrese su RFC"
-    id1.maxLength = "13"
-    labelId2.innerText = "Núm. de Trabajador"
-    id2.placeholder = "Ingrese su Núm. de Trab"
-    id2.maxLength = "6"
-    }
     function registro() {
         let data = new FormData(document.getElementById('miForm'));
         fetch('../dynamics/php/Registro.php', {
@@ -94,6 +67,45 @@ formRegistro.addEventListener("click",()=>{
         var id2 = document.querySelector("input[name='id2']");
         var labelId2 = document.querySelector("label[for='id2']");
         var password = document.querySelector("input[name='password']");
+        var alumnoBtt = document.querySelector("#alumno");
+        var profesorBtt = document.querySelector("#profesor");
+        var funcionarioBtt = document.querySelector("#funcionario");
+        alumnoBtt.addEventListener("click",()=>{
+            alumno();
+        })
+        profesorBtt.addEventListener("click",()=>{
+            profesor();
+        })
+        funcionarioBtt.addEventListener("click",()=>{
+            funcionario();
+        })
+        function alumno(){
+            tipo.value = "alumno"
+            labelId1.innerText = "Núm. de cuenta"
+            id1.placeholder = "Ingrese su Núm. de cuenta"
+            id1.maxLength = "9"
+            labelId2.innerText = "CURP"
+            id2.placeholder = "Ingrese su CURP"
+            id2.maxLength = "18"
+            }
+        function profesor(){
+            tipo.value = "profesor"
+            labelId1.innerText = "Núm. de RFC"
+            id1.placeholder = "Ingrese su RFC"
+            id1.maxLength = "13"
+            labelId2.innerText = "Núm. de Trabajador"
+            id2.placeholder = "Ingrese su Núm. de Trab"
+            id2.maxLength = "6"
+            }
+        function funcionario(){
+            tipo.value = "funcionario"
+            labelId1.innerText = "Núm. de RFC"
+            id1.placeholder = "Ingrese su RFC"
+            id1.maxLength = "13"
+            labelId2.innerText = "Núm. de Trabajador"
+            id2.placeholder = "Ingrese su Núm. de Trab"
+            id2.maxLength = "6"
+            }
         //Validador de contraseña segura
         password.addEventListener("blur",()=>{
         let mensajePsw = document.createElement("p")
@@ -102,15 +114,16 @@ formRegistro.addEventListener("click",()=>{
         if (document.querySelector("p.Error_psw")!=null) {
             //Cambien el regex como crean conveniente
             if (password.value.search(/^(?=[\w!#$@%&*^+-]*\d)(?=[\w!#$@%&*^+-]*[A-Z])(?=[\w!#@$%&*^+-]*[a-z])(?=[\w!#$%&*^+@-]*[!#$%&*@^+-])\S{8,100}$/)>=0) {
-            document.querySelector("p.Error_psw").innerText = "Contraseña segura"
+            document.querySelector("p.Error_psw").innerText = "Contraseña segura";
             }else {
-            document.querySelector("p.Error_psw").innerText = "Contraseña insegura"
+            document.querySelector("p.Error_psw").innerText = "Contraseña insegura";
             }
         }else {
             if (!(password.value.search(/^(?=[\w!#$@%&*^+-]*\d)(?=[\w!#$@%&*^+-]*[A-Z])(?=[\w!#@$%&*^+-]*[a-z])(?=[\w!#$%&*^+@-]*[!#$%&*@^+-])\S{8,100}$/)>=0)) {
-            mensajePsw.innerText = "Contraseña insegura"
+            mensajePsw.innerText = "Contraseña insegura";
             document.getElementsByTagName("form")[0].insertBefore(mensajePsw, tipo)
-            }
+           
+}
         }
 
         })
