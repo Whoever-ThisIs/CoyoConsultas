@@ -1,10 +1,16 @@
+/**
+ * Este programa muestra una interfaz gráfica para la manipulación de un objeto Formulario. 
+ * Permite editar la cantidad de preguntas y su contenido, al igual que sus
+ * respuestas. Por último, a oetición del usuario se almacenan en la base de datos
+ */
+// Creación de las respuestas
 class Opcion{
   constructor(id) {
     this.id = id;
     this.valor = "Opción" + id;
   }
 }
-
+// Creación de las preguntas
 class Pregunta{
   constructor(id) {
     this.id = id;
@@ -12,31 +18,30 @@ class Pregunta{
     this.opciones = new Array();
     this.cOpciones = 0;
   }
+  // Método para añadir opciones de respuesta
   addResp() {
-    /*Aqui se calcula cuantos hijos (respuestas) hay en las opciones
-      El valor de numero de pregunta es igual A sus hijos(total adentro)
-      -1(El boton de añadir)+1(La respuesta actual) por eso lo siguiente*/
+    // Verifica que no supere el límite
     if (this.cOpciones < 10){
       let index = this.cOpciones;
       this.cOpciones++;
+      // Crea una nueva opción dentro de pregunta
       this.opciones.push( new Opcion(this.cOpciones));
       let numOpc = this.cOpciones;
       //Se crea el p donde se guarda esto
-      let newOpc = $("<p>")
+      let newOpc = $("<p>");
+      // Se añade el evento input (actualiza conforme se ingresa el valor)
       let input = $("<input>");
       input.attr('type', 'text');
       input.attr('name', "P-" + this.id + "-" + this.cOpciones);
       input.attr('placeholder', 'Ingrese su respuesta');
       input.attr('required');
-
       input.on('input', (e) => {
         this.opciones[index].valor = input.val();
       })
       newOpc.append(input);
-
-      //Si hay mas de dos opciones en esa pregunta puedes eliminar esa opcion
+      // Si hay mas de dos opciones en esa pregunta puedes eliminar esa opcion
       if (numOpc>2) {
-        //Boton para eliminar esa opcion
+        // Boton para eliminar esa opcion
         let btnElimOpc = $("<button type='button' class='Elim_Opc'>Eliminar</button>")
         btnElimOpc.click(()=>{
           newOpc.remove()
@@ -47,15 +52,17 @@ class Pregunta{
     }
   }
 }
-
+// Creación del formulario
 class Formulario {
   constructor() {
+    // Se añade el evento input (actualiza conforme se ingresa el valor del título)
     this.titulo = "Formulario";
     $("#tituloForm").on('input', (e) => {
       this.titulo = $("#tituloForm").val();
     })
     this.preguntas = new Array();
     this.cPreguntas = 0;
+    // Crea un id único
     let simbolos = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
     var id_form = "";
     for (var i = 0; i < 6; i++) {
@@ -63,10 +70,13 @@ class Formulario {
     }
     this.id = id_form;
   }
+  // Método para añadir preguntas
   addPreg() {
+    // Verifica que no supere el límite
     if (this.cPreguntas < 5){
       let indexPregunta = this.cPreguntas;
       this.cPreguntas++;
+      // Crea una nueva pregunta dentro de formulario
       this.preguntas.push(new Pregunta(this.cPreguntas));
       //Se crea el contenedor de la nueva pregunta
       let newPreg = $("<div>")
@@ -74,6 +84,7 @@ class Formulario {
       let numPreg = this.cPreguntas;//Se obtiene su numero de pregunta
       newPreg.attr('id', ("P-"+numPreg));//Se agrega su id
       newPreg.append("<h2>Pregunta "+numPreg+"</h2>")
+      // Se añade el evento input (actualiza conforme se ingresa el valor)
       let input = $("<input>");
       input.attr('type', 'text');
       input.attr('name', "P-" + numPreg);
@@ -82,6 +93,7 @@ class Formulario {
       input.on('input', (e) => {
         this.preguntas[indexPregunta].texto = input.val();
       })
+
       newPreg.append(input)//Su pregunta
       newPreg.append("<h3>Opciones de respuesta</h3>")
       ////**  Opciones de respuesta  **////
@@ -104,6 +116,10 @@ class Formulario {
       alert("Se ha alcanzado el número máximo de preguntas")
     }
   }
+  /**
+   * Método para generar los registros del formulario, preguntas y
+   * opciones por primera vez en la base de datos.
+   */
   guardarForm() {
     //Insercion de datos del formulario
     console.log("id_form = " + this.id);
@@ -127,12 +143,13 @@ class Formulario {
       }
     }
   }
+  // Método para actualizar los registros
   modForm() {
     console.log("Do se puede")
   }
 }
 
-//Añade la primera pregunta
+// Instancia formulario
 let form = new Formulario();
 form.addPreg();
 //Boton para añadir preguntas
