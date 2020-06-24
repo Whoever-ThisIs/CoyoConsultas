@@ -3,7 +3,7 @@
    * Este programa recibe la información del usuario con 
    * respecto a un formulario y lo va a creando
    */
-  include "config.php";
+  include ("Config.php");
   $conexion = connect();
   if(!$conexion) {
     echo "No se pudo conectar con el servidor. <br>

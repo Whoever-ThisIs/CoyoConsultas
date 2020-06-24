@@ -123,15 +123,16 @@ class Formulario {
    * opciones por primera vez en la base de datos.
    */
   guardarForm() {
+    let data = new FormData();
+    data.append("tipo", 1);
+    data.append("idForm", this.id);
+    data.append("categoria", this.categoria);
+    data.append("titulo", this.titulo);
+    data.append("rango", this.rango);
+
     fetch("../dynamics/php/Guardar-form.php", {
       method: 'POST',
-      body: {
-        tipo: 1,
-        idForm: this.id,
-        categoria: this.categoria,
-        titulo: this.titulo,
-        rango: this.rango
-      }
+      body: data
     })
     for (let i = 0; i < this.cPreguntas; i++) {
       // Creación de preguntas
