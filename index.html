@@ -2,28 +2,79 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <title>CoyoConsultas</title>
     <link rel="stylesheet" href="statics/css/index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css">
 </head>
 <body>
-    <header>
-        <a id="logoHeader" href="index.html"><img src="#" class="logo">
-          </a>
-         <nav>
-            <ul>
-              <li><a href="index.html">Inicio</a></li>
-                <li><a href="#">Resultados</a></li>
-                <li><a href="#">Encuestas</a></li>
-                <li><a href="#"><form>
-                  <input class="search" type="text" placeholder="Ingresar código">
-                  <input class="searchButton" type="button" value="Ir" />
-                  </form></a></li>
-            </ul>
-        </nav>
-        <div class="mainHeader">
-            
+<!--nav-->
+<header>
+<div class="menu_bar">
+  <a href="#" class="bt-menu"><span class="fas fa-bars"></span></a>
+</div>
+<a id="logoHeader" href="index.html"><img src="#" class="logo"></a>
+<nav>
+  <ul>
+    <li><a href="#"><span class="fas fa-chart-bar"></span> Resultados</a></li>
+    <li><a href="#"><span class="fas fa-file-signature"></span> Encuestas</a></li>
+    <li><a href="#"><form>
+      <input class="search" type="text" placeholder="Ingresar código">
+      <button class="searchButton"><span class="fas fa-search"></span></button>
+    </form></a></li>
+  </ul>
+</nav>
+</header>
+<!--sección 1 para foto-->
+<section id="photo">
+  <div>
+    <p>Holaaa</p>
+  </div>
+</section>
+<!--galería y formulario de registro o inicio de sesión-->
+<div id="galreg">
+<div class="grid-item1">
+  <div class="center">
+    <br>
+    <h3>GALERÍA</h3>
+    <img src="statics/media/img/photo11.png" class="image"> 
+    <img src="statics/media/img/photo23.png" class="image"> 
+    <img src="statics/media/img/photo25.png" class="image"> 
+    <img src="statics/media/img/photo14.png" class="image"> 
+    <img src="statics/media/img/photo24.png" class="image"> 
+    <img src="statics/media/img/photo22.png" class="image">
+  </div>
+</div>
+<div class="grid-item2">
+  <div id="register">
+    <br>
+    <br>
+    <br>
+      <fieldset>
+        <legend>
+          <span id="formIngreso">Ingreso</span>/<span id="formRegistro">Registro</span>
+        </legend>
+        <div id="publicForm">
         </div>
-     </header>   
-</body>
+      </fieldset>
+  </div>
+</div>
+</div>
+<!--footer-->
+<footer>
+  <div class="all-footer">
+  <div class="footer">
+    ©2020  Todos los derechos reservados.
+  </div>
+  <div class="social">
+    <a href="#"><span class="fab fa-facebook-f"></span></a>
+    <a href="#"><span class="fab fa-twitter"></span></a>
+    <a href="#"><span class="fas fa-envelope"></span></a>
+  </div>
+  </div>
+</footer>
+    <!--script-->
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script src="./dynamics/js/index.js"></script>
+    </body>
 </html>

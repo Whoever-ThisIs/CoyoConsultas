@@ -1,0 +1,142 @@
+/* NAVBAR */
+@font-face{
+    src: url('https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap');
+    font-family: 'Roboto Condensed', sans-serif;
+} 
+.nav nav{
+    padding-top:10px;
+    height: 60px;
+}
+.nav nav{
+    background: #272626;
+}
+.nav nav ul{
+    position: relative;
+    padding-left: 45%;
+    padding-top: 1%;
+    list-style: none;
+    margin: 0 auto;    
+}
+.nav nav ul li{
+    display: inline;
+    padding-left: 5%;
+    font-size: 16px;
+}
+.nav ul li a {
+    text-decoration: none;
+    font-weight: 500;
+    position: relative;
+    padding: 25px;
+    color: #ffffff;
+    font-size: 20px;
+}
+body{
+    background-color:#393939;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+/*PAGINA PRINCIPAL */
+.CoyoConsultasTitle{
+    width:100%;
+    height:291px;
+    background: linear-gradient(90deg, #E25050 11.84%, rgba(0, 192, 158, 0.53) 78.99%);
+}
+.CoyoConsultasTitle span{
+    position: relative;
+    top:30%;
+    left:35%;
+    color: #DCDBDB;
+    font-size: 80px;
+}
+#categories ul li{
+    display: inline;
+    padding-left: 20px;
+    color: #CBCBCB;
+    font-size: 15px;
+}
+#categories ul li:hover{
+    color:rgba(7, 196, 161, 0.925);
+}
+#categories{
+    padding:5px;
+    background: #6F6B6B;
+}
+.cardFeed{
+    margin: 0 auto;
+    max-width: 1200px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    padding: 0.5rem;
+}
+.card{
+    border: 0px solid aqua;
+    margin: 0.5rem;
+    position: relative;
+    height: 12rem;
+    overflow: hidden;
+    border-radius: 0.5rem;
+    flex: 1;
+    min-width: 290px;
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.5);        
+    background-color: sandybrown;
+}
+.card::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0) linear-gradient(to bottom, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0.7) 80%);;
+    z-index: 0;
+}
+.link{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+/* PERFIL*/
+.profileCover{
+    min-width: 100%;
+    min-height: 300px;
+    background: linear-gradient(90deg, #E25050 11.84%, rgba(0, 192, 158, 0.53) 78.99%);
+    position: relative;
+}
+.profileCard{
+    position:relative;
+    left:17%;
+    top:180px;
+    width: 63.5%;
+    min-height:400px;
+    background-color: silver;
+    text-align: center;
+}
+.profile{
+    width:242px;
+    height:242px;
+    border-radius: 50%;
+    z-index: 5;
+    position: relative;
+    left:36.6%;
+    top:-121px;
+    background-color: rgb(0, 133, 133);
+}
+.profileName{
+    font-family: 'Roboto Condensed', sans-serif;
+    position: relative;
+    font-size: 30px;
+    top:-60px;
+
+}
+.profileData{
+    position: relative;
+    width:100%;
+    height:125px;
+    background-color: royalblue;
+}
