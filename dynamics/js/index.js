@@ -18,7 +18,7 @@ var count = 1;
 };
 function acceso() {
     let data = new FormData(document.getElementById('formAcceso'));
-    fetch('../dynamics/php/Acceso.php', {
+    fetch('./dynamics/php/Acceso.php', {
       method: 'POST',
       body: data
     }).then((response) => {
@@ -28,7 +28,7 @@ function acceso() {
       console.log(respuesta);
       if (respuesta) {
         console.log("si entraste");
-        window.location = "../index.html";
+        window.location = "./index.html";
       }
     })
     .catch((message) =>
@@ -36,7 +36,7 @@ function acceso() {
   }
     function registro() {
         let data = new FormData(document.getElementById('miForm'));
-        fetch('../dynamics/php/Registro.php', {
+        fetch('./dynamics/php/Registro.php', {
             method: 'POST',
             body: data
             })
@@ -106,27 +106,6 @@ formRegistro.addEventListener("click",()=>{
             id2.placeholder = "Ingrese su Núm. de Trab"
             id2.maxLength = "6"
             }
-        //Validador de contraseña segura
-        password.addEventListener("blur",()=>{
-        let mensajePsw = document.createElement("p")
-        mensajePsw.classList.add("Error_psw")
-        //El mensaje de error ya creado
-        if (document.querySelector("p.Error_psw")!=null) {
-            //Cambien el regex como crean conveniente
-            if (password.value.search(/^(?=[\w!#$@%&*^+-]*\d)(?=[\w!#$@%&*^+-]*[A-Z])(?=[\w!#@$%&*^+-]*[a-z])(?=[\w!#$%&*^+@-]*[!#$%&*@^+-])\S{8,100}$/)>=0) {
-            document.querySelector("p.Error_psw").innerText = "Contraseña segura";
-            }else {
-            document.querySelector("p.Error_psw").innerText = "Contraseña insegura";
-            }
-        }else {
-            if (!(password.value.search(/^(?=[\w!#$@%&*^+-]*\d)(?=[\w!#$@%&*^+-]*[A-Z])(?=[\w!#@$%&*^+-]*[a-z])(?=[\w!#$%&*^+@-]*[!#$%&*@^+-])\S{8,100}$/)>=0)) {
-            mensajePsw.innerText = "Contraseña insegura";
-            document.getElementsByTagName("form")[0].insertBefore(mensajePsw, tipo)
-           
-}
-        }
-
-        })
         //---------Registro---------//
         /////Añadimos un manejador de eventos para cuando el formulario se envíe/////
         document.getElementById('miForm').addEventListener('submit', (e) => {
