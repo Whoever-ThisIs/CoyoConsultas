@@ -52,11 +52,6 @@ function acceso() {
             .then((response) => {
             return response.text();
             }).then((data) => {
-<<<<<<< HEAD
-            alert(data);
-=======
-              console.log("Todoc cool");
->>>>>>> 6f6a33c7294ff8b223056fb418a7dceb3eb1db3a
             document.getElementById('miForm').reset();
             }).catch((message)=>{
             console.log(message);

@@ -1,5 +1,5 @@
 /**
- * Este programa muestra una interfaz gráfica para la manipulación de un objeto Formulario. 
+ * Este programa muestra una interfaz gráfica para la manipulación de un objeto Formulario.
  * Permite editar la cantidad de preguntas y su contenido, al igual que sus
  * respuestas. Por último, a oetición del usuario se almacenan en la base de datos
  */
@@ -62,6 +62,8 @@ class Formulario {
     })
     this.preguntas = new Array();
     this.cPreguntas = 0;
+    this.categoria = 1;
+    this.rango = 1;
     // Crea un id único
     let simbolos = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
     var id_form = "";
@@ -121,25 +123,26 @@ class Formulario {
    * opciones por primera vez en la base de datos.
    */
   guardarForm() {
-    //Insercion de datos del formulario
-    console.log("id_form = " + this.id);
-    console.log("Titulo = " + this.titulo);
-    console.log("reportes = " + 0);
-    let id_form = this.id;
-    for (var i = 0; i < form.cPreguntas; i++) {
-      //Se crea una pregunta
-      // Id de pregunta de la base de datos
-      let id_preg = id_form + "-P" + (i + 1);
-      let tituloPreg = this.preguntas[i].texto;
-      //"INSERT INTO pregunta (id_pregunta, id_form, titulo) VALUES ('id_preg','id_form', 'tituloPreg')"
-      for (var n = 0; n < form.preguntas[i].cOpciones; n++) {
-        //Aqui se crean las opciones de esa pregunta
-        //Se crea el id_de la opcion
-        let id_opc = id_preg + "-" + (n + 1)
-        //Obtiene el valor del input de esa opcion
-        let valorOpc = this.preguntas[i].opciones[n].valor;
-        //"INSERT INTO opcion (id_opcion, id_pregunta, valor) VALUES ('id_opc','id_preg', 'valorOpc')"
-        console.log("Pregunta " + id_preg + ", opcion:" + (n + 1));
+    // Petición tipo 1
+    var data = new FormData();
+    data.append("tipo", "1");
+    data.append("idForm", this.id);
+    data.append("categoria", this.categoria);
+    data.append("titulo", this.titulo);
+    data.append("rango", this.rango);
+    data.append("descripcion", "Queti");
+    data.append("usuario", '319014217');
+    fetch("../dynamics/php/Guardar-form.php", {
+      method: 'POST',
+      body: data
+    }).then((response) => {
+      console.log(response.text())
+    })
+    for (let i = 0; i < this.cPreguntas; i++) {
+      // Creación de preguntas
+
+      for (let j = 0; j < this.preguntas[i].cOpciones; j++) {
+        // Creación de respuestas
       }
     }
   }
@@ -199,7 +202,7 @@ class Formulario {
     fechaInicio.val(añoInicio+"-"+mesInicio+"-"+diaInicio)
     console.log(añoInicio+"-"+mesInicio+"-"+diaInicio);
     $('#Form_config').append(fechaInicio)
-    
+
     //Se agrego el input tyme de Inicio
     let tiempoInicio = $("<input type='time' name='Inicio_hora' required>")
     var horaInicio = actual.getHours();
@@ -213,7 +216,7 @@ class Formulario {
     console.log(horaInicio+":"+minutosInicio);
     tiempoInicio.val(horaInicio+":"+minutosInicio)
     $('#Form_config').append(tiempoInicio)
-    
+
     //Dia y Hora de cierre de formulario
     $('#Form_config').append("Fin: ")
     $('#Form_config').append("<input type='date' name='Fin_dia' required>")
@@ -250,5 +253,11 @@ var btnCrear = $("<button type='button' name='button' id='Crear_form'>Crear Form
 btnCrear.click(()=>{
   console.log("Yamete kudasai")
 })
+let buttonGuardar = $("<button id='Guardar'>Guardar formulario</button>");
+buttonGuardar.click(()=>{
+  console.log("Guardando...")
+  form.guardarForm();
+})
+$('#Form_config').append(buttonGuardar)
 $('#Form_config').append("<br><br>")
 $('#Form_config').append(btnCrear)
