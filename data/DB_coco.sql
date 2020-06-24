@@ -84,11 +84,15 @@ CREATE TABLE `formulario` (
   `reportes` smallint(13) DEFAULT '0',
   `inicio_hora` time DEFAULT NULL,
   `fin_hora` time DEFAULT NULL,
+  `descripcion` text NOT NULL,
+  `id_usuario` varchar(13) NOT NULL,
   PRIMARY KEY (`id_form`),
   KEY `FK_id_categoria` (`id_categoria`),
   KEY `FK_rango` (`rango`),
+  KEY `id_usuario` (`id_usuario`),
   CONSTRAINT `FK_id_categoria` FOREIGN KEY (`id_categoria`) REFERENCES `categoria` (`id_categoria`),
-  CONSTRAINT `FK_rango` FOREIGN KEY (`rango`) REFERENCES `rango` (`id_rango`)
+  CONSTRAINT `FK_rango` FOREIGN KEY (`rango`) REFERENCES `rango` (`id_rango`),
+  CONSTRAINT `formulario_ibfk_1` FOREIGN KEY (`id_usuario`) REFERENCES `usuario` (`id_usuario`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -274,4 +278,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-06-23 13:18:48
+-- Dump completed on 2020-06-23 21:00:41
