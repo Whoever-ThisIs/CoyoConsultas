@@ -144,7 +144,7 @@ class Formulario {
       let data = new FormData(document.getElementById('crearForm'));
       data.append("tipo", 2);
       // data.append("idPregunta", this.preguntas[i].id);
-      data.append("idPregunta", "rawr" + i);  
+      data.append("idPregunta", "rawr" + 5);  
       data.append("idForm", "rawr");
       data.append("nombrePreg", "Pregunta preguntosa");
       console.log(data);
@@ -158,7 +158,7 @@ class Formulario {
         data.append("tipo",3);
         //data.append("idOpcion",this.preguntas[i][j].id);
         //data.append("idPregunta", this.preguntas[i].id);
-        data.append("idOpcion", "rawr" + j); 
+        data.append("idOpcion", "rawr" + 7); 
         data.append("idPreguntaOp", "rawr" + i);
         data.append("valor","ALO");
         //data.append("apoyo",this.apoyo);
