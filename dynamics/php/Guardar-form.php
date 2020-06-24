@@ -21,6 +21,20 @@
       $usuario = $_POST['usuario'];
       $SQL_formulario = "INSERT INTO formulario(id_form, id_categoria, titulo, rango, descripcion, id_usuario) VALUES ('$id', $categoria, '$titulo', $rango, '$descripcion','$usuario');";
       $query_formulario = mysqli_query($conexion,$SQL_formulario);
-      }
+    }
+    elseif($_POST['tipo']==2){
+      $id_pregunta = $_POST['idPregunta'];
+      $id_form = $_POST['idForm'];
+      $nombre_preg = $_POST['nombrePreg'];
+      $SQL_pregunta = "INSERT INTO pregunta(id_pregunta, id_form, titulo) VALUES ('$id_pregunta','$id_form','$nombre_preg');";
+      $query_pregunta = mysqli_query($conexion, $SQL_pregunta);   
+    } 
+    elseif($_POST['tipo']==3){
+      $id_opcion = $_POST['idOpcion'];
+      $id_pregunta = $_POST['idPreguntaOp'];
+      $valor = $_POST['valor'];
+      $SQL_opcion = "INSERT INTO opcion(id_opcion,id_pregunta,valor) VALUES('$id_opcion','$id_pregunta','$valor');";
+      $query_opcion = mysqli_query($conexion,$SQL_opcion);
+    }
     }
 ?>
