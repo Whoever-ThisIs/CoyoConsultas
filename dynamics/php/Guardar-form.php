@@ -14,12 +14,14 @@
   }
   else {
     if ($_POST['tipo'] == 1) {
-      $id = $_POST['idForm'];
-      $categoria = $_POST['categoria'];
-      $titulo = $_POST['titulo'];
-      $rango = $_POST['rango'];
-      $SQL_formulario = "INSERT INTO formulario(id_form, id_categoria, titulo, rango) VALUES ('$id', $categoria, '$titulo', $rango)";
-      $query_formulario = mysqli_query($conexion,$SQL_formulario);
+    $id = $_POST['idForm'];
+    $categoria = $_POST['categoria'];
+    $titulo = $_POST['titulo'];
+    $rango = $_POST['rango'];
+    $descripcion = $_POST['descripcion'];
+    $usuario = $_POST['usuario'];
+    $SQL_formulario = "INSERT INTO formulario(id_form, id_categoria, titulo, rango, descripcion, id_usuario) VALUES ('$id', $categoria, '$titulo', $rango, $descripcion','$usuario');";
+    $query_formulario = mysqli_query($conexion,$SQL_formulario);
     }
-  }
+   }
 ?>

@@ -123,19 +123,22 @@ class Formulario {
    * opciones por primera vez en la base de datos.
    */
   guardarForm() {
-    let data = new FormData();
+    // Petición tipo 1
+    let data = new FormData(document.getElementById('crearForm'));
     data.append("tipo", 1);
     data.append("idForm", this.id);
     data.append("categoria", this.categoria);
     data.append("titulo", this.titulo);
     data.append("rango", this.rango);
-
+    data.append("descripcion", "Queti");
+    data.append("usuario", '319014217');
     fetch("../dynamics/php/Guardar-form.php", {
       method: 'POST',
       body: data
     })
     for (let i = 0; i < this.cPreguntas; i++) {
       // Creación de preguntas
+
       for (let j = 0; j < this.preguntas[i].cOpciones; j++) {
         // Creación de respuestas        
       }
@@ -248,7 +251,10 @@ var btnCrear = $("<button type='button' name='button' id='Crear_form'>Crear Form
 btnCrear.click(()=>{
   console.log("Yamete kudasai")
 })
-let buttonGuardar = $("<button id='Guardar' onclick='form.guardarForm()'>Guardar formulario</button>");
+let buttonGuardar = $("<button id='Guardar'>Guardar formulario</button>");
+buttonGuardar.click(()=>{
+  form.guardarForm();
+})
 $('#Form_config').append(buttonGuardar)
 $('#Form_config').append("<br><br>")
 $('#Form_config').append(btnCrear)
