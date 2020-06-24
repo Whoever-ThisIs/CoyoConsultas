@@ -60,6 +60,10 @@ class Formulario {
     $("#tituloForm").on('input', (e) => {
       this.titulo = $("#tituloForm").val();
     })
+    this.descripcion = "Descripción";
+    $("#descripcion").on('input', (e) => {
+      this.descripcion = $("#descripcion").val();
+    })
     this.preguntas = new Array();
     this.cPreguntas = 0;
     this.categoria = 1;
@@ -130,8 +134,8 @@ class Formulario {
     data.append("categoria", this.categoria);
     data.append("titulo", this.titulo);
     data.append("rango", this.rango);
-    data.append("descripcion", "Queti");
-    data.append("usuario", '319014217');
+    console.log(this.descripcion);
+    data.append("descripcion", this.descripcion);
     fetch("../dynamics/php/Guardar-form.php", {
       method: 'POST',
       body: data
