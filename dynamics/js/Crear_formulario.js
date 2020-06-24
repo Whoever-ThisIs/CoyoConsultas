@@ -4,6 +4,14 @@
  * respuestas. Por último, a oetición del usuario se almacenan en la base de datos
  */
 // Creación de las respuestas
+//Consulta si ya hay una sesion abierta
+fetch('../dynamics/php/Datos_sesion.php')
+.then((respuesta)=>{
+    return respuesta.json();
+})
+.then((text)=>{
+  var datos = text.split("~");
+})
 class Opcion{
   constructor(id) {
     this.id = id;
@@ -137,14 +145,14 @@ class Formulario {
       body: data
     })
   }
-  
+
   guardarPregunta () {
     //Petición tipo 2
     for (let i = 0; i < this.cPreguntas; i++) {
       let data = new FormData(document.getElementById('crearForm'));
       data.append("tipo", 2);
       // data.append("idPregunta", this.preguntas[i].id);
-      data.append("idPregunta", "rawr" + 5);  
+      data.append("idPregunta", "rawr" + 5);
       data.append("idForm", "rawr");
       data.append("nombrePreg", "Pregunta preguntosa");
       console.log(data);
@@ -153,12 +161,12 @@ class Formulario {
         body: data
       })
       for (let j = 0; j < this.preguntas[i].cOpciones; j++) {
-        // Creación de respuestas   
+        // Creación de respuestas
         data = new FormData(document.getElementById('crearForm'));
         data.append("tipo",3);
         //data.append("idOpcion",this.preguntas[i][j].id);
         //data.append("idPregunta", this.preguntas[i].id);
-        data.append("idOpcion", "rawr" + 7); 
+        data.append("idOpcion", "rawr" + 7);
         data.append("idPreguntaOp", "rawr" + i);
         data.append("valor","ALO");
         //data.append("apoyo",this.apoyo);
@@ -166,7 +174,7 @@ class Formulario {
         fetch("../dynamics/php/Guardar-form.php", {
           method: 'POST',
           body: data
-        })       
+        })
       }
     }
   }

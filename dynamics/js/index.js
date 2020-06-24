@@ -18,7 +18,6 @@ var count = 1;
 };
 function acceso() {
     let data = new FormData(document.getElementById('formAcceso'));
-    console.log(window.location);
     fetch('./dynamics/php/Acceso.php', {
       method: 'POST',
       body: data
