@@ -67,7 +67,13 @@ class Formulario {
     this.preguntas = new Array();
     this.cPreguntas = 0;
     this.categoria = 1;
+    $("#rango").on('input', (e) => {
+      this.rango = $("#rango").val();
+    })
     this.rango = 1;
+    $("#categoria").on('input', (e) => {
+      this.categoria = $("#categoria").val();
+    })
     // Crea un id único
     let simbolos = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
     var id_form = "";
