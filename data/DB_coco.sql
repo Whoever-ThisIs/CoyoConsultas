@@ -89,8 +89,10 @@ CREATE TABLE `formulario` (
   PRIMARY KEY (`id_form`),
   KEY `FK_id_categoria` (`id_categoria`),
   KEY `FK_rango` (`rango`),
+  KEY `id_usuario` (`id_usuario`),
   CONSTRAINT `FK_id_categoria` FOREIGN KEY (`id_categoria`) REFERENCES `categoria` (`id_categoria`),
-  CONSTRAINT `FK_rango` FOREIGN KEY (`rango`) REFERENCES `rango` (`id_rango`)
+  CONSTRAINT `FK_rango` FOREIGN KEY (`rango`) REFERENCES `rango` (`id_rango`),
+  CONSTRAINT `formulario_ibfk_1` FOREIGN KEY (`id_usuario`) REFERENCES `usuario` (`id_usuario`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -100,7 +102,6 @@ CREATE TABLE `formulario` (
 
 LOCK TABLES `formulario` WRITE;
 /*!40000 ALTER TABLE `formulario` DISABLE KEYS */;
-INSERT INTO `formulario` VALUES ('BB946N',1,'Formulario',NULL,NULL,1,0,NULL,NULL,'',''),('uwu',1,'uwu Consultas',NULL,NULL,1,0,NULL,NULL,'','');
 /*!40000 ALTER TABLE `formulario` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -277,4 +278,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-06-23 19:39:27
+-- Dump completed on 2020-06-23 21:00:41
