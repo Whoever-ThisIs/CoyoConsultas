@@ -1,3 +1,17 @@
+//Consulta si ya hay una sesion abierta
+fetch('../dynamics/php/Validar_sesion.php')
+.then((respuesta)=>{
+    return respuesta.text();
+})
+.then((text)=>{
+  if (text==true) {
+    //Si no esta abierta te manda a index
+    window.location = '../'
+  }else {
+    //Si no te permite continuar
+    console.log("Sesion iniciada");
+  }
+})
 function eventlis(){
     let crear = document.querySelector("#crear");
     let inicio = document.querySelector("#inicio");

@@ -28,8 +28,16 @@ function acceso() {
     }).then((respuesta) => {
       console.log(respuesta);
       if (respuesta) {
-        console.log("si entraste");
-        window.location = "../index.html";
+        let usuario = new FormData();
+        let id_us = document.querySelector("input[name='id']")
+        console.log(id_us.value);
+        usuario.append("id", id_us.value);
+        fetch('./dynamics/php/Crear_sesion.php', {
+          method: 'POST',
+          body: usuario
+        }).then((response) => {
+          window.location = './templates/Inicio.html'
+        })
       }
     })
     .catch((message) =>
@@ -44,7 +52,6 @@ function acceso() {
             .then((response) => {
             return response.text();
             }).then((data) => {
-              console.log("Todoc cool");
             alert(data);
             document.getElementById('miForm').reset();
             }).catch((message)=>{
