@@ -1,5 +1,5 @@
 /**
- * Este programa muestra una interfaz gráfica para la manipulación de un objeto Formulario. 
+ * Este programa muestra una interfaz gráfica para la manipulación de un objeto Formulario.
  * Permite editar la cantidad de preguntas y su contenido, al igual que sus
  * respuestas. Por último, a oetición del usuario se almacenan en la base de datos
  */
@@ -124,8 +124,8 @@ class Formulario {
    */
   guardarForm() {
     // Petición tipo 1
-    let data = new FormData(document.getElementById('crearForm'));
-    data.append("tipo", 1);
+    var data = new FormData(document.getElementById('crearForm'));
+    data.append("tipo", "1");
     data.append("idForm", this.id);
     data.append("categoria", this.categoria);
     data.append("titulo", this.titulo);
@@ -226,7 +226,7 @@ class Formulario {
     fechaInicio.val(añoInicio+"-"+mesInicio+"-"+diaInicio)
     console.log(añoInicio+"-"+mesInicio+"-"+diaInicio);
     $('#Form_config').append(fechaInicio)
-    
+
     //Se agrego el input tyme de Inicio
     let tiempoInicio = $("<input type='time' name='Inicio_hora' required>")
     var horaInicio = actual.getHours();
@@ -240,7 +240,7 @@ class Formulario {
     console.log(horaInicio+":"+minutosInicio);
     tiempoInicio.val(horaInicio+":"+minutosInicio)
     $('#Form_config').append(tiempoInicio)
-    
+
     //Dia y Hora de cierre de formulario
     $('#Form_config').append("Fin: ")
     $('#Form_config').append("<input type='date' name='Fin_dia' required>")

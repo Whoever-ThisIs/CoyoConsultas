@@ -27,7 +27,13 @@ function eventlis(){
         window.location = './Perfil.html'
     })
     cerrar.addEventListener("click",()=>{
-        window.location = '../index.html'
+      //Consulta si ya hay una sesion abierta
+      fetch('../dynamics/php/Cerrar_sesion.php')
+      .then((respuesta)=>{
+        console.log(respuesta.text());
+        console.log("Sesion cerrada");
+        window.location.reload()
+      })
     })
 }
 fetch('NavInicio.html')
