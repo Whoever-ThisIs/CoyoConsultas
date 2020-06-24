@@ -1,4 +1,5 @@
 <?php
+  session_start();
   /**
    * Este programa recibe la información del usuario con
    * respecto a un formulario y lo va a creando
@@ -18,7 +19,7 @@
       $titulo = $_POST['titulo'];
       $rango = $_POST['rango'];
       $descripcion = $_POST['descripcion'];
-      $usuario = $_POST['usuario'];
+      $usuario = $_SESSION['id'];
       $SQL_formulario = "INSERT INTO formulario(id_form, id_categoria, titulo, rango, descripcion, id_usuario) VALUES ('$id', $categoria, '$titulo', $rango, '$descripcion','$usuario');";
       $query_formulario = mysqli_query($conexion,$SQL_formulario);
     }
