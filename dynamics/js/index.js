@@ -45,10 +45,9 @@ function acceso() {
             return response.text();
             }).then((data) => {
               console.log("Todoc cool");
-            alert(data);
             document.getElementById('miForm').reset();
             }).catch((message)=>{
-            alert(message);
+            console.log(message);
             });
     }
 
