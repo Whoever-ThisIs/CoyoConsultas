@@ -3,7 +3,7 @@
 ////////////////////////////////////////////////////////////////////////////////
   //Se crea el id_form para obtenerlo luego por metodo POST en el php
   getForm = new FormData();
-  getForm.append("id_form", "1GT3MB");//<== Ingrese aui el id del formulario
+getForm.append("id_form", "CQ5MEP");//<== Ingrese aui el id del formulario
   //Se manda la peticion
   fetch('../dynamics/php/Resp_form.php', {
     method: 'POST',

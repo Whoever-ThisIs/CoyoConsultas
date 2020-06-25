@@ -162,15 +162,9 @@ class Formulario {
       let data = new FormData(document.getElementById('crearForm'));
       data.append("tipo", 2);
       // data.append("idPregunta", this.preguntas[i].id);
-<<<<<<< HEAD
-      data.append("idPregunta", "rawr" + 5);
-      data.append("idForm", "rawr");
-      data.append("nombrePreg", "Pregunta preguntosa");
-=======
       data.append("idPregunta", this.id + "-" + i);  
       data.append("idForm", this.id);
       data.append("nombrePreg", this.preguntas[i].texto);
->>>>>>> 05b656d1201f7364020a252ed4031f20ca738159
       console.log(data);
       fetch("../dynamics/php/Guardar-form.php", {
         method: 'POST',
@@ -182,15 +176,9 @@ class Formulario {
         data.append("tipo",3);
         //data.append("idOpcion",this.preguntas[i][j].id);
         //data.append("idPregunta", this.preguntas[i].id);
-<<<<<<< HEAD
-        data.append("idOpcion", "rawr" + 7);
-        data.append("idPreguntaOp", "rawr" + i);
-        data.append("valor","ALO");
-=======
         data.append("idOpcion", this.id + "-" + i + "-" + j); 
         data.append("idPreguntaOp", this.id + "-" + i);
         data.append("valor",this.preguntas[i].opciones[j].valor);
->>>>>>> 05b656d1201f7364020a252ed4031f20ca738159
         //data.append("apoyo",this.apoyo);
         console.log(data);
         fetch("../dynamics/php/Guardar-form.php", {
