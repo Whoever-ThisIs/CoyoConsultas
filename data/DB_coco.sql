@@ -50,10 +50,13 @@ CREATE TABLE `contestada` (
   `id_contestada` smallint(16) NOT NULL AUTO_INCREMENT,
   `id_usuario` varchar(13) NOT NULL,
   `id_form` varchar(6) NOT NULL,
+  `id_respuesta` int(20) DEFAULT NULL,
   PRIMARY KEY (`id_contestada`),
   KEY `FK_id_usuario` (`id_usuario`),
   KEY `FK_id_form` (`id_form`),
+  KEY `FK_id_respuesta` (`id_respuesta`),
   CONSTRAINT `FK_id_form` FOREIGN KEY (`id_form`) REFERENCES `formulario` (`id_form`),
+  CONSTRAINT `FK_id_respuesta` FOREIGN KEY (`id_respuesta`) REFERENCES `respuesta` (`id_respuesta`),
   CONSTRAINT `FK_id_usuario` FOREIGN KEY (`id_usuario`) REFERENCES `usuario` (`id_usuario`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -102,7 +105,7 @@ CREATE TABLE `formulario` (
 
 LOCK TABLES `formulario` WRITE;
 /*!40000 ALTER TABLE `formulario` DISABLE KEYS */;
-INSERT INTO `formulario` VALUES ('4NVM6N',1,'Título genérico pt5',NULL,NULL,1,0,NULL,NULL,'Ulalá, chulada','319014216'),('68PBUU',1,'Wey ya!',NULL,NULL,1,0,NULL,NULL,'Ulalá chulada que no funciona','319014216'),('7ZQS4A',1,'Título genérico pt4',NULL,NULL,1,0,NULL,NULL,'Queti','319014216'),('878WEE',1,'Formulario',NULL,NULL,1,0,NULL,NULL,'Descripción','319014216'),('CQ5MEP',1,'Percibo lo secreto, lo oculto','2020-06-04','2020-05-24',1,0,'00:59:00','22:00:00','¡Oh vosotros señores! Así somos, somos mortales, de cuatro en cuatro nosotros los hombres','319014216'),('EE00G5',2,'Una flor blanca y una roja las hiciste llegar a mis manos',NULL,NULL,3,0,NULL,NULL,'Conocí la mitad de tu iluminar, ','319014216'),('H3UQJQ',1,'Título genérico pt3',NULL,NULL,1,0,NULL,NULL,'Queti','319014216'),('NNT56L',1,'Parajillo, ¿por qué cantas?',NULL,NULL,1,0,NULL,NULL,' Yo canto porque estoy alegre','319014216'),('Q06J83',1,'Título genérico pt2',NULL,NULL,1,0,NULL,NULL,'Queti','319014217'),('uwuuwu',1,'Formulario asombroso',NULL,NULL,1,0,NULL,NULL,'Queti','319014217'),('Y0H8N',1,'Título genérico pt4',NULL,NULL,1,0,NULL,NULL,'Lorem ipsum dolor sit amet','319014216'),('Y0RCMD',1,'Título genérico pt8',NULL,NULL,1,0,NULL,NULL,'Uwuwuwuwuwuwuwuwuwuwuuwuwuwuwuw','319014216'),('ZK8XER',1,'Título Genérico',NULL,NULL,1,0,NULL,NULL,'Queti','319014217');
+INSERT INTO `formulario` VALUES ('1MQG6R',2,'¿Por qué conocí tu faz, por qué tienes que retorcerte en la lumbre? No sé lo que hago, mi vivir se está terminando',NULL,NULL,3,0,NULL,NULL,'¿Por qué vine a vivir si no puedo hacer algo sobre esta tierra?','319014216'),('4NVM6N',1,'Título genérico pt5',NULL,NULL,1,0,NULL,NULL,'Ulalá, chulada','319014216'),('68PBUU',1,'Wey ya!',NULL,NULL,1,0,NULL,NULL,'Ulalá chulada que no funciona','319014216'),('7ZQS4A',1,'Título genérico pt4',NULL,NULL,1,0,NULL,NULL,'Queti','319014216'),('878WEE',1,'Formulario',NULL,NULL,1,0,NULL,NULL,'Descripción','319014216'),('CQ5MEP',1,'Percibo lo secreto, lo oculto','2020-06-04','2020-05-24',1,0,'00:59:00','22:00:00','¡Oh vosotros señores! Así somos, somos mortales, de cuatro en cuatro nosotros los hombres','319014216'),('EE00G5',2,'Una flor blanca y una roja las hiciste llegar a mis manos',NULL,NULL,3,0,NULL,NULL,'Conocí la mitad de tu iluminar, ','319014216'),('FNMVVQ',1,'Prueba 2',NULL,NULL,1,0,NULL,NULL,'Descripción','319014216'),('H3UQJQ',1,'Título genérico pt3',NULL,NULL,1,0,NULL,NULL,'Queti','319014216'),('J60CW8',1,'Prueba 4',NULL,NULL,1,0,NULL,NULL,'Descripción','319014216'),('NNT56L',1,'Parajillo, ¿por qué cantas?',NULL,NULL,1,0,NULL,NULL,' Yo canto porque estoy alegre','319014216'),('PD7CM8',1,'Prueba 3',NULL,NULL,1,0,NULL,NULL,'Descripción','319014216'),('PP8ZRV',1,'Formulario',NULL,NULL,1,0,NULL,NULL,'Descripción','319014216'),('Q06J83',1,'Título genérico pt2',NULL,NULL,1,0,NULL,NULL,'Queti','319014217'),('QP2YA0',1,'Prueba 6',NULL,NULL,1,0,NULL,NULL,'Descripción','319014216'),('R5PRJ8',1,'Prueba 5',NULL,NULL,1,0,NULL,NULL,'Descripción','319014216'),('RSBMRA',1,'Prueba 6',NULL,NULL,1,0,NULL,NULL,'Descripción','319014216'),('S6FENX',1,'Prueba 3',NULL,NULL,1,0,NULL,NULL,'Descripción','319014216'),('TCUNHL',1,'Prueb',NULL,NULL,1,0,NULL,NULL,'Descripción','319014216'),('uwuuwu',1,'Formulario asombroso',NULL,NULL,1,0,NULL,NULL,'Queti','319014217'),('Y0H8N',1,'Título genérico pt4',NULL,NULL,1,0,NULL,NULL,'Lorem ipsum dolor sit amet','319014216'),('Y0RCMD',1,'Título genérico pt8',NULL,NULL,1,0,NULL,NULL,'Uwuwuwuwuwuwuwuwuwuwuuwuwuwuwuw','319014216'),('ZK8XER',1,'Título Genérico',NULL,NULL,1,0,NULL,NULL,'Queti','319014217');
 /*!40000 ALTER TABLE `formulario` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -130,7 +133,7 @@ CREATE TABLE `opcion` (
 
 LOCK TABLES `opcion` WRITE;
 /*!40000 ALTER TABLE `opcion` DISABLE KEYS */;
-INSERT INTO `opcion` VALUES ('4NVM6N-2-0','4NVM6N-2','Clarobviamente',NULL),('4NVM6N-2-1','4NVM6N-2','Chi',NULL),('68PBUU-1-0','68PBUU-1','m',NULL),('68PBUU-1-1','68PBUU-1','123',NULL),('68PBUU-2-0','68PBUU-2','456',NULL),('68PBUU-2-1','68PBUU-2','789',NULL),('68PBUU-3-0','68PBUU-3','111',NULL),('68PBUU-3-1','68PBUU-3','222',NULL),('7ZQS4A-0-0','7ZQS4A-0','Verdadero',NULL),('878WEE-0-0','878WEE-0','Opción1',NULL),('878WEE-0-1','878WEE-0','Opción2',NULL),('CQ5MEP-0-1','CQ5MEP-0','Nadie en jade, nadie en oro se convertirá',NULL),('CQ5MEP-1-0','CQ5MEP-1',' todos nos iremos',NULL),('CQ5MEP-1-1','CQ5MEP-1','Allá, de igual modo. nadie quedará',NULL),('CQ5MEP-2-0','CQ5MEP-2','Como una pintura, nos iremos borrando.',NULL),('CQ5MEP-2-1','CQ5MEP-2','Como una flor, nos iremos secando aquí sobre la tierra.',NULL),('H3UQJQ-0-0','H3UQJQ-0','Do',NULL),('H3UQJQ-0-1','H3UQJQ-0','No',NULL),('Q06J83-0-0','Q06J83-0','1',NULL),('Q06J83-0-1','Q06J83-0','A',NULL),('Q06J83-0-2','Q06J83-0','F',NULL),('Q06J83-1-0','Q06J83-1','No',NULL),('Q06J83-1-1','Q06J83-1','Noo',NULL);
+INSERT INTO `opcion` VALUES ('4NVM6N-2-0','4NVM6N-2','Clarobviamente',NULL),('4NVM6N-2-1','4NVM6N-2','Chi',NULL),('68PBUU-1-0','68PBUU-1','m',NULL),('68PBUU-1-1','68PBUU-1','123',NULL),('68PBUU-2-0','68PBUU-2','456',NULL),('68PBUU-2-1','68PBUU-2','789',NULL),('68PBUU-3-0','68PBUU-3','111',NULL),('68PBUU-3-1','68PBUU-3','222',NULL),('7ZQS4A-0-0','7ZQS4A-0','Verdadero',NULL),('878WEE-0-0','878WEE-0','Opción1',NULL),('878WEE-0-1','878WEE-0','Opción2',NULL),('CQ5MEP-0-1','CQ5MEP-0','Nadie en jade, nadie en oro se convertirá',NULL),('CQ5MEP-1-0','CQ5MEP-1',' todos nos iremos',NULL),('CQ5MEP-1-1','CQ5MEP-1','Allá, de igual modo. nadie quedará',NULL),('CQ5MEP-2-0','CQ5MEP-2','Como una pintura, nos iremos borrando.',NULL),('CQ5MEP-2-1','CQ5MEP-2','Como una flor, nos iremos secando aquí sobre la tierra.',NULL),('FNMVVQ-1-0','FNMVVQ-1','Opción1',NULL),('FNMVVQ-1-1','FNMVVQ-1','Opción2',NULL),('FNMVVQ-2-0','FNMVVQ-2','Opción1',NULL),('FNMVVQ-2-1','FNMVVQ-2','Opción2',NULL),('H3UQJQ-0-0','H3UQJQ-0','Do',NULL),('H3UQJQ-0-1','H3UQJQ-0','No',NULL),('Q06J83-0-0','Q06J83-0','1',NULL),('Q06J83-0-1','Q06J83-0','A',NULL),('Q06J83-0-2','Q06J83-0','F',NULL),('Q06J83-1-0','Q06J83-1','No',NULL),('Q06J83-1-1','Q06J83-1','Noo',NULL),('RSBMRA-0-0','RSBMRA-0','Opción0',NULL),('RSBMRA-0-1','RSBMRA-0','Opción1',NULL),('TCUNHL-0-0','TCUNHL-0','Opción1',NULL),('TCUNHL-0-1','TCUNHL-0','Opción2',NULL);
 /*!40000 ALTER TABLE `opcion` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -157,7 +160,7 @@ CREATE TABLE `pregunta` (
 
 LOCK TABLES `pregunta` WRITE;
 /*!40000 ALTER TABLE `pregunta` DISABLE KEYS */;
-INSERT INTO `pregunta` VALUES ('4NVM6N-0','4NVM6N','Carlos'),('4NVM6N-2','4NVM6N','Tamara'),('68PBUU-0','68PBUU','qwertyu'),('68PBUU-1','68PBUU','wertyuiop'),('68PBUU-2','68PBUU','asdfgh'),('68PBUU-3','68PBUU','sdfghjklñ'),('7ZQS4A-0','7ZQS4A','¿Que es una descripción?'),('878WEE-0','878WEE','¿?'),('CQ5MEP-0','CQ5MEP','todos habremos de irnos'),('CQ5MEP-1','CQ5MEP',' en la tierra quedará guardado, '),('CQ5MEP-2','CQ5MEP','conjuntamente habrá que perecer, nosotros iremos así a su casa.'),('H3UQJQ-0','H3UQJQ','Wey ya'),('Q06J83-0','Q06J83','¿Galletas?'),('Q06J83-1','Q06J83','¿El verde es un color creativo?');
+INSERT INTO `pregunta` VALUES ('4NVM6N-0','4NVM6N','Carlos'),('4NVM6N-2','4NVM6N','Tamara'),('68PBUU-0','68PBUU','qwertyu'),('68PBUU-1','68PBUU','wertyuiop'),('68PBUU-2','68PBUU','asdfgh'),('68PBUU-3','68PBUU','sdfghjklñ'),('7ZQS4A-0','7ZQS4A','¿Que es una descripción?'),('878WEE-0','878WEE','¿?'),('CQ5MEP-0','CQ5MEP','todos habremos de irnos'),('CQ5MEP-1','CQ5MEP',' en la tierra quedará guardado, '),('CQ5MEP-2','CQ5MEP','conjuntamente habrá que perecer, nosotros iremos así a su casa.'),('FNMVVQ-1','FNMVVQ','¿?'),('FNMVVQ-2','FNMVVQ','¿?'),('H3UQJQ-0','H3UQJQ','Wey ya'),('Q06J83-0','Q06J83','¿Galletas?'),('Q06J83-1','Q06J83','¿El verde es un color creativo?'),('RSBMRA-0','RSBMRA','¿?'),('TCUNHL-0','TCUNHL','¿?');
 /*!40000 ALTER TABLE `pregunta` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -282,4 +285,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-06-25  0:16:29
+-- Dump completed on 2020-06-25 11:08:19
