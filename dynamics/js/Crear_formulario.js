@@ -197,7 +197,7 @@ class Formulario {
       console.log("uwu")
       for (let j = 0; j < this.preguntas[i].cOpciones; j++) {
         // Creación de respuestas
-        data = new FormData(document.getElementById('crearForm'));
+        data = new FormData();
         data.append("tipo",3);
         //data.append("idOpcion",this.preguntas[i][j].id);
         //data.append("idPregunta", this.preguntas[i].id);
