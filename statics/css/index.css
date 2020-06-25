@@ -132,16 +132,18 @@ input[type=submit]:focus,input[type=date]:focus,input[type=password]:focus,input
 }
 
 .searchButton{
-	background-color: #e9420f;
+	background-color: #e76c46;
 	border:none;
 	color:white;
 	height:20px;
 	outline:none;
 	width:20px;
 }
-
+input[type=text]::-webkit-input-placeholder{
+	color:white;
+}
 .searchButton:hover,.searchButton:focus,.searchButton:active{
-	background-color: #d31e1e;
+	background-color: #ca5734;
 }
 
 .fa-search{  

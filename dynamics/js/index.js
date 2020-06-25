@@ -116,6 +116,17 @@ formRegistro.addEventListener("click",()=>{
     })
 
 //-----------Acceso------------//
+fetch('./templates/Acceso.html')
+.then((response)=>{
+    return response.text();
+})
+.then((text)=>{
+    divRegistro.innerHTML = text;
+    document.getElementById('formAcceso').addEventListener('submit', (e) => {
+        e.preventDefault();
+        acceso();
+      })
+    })
 formIngreso.addEventListener("click",()=>{
     fetch('./templates/Acceso.html')
     .then((response)=>{
