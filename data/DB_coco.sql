@@ -50,13 +50,10 @@ CREATE TABLE `contestada` (
   `id_contestada` smallint(16) NOT NULL AUTO_INCREMENT,
   `id_usuario` varchar(13) NOT NULL,
   `id_form` varchar(6) NOT NULL,
-  `id_respuesta` int(20) DEFAULT NULL,
   PRIMARY KEY (`id_contestada`),
   KEY `FK_id_usuario` (`id_usuario`),
   KEY `FK_id_form` (`id_form`),
-  KEY `FK_id_respuesta` (`id_respuesta`),
   CONSTRAINT `FK_id_form` FOREIGN KEY (`id_form`) REFERENCES `formulario` (`id_form`),
-  CONSTRAINT `FK_id_respuesta` FOREIGN KEY (`id_respuesta`) REFERENCES `respuesta` (`id_respuesta`),
   CONSTRAINT `FK_id_usuario` FOREIGN KEY (`id_usuario`) REFERENCES `usuario` (`id_usuario`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -199,9 +196,12 @@ CREATE TABLE `respuesta` (
   `id_respuesta` int(20) NOT NULL AUTO_INCREMENT,
   `id_pregunta` varchar(9) NOT NULL,
   `respuesta` varchar(12) NOT NULL,
+  `id_contestada` smallint(16) DEFAULT NULL,
   PRIMARY KEY (`id_respuesta`),
   KEY `FK_id_pregunta_1` (`id_pregunta`),
   KEY `FK_respuesta` (`respuesta`),
+  KEY `FK_id_contestada` (`id_contestada`),
+  CONSTRAINT `FK_id_contestada` FOREIGN KEY (`id_contestada`) REFERENCES `contestada` (`id_contestada`),
   CONSTRAINT `FK_id_pregunta_1` FOREIGN KEY (`id_pregunta`) REFERENCES `pregunta` (`id_pregunta`),
   CONSTRAINT `FK_respuesta` FOREIGN KEY (`respuesta`) REFERENCES `opcion` (`id_opcion`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -285,4 +285,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-06-25 11:08:19
+-- Dump completed on 2020-06-25 12:47:10
