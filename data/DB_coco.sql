@@ -102,7 +102,7 @@ CREATE TABLE `formulario` (
 
 LOCK TABLES `formulario` WRITE;
 /*!40000 ALTER TABLE `formulario` DISABLE KEYS */;
-INSERT INTO `formulario` VALUES ('BB946N',1,'Formulario',NULL,NULL,1,0,NULL,NULL,'',''),('uwu',1,'uwu Consultas',NULL,NULL,1,0,NULL,NULL,'','');
+INSERT INTO `formulario` VALUES ('4NVM6N',1,'Título genérico pt5',NULL,NULL,1,0,NULL,NULL,'Ulalá, chulada','319014216'),('68PBUU',1,'Wey ya!',NULL,NULL,1,0,NULL,NULL,'Ulalá chulada que no funciona','319014216'),('7ZQS4A',1,'Título genérico pt4',NULL,NULL,1,0,NULL,NULL,'Queti','319014216'),('878WEE',1,'Formulario',NULL,NULL,1,0,NULL,NULL,'Descripción','319014216'),('CQ5MEP',1,'Percibo lo secreto, lo oculto','2020-06-04','2020-05-24',1,0,'00:59:00','22:00:00','¡Oh vosotros señores! Así somos, somos mortales, de cuatro en cuatro nosotros los hombres','319014216'),('EE00G5',2,'Una flor blanca y una roja las hiciste llegar a mis manos',NULL,NULL,3,0,NULL,NULL,'Conocí la mitad de tu iluminar, ','319014216'),('H3UQJQ',1,'Título genérico pt3',NULL,NULL,1,0,NULL,NULL,'Queti','319014216'),('NNT56L',1,'Parajillo, ¿por qué cantas?',NULL,NULL,1,0,NULL,NULL,' Yo canto porque estoy alegre','319014216'),('Q06J83',1,'Título genérico pt2',NULL,NULL,1,0,NULL,NULL,'Queti','319014217'),('uwuuwu',1,'Formulario asombroso',NULL,NULL,1,0,NULL,NULL,'Queti','319014217'),('Y0H8N',1,'Título genérico pt4',NULL,NULL,1,0,NULL,NULL,'Lorem ipsum dolor sit amet','319014216'),('Y0RCMD',1,'Título genérico pt8',NULL,NULL,1,0,NULL,NULL,'Uwuwuwuwuwuwuwuwuwuwuuwuwuwuwuw','319014216'),('ZK8XER',1,'Título Genérico',NULL,NULL,1,0,NULL,NULL,'Queti','319014217');
 /*!40000 ALTER TABLE `formulario` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -130,6 +130,7 @@ CREATE TABLE `opcion` (
 
 LOCK TABLES `opcion` WRITE;
 /*!40000 ALTER TABLE `opcion` DISABLE KEYS */;
+INSERT INTO `opcion` VALUES ('4NVM6N-2-0','4NVM6N-2','Clarobviamente',NULL),('4NVM6N-2-1','4NVM6N-2','Chi',NULL),('68PBUU-1-0','68PBUU-1','m',NULL),('68PBUU-1-1','68PBUU-1','123',NULL),('68PBUU-2-0','68PBUU-2','456',NULL),('68PBUU-2-1','68PBUU-2','789',NULL),('68PBUU-3-0','68PBUU-3','111',NULL),('68PBUU-3-1','68PBUU-3','222',NULL),('7ZQS4A-0-0','7ZQS4A-0','Verdadero',NULL),('878WEE-0-0','878WEE-0','Opción1',NULL),('878WEE-0-1','878WEE-0','Opción2',NULL),('CQ5MEP-0-1','CQ5MEP-0','Nadie en jade, nadie en oro se convertirá',NULL),('CQ5MEP-1-0','CQ5MEP-1',' todos nos iremos',NULL),('CQ5MEP-1-1','CQ5MEP-1','Allá, de igual modo. nadie quedará',NULL),('CQ5MEP-2-0','CQ5MEP-2','Como una pintura, nos iremos borrando.',NULL),('CQ5MEP-2-1','CQ5MEP-2','Como una flor, nos iremos secando aquí sobre la tierra.',NULL),('H3UQJQ-0-0','H3UQJQ-0','Do',NULL),('H3UQJQ-0-1','H3UQJQ-0','No',NULL),('Q06J83-0-0','Q06J83-0','1',NULL),('Q06J83-0-1','Q06J83-0','A',NULL),('Q06J83-0-2','Q06J83-0','F',NULL),('Q06J83-1-0','Q06J83-1','No',NULL),('Q06J83-1-1','Q06J83-1','Noo',NULL);
 /*!40000 ALTER TABLE `opcion` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -156,6 +157,7 @@ CREATE TABLE `pregunta` (
 
 LOCK TABLES `pregunta` WRITE;
 /*!40000 ALTER TABLE `pregunta` DISABLE KEYS */;
+INSERT INTO `pregunta` VALUES ('4NVM6N-0','4NVM6N','Carlos'),('4NVM6N-2','4NVM6N','Tamara'),('68PBUU-0','68PBUU','qwertyu'),('68PBUU-1','68PBUU','wertyuiop'),('68PBUU-2','68PBUU','asdfgh'),('68PBUU-3','68PBUU','sdfghjklñ'),('7ZQS4A-0','7ZQS4A','¿Que es una descripción?'),('878WEE-0','878WEE','¿?'),('CQ5MEP-0','CQ5MEP','todos habremos de irnos'),('CQ5MEP-1','CQ5MEP',' en la tierra quedará guardado, '),('CQ5MEP-2','CQ5MEP','conjuntamente habrá que perecer, nosotros iremos así a su casa.'),('H3UQJQ-0','H3UQJQ','Wey ya'),('Q06J83-0','Q06J83','¿Galletas?'),('Q06J83-1','Q06J83','¿El verde es un color creativo?');
 /*!40000 ALTER TABLE `pregunta` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -254,6 +256,7 @@ CREATE TABLE `usuario` (
   `paterno` varchar(20) NOT NULL,
   `materno` varchar(20) NOT NULL,
   `sal` text,
+  `perfil` tinyint(1) DEFAULT NULL,
   PRIMARY KEY (`id_usuario`),
   KEY `FK_id_tipo` (`id_tipo`),
   CONSTRAINT `FK_id_tipo` FOREIGN KEY (`id_tipo`) REFERENCES `tipo` (`id_tipo`)
@@ -266,7 +269,7 @@ CREATE TABLE `usuario` (
 
 LOCK TABLES `usuario` WRITE;
 /*!40000 ALTER TABLE `usuario` DISABLE KEYS */;
-INSERT INTO `usuario` VALUES ('319014217',1,'uwu','2020-06-10','uwu@example.com',0,'pal','Lenin','Pavón','Alvarez',NULL);
+INSERT INTO `usuario` VALUES ('319014216',1,'aZFYaAekvQKrDQd4du2evBRdijEP3Z5/ey1S5kyXNJoLIkI23qcHcCw6SYt0oaj6Mwsqbysl0S5N0tv2Fm3LNYj99x0zwGTxNSPl8k+0FII=','2020-06-05','uwu@example.com',0,'curp','Lenin','Pavón','Alvarez','H35af$&qLcBfkrK',NULL),('319014217',1,'uwu','2020-06-10','uwu@example.com',0,'pal','Lenin','Pavón','Alvarez',NULL,NULL);
 /*!40000 ALTER TABLE `usuario` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -279,4 +282,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-06-23 21:00:41
+-- Dump completed on 2020-06-25  0:16:29
