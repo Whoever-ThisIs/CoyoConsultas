@@ -49,17 +49,22 @@ header nav ul li span {
 }
 
 header nav ul li:nth-child(1) :hover{
-	background:#037E8C;
+	background:#e76c46;
 }
 
 header nav ul li:nth-child(2) :hover{
-	background:#037E8C;
+	background:#e76c46;
 }
 footer{
 	background-color: #373535;
 	width: 100%;
 }
-
+#miForm input[type=text], #miForm input[type=password], #miForm input[type=email], #formAcceso input[type=text], #formAcceso input[type=password], #formAcceso input[type=email]{
+	background-color: transparent;
+	border:none;
+	border-bottom: 3px solid #fff;
+	width:80%;
+}
 .logo{
 	float: left;
 	height: 50px;
@@ -154,7 +159,7 @@ footer{
 }
 
 #logo-header:hover {
-	color: #0b76a6;
+	color: #e76c46;
 }
 
 #photo{
@@ -180,22 +185,28 @@ footer{
 	text-align: center;
 	width:100%;
 }
-
+#indexFieldset{
+	border: 3px solid #e76c46;
+	margin: auto;
+	width: 70%;
+	height: 434.71px;
+}
 #publicForm{
-	width:500px;
+	width: 90%;
 	height:500px;
-	background-color: seagreen;
+	margin: auto;
 }
 #formRegistro:hover{
-	color: #e9420f;
+	color: #e76c46;
 }
 #formIngreso:hover{
-	color: #e9420f;
+	color:#e76c46;
 }
 #formRegistro,#formIngreso{
 	font-weight: bold;
 	text-decoration-line: underline;
 	letter-spacing: 2px;
+	text-transform: capitalize;
 }
 #cocoHeader{
 	color:white;
