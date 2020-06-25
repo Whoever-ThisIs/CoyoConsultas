@@ -49,17 +49,70 @@ header nav ul li span {
 }
 
 header nav ul li:nth-child(1) :hover{
-	background:#037E8C;
+	background:#e76c46;
 }
 
 header nav ul li:nth-child(2) :hover{
-	background:#037E8C;
+	background:#e76c46;
 }
 footer{
 	background-color: #373535;
 	width: 100%;
 }
-
+#miForm input[type=text], #miForm input[type=password], #miForm input[type=email], #formAcceso input[type=text], #formAcceso input[type=password], #formAcceso input[type=email]{
+	background-color: transparent;
+	border:none;
+	border-bottom: 3px solid #fff;
+	width:80%;
+}
+#miForm input[type=text], #miForm input[type=password], #miForm input[type=email], #miForm input[type=date], #formAcceso input[type=text], #formAcceso input[type=password], #formAcceso input[type=email], #formAcceso input[type=date]{
+	padding-top:10px;
+	color:white;
+}
+#miForm input[type=submit], #formAcceso input[type=submit], #miForm input[type=date], #formAcceso input[type=date]{
+	margin-top:25px;
+	color:White;
+	background: #e76c46;
+	border:none;
+}
+#miForm input[type=submit]:hover, #formAcceso input[type=submit]:hover, #miForm input[type=date]:hover,#alumno:hover,#profesor:hover,#funcionario:hover{
+	background: #c4502d;
+}
+#miForm input[type=text]::-webkit-input-placeholder, #miForm input[type=password]::-webkit-input-placeholder, #miForm input[type=email]::-webkit-input-placeholder, #miForm input[type=date]::-webkit-input-placeholder, #formAcceso input[type=text]::-webkit-input-placeholder, #formAcceso input[type=password]::-webkit-input-placeholder, #formAcceso input[type=email]::-webkit-input-placeholder, #formAcceso input[type=date]::-webkit-input-placeholder{
+	color: rgb(255, 255, 255); 
+} 
+#formAcceso{
+	padding:40px;
+}
+#formAcceso input[type=text], #formAcceso input[type=password]{
+	margin-top: 20px;
+}
+input[type=date]{
+	appearance: none;
+	padding: 8px;
+	border:none;
+}
+input[type=date]::-webkit-datetime-edit-month-field { 
+	text-transform: uppercase; 
+}
+input[type=date]::-webkit-datetime-edit-day-field {
+	text-transform: uppercase; 
+}
+input[type=date]::-webkit-datetime-edit-year-field {
+	text-transform: uppercase;
+}
+input[type=date]::-webkit-calendar-picker-indicator {
+	color:white;
+}
+input[type=submit]{
+	text-align: center;
+	left:80%;
+	height:40px;
+	width:90px;
+}
+input[type=submit]:focus,input[type=date]:focus,input[type=password]:focus,input[type=text]:focus,input[type=email]:focus,input[type=email]:focus,#alumno,#profesor,#funcionario{
+	outline: none;
+}
 .logo{
 	float: left;
 	height: 50px;
@@ -79,16 +132,18 @@ footer{
 }
 
 .searchButton{
-	background-color: #e9420f;
+	background-color: #e76c46;
 	border:none;
 	color:white;
 	height:20px;
 	outline:none;
 	width:20px;
 }
-
+input[type=text]::-webkit-input-placeholder{
+	color:white;
+}
 .searchButton:hover,.searchButton:focus,.searchButton:active{
-	background-color: #d31e1e;
+	background-color: #ca5734;
 }
 
 .fa-search{  
@@ -154,7 +209,7 @@ footer{
 }
 
 #logo-header:hover {
-	color: #0b76a6;
+	color: #e76c46;
 }
 
 #photo{
@@ -180,23 +235,33 @@ footer{
 	text-align: center;
 	width:100%;
 }
-
+#indexFieldset{
+	border: 3px solid #e76c46;
+	margin: auto;
+	width: 70%;
+	height: 437.71px;
+}
 #publicForm{
-	width:500px;
+	width: 90%;
 	height:500px;
-	background-color: seagreen;
+	margin: auto;
 }
+
 #formRegistro:hover{
-	color: #e9420f;
+	color: #e76c46;
 }
+
 #formIngreso:hover{
-	color: #e9420f;
+	color:#e76c46;
 }
+
 #formRegistro,#formIngreso{
 	font-weight: bold;
 	text-decoration-line: underline;
 	letter-spacing: 2px;
+	text-transform: capitalize;
 }
+
 #cocoHeader{
 	color:white;
 	font-size: 80px;
@@ -205,6 +270,34 @@ footer{
 	position: relative;
 	top:20%;
 }
+
+#alumno{
+	margin-top:20px;
+	color:White;
+	background: #e76c46;
+	border:none;
+	width: 60px;
+	height: 20px;
+}
+
+#profesor{
+	margin-top:25px;
+	color:White;
+	background: #e76c46;
+	border:none;
+	width: 60px;
+	height: 20px;
+}
+
+#funcionario{
+	margin-top:25px;
+	color:White;
+	background: #e76c46;
+	border:none;
+	width: 75px;
+	height: 20px;
+}
+
 @media screen and (max-width:800px ) {
 	
 	header nav {
