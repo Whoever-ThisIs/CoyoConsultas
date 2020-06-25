@@ -3,19 +3,25 @@
   include('Config.php');
   include('Des-cifrado.php');
 
-  $error = 0;
   $validador = false;
   $con = connect();
-  // if (isset($_POST['edcorreo'])) {
-  //   $correo = $_POST['edcorreo']
-  // }
-  // if (isset($_POST['edcorreo'])) {
-  //   $correo = $_POST['edcorreo']
-  // }
+
   $correo = $_POST['edcorreo'];
   $new = $_POST['newPass'];
   $old = $_POST['oldPass'];
   $id = $_SESSION['id'];
+
+  if ($_FILES['edimg']['type']=="image/png"||$_FILES['edimg']['type']=="image/jpg"||$_FILES['edimg']['type']=="image/jpeg") {
+    $ext=pathinfo($_FILES['edimg']['name'],PATHINFO_EXTENSION);
+    $carpeta="../../statics/media/img/profilepics/";
+    $destino = $carpeta.$id.".".$ext;
+    move_uploaded_file($_FILES['edimg']['tmp_name'],$destino);
+    $validador = true;
+
+    mysqli_query($con,"UPDATE usuario SET perfil = 1 WHERE id_usuario = $id");
+  }
+
+
   if ($old != "" && $new != "") {
     $salt = salt();
     $password = registro($new,$salt);
@@ -103,7 +109,7 @@
       return mysqli_query($con, $inquiry);
     }
     else {
-      return "xd algo fallo";
+      return "Error";
     }
   }
   echo json_encode(update($con,$inquiry,$validador));
