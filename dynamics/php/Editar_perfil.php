@@ -1,5 +1,6 @@
 <?php
-  include('config.php');
+  session_start();
+  include('Config.php');
   include('Des-cifrado.php');
 
   $error = 0;
@@ -11,44 +12,42 @@
   // if (isset($_POST['edcorreo'])) {
   //   $correo = $_POST['edcorreo']
   // }
-  if (isset($_POST['edcorreo'])) {
-    $correo = $_POST['edcorreo'];
+  $correo = $_POST['edcorreo'];
+  $new = $_POST['newPass'];
+  $old = $_POST['oldPass'];
+  $id = $_SESSION['id'];
+  if ($old != "" && $new != "") {
+    $salt = salt();
+    $password = registro($new,$salt);
   }
-  if (isset($_POST['newPass'])) {
-    $new = $_POST['newPass'];
-  }
-  if (isset($_POST['oldPass'])) {
-    $old = $_POST['oldPass'];
-  }
-  $id = $_POST['id'];
 
   // Solo correo
-  if (!isset($_POST['oldPass'])&&!isset($_POST['newPass'])&&isset($_POST['edcorreo'])) {
-    if (!sameMail($con,$correo)) {
-      $inquiry = "UPDATE usuario SET correo = '$correo' WHERE id_usuario = '%$id%'";
+  if ($correo != "" && $new == "" && $old == "") {
+    if (!sameMailAll($con,$correo,$id)&&!sameMailSelf($con,$correo,$id)) {
+      $inquiry = "UPDATE usuario SET correo = '$correo' WHERE id_usuario = $id";
       $validador = true;
     }
   }
 
   //Solo contraseña
-  if (isset($_POST['oldPass'])&&isset($_POST['newPass'])&&!isset($_POST['edcorreo'])) {
-    if (checkPass($con,$old)) {
-      $inquiry = "UPDATE usuario SET password = '$new' WHERE id_usuario = '%$id%'";
+  if ($correo == "" && $new != "" && $old != "") {
+    if (checkPass($con,$old,$id)) {
+      $inquiry = "UPDATE usuario SET password = '$password', sal = '$salt' WHERE id_usuario = $id";
       $validador = true;
     }
   }
 
   //Ambos
-  if (isset($_POST['oldPass'])&&isset($_POST['newPass'])&&isset($_POST['edcorreo'])) {
-    if (checkPass($con,$old)&&!sameMail($con,$correo)) {
-      $inquiry = "UPDATE usuario SET password = '$new', correo = '$correo' WHERE id_usuario = '%$id%'";
+  if ($correo != "" && $new != "" && $old != "") {
+    if (checkPass($con,$old,$id)&&!sameMailAll($con,$correo,$id)&&!sameMailSelf($con,$correo,$id)) {
+      $inquiry = "UPDATE usuario SET password = '$password', sal = '$salt', correo = '$correo' WHERE id_usuario = $id";
       $validador = true;
     }
   }
 
 
-  function checkPass($con,$old){
-    $checkPass = "SELECT password, sal FROM usuario WHERE id_usuario LIKE '%$id%'";
+  function checkPass($con,$old,$id){
+    $checkPass = "SELECT password, sal FROM usuario WHERE id_usuario LIKE $id";
     $resultPass = mysqli_query($con,$checkPass);
     $response = [];
 
@@ -57,27 +56,57 @@
       array_push($response, $row);
     }
     if ($response > 0) {
-      return acceso($old,$response[0]["password"],$response[0]["sal"]);
+      if (acceso($old,$response[0]["password"],$response[0]["sal"])) {
+        return true;
+      }else {
+        return false;
+      }
     }
   }
 
-  function sameMail($con,$correo){
-    $checkMail = "SELECT correo FROM usuario WHERE id_usuario LIKE '%$id%'";
-    $resultMail = mysqli_query($con,$checkMail);
-    if ($resultMail == $correo) {
-      return true;
+  function sameMailAll($con,$correo,$id){
+    $checkMailAll = "SELECT correo FROM usuario WHERE correo LIKE '$correo'";
+    $resultMailAll = mysqli_query($con,$checkMailAll);
+
+    $responseAll = [];
+    while($row = mysqli_fetch_assoc($resultMailAll))
+    {
+      array_push($responseAll, $row);
     }
-    else {
+
+    if (count($responseAll) > 0) {
+      return true;
+    }else{
       return false;
     }
   }
 
-  function update($con,$inquiry){
+  function sameMailSelf($con,$correo,$id){
+    $checkMailSelf = "SELECT correo FROM usuario WHERE id_usuario LIKE $id AND correo LIKE '$correo'";
+    $resultMailSelf = mysqli_query($con,$checkMailSelf);
+
+    $responseSelf = [];
+    while($row = mysqli_fetch_assoc($resultMailSelf))
+    {
+      array_push($responseSelf, $row);
+    }
+
+    if (count($responseSelf) > 0) {
+      return true;
+    }else {
+      return false;
+    }
+  }
+
+  function update($con,$inquiry,$validador){
     if ($validador) {
       return mysqli_query($con, $inquiry);
     }
+    else {
+      return "xd algo fallo";
+    }
   }
-  echo json_encode(update($con,$inquiry));
+  echo json_encode(update($con,$inquiry,$validador));
 
 
 
