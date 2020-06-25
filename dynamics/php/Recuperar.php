@@ -9,7 +9,9 @@ function recuperar(){
 
 	$response = [];
 
-	while($row = mysqli_fetch_assoc($resultA))
+  $result = mysqli_query($con,$resultA);
+
+	while($row = mysqli_fetch_assoc($result))
 	{
 		array_push($response, $row);
 	}

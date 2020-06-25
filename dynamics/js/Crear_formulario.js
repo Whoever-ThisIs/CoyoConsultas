@@ -91,7 +91,7 @@ class Formulario {
     let simbolos = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
     var id_form = "";
     for (var i = 0; i < 6; i++) {
-      id_form += simbolos.substr(Math.round(Math.random() * simbolos.length), 1);
+      id_form += simbolos.substr(Math.floor(Math.random() * simbolos.length), 1);
     }
     this.id = id_form;
     // Fechas //
@@ -187,7 +187,7 @@ class Formulario {
       let data = new FormData();
       data.append("tipo", 2);
       // data.append("idPregunta", this.preguntas[i].id);
-      data.append("idPregunta", this.id + "-" + i);  
+      data.append("idPregunta", this.id + "-" + i);
       data.append("idForm", this.id);
       data.append("nombrePreg", this.preguntas[i].texto);
       fetch("../dynamics/php/Guardar-form.php", {
@@ -201,7 +201,7 @@ class Formulario {
         data.append("tipo",3);
         //data.append("idOpcion",this.preguntas[i][j].id);
         //data.append("idPregunta", this.preguntas[i].id);
-        data.append("idOpcion", this.id + "-" + i + "-" + j); 
+        data.append("idOpcion", this.id + "-" + i + "-" + j);
         data.append("idPreguntaOp", this.id + "-" + i);
         data.append("valor", this.preguntas[i].opciones[j].valor);
         //data.append("apoyo",this.apoyo);

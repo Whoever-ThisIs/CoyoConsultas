@@ -1,9 +1,11 @@
 ////////////////////////////////////////////////////////////////////////////////
 //////////////////////  Crear el formulario de respuesta  //////////////////////
 ////////////////////////////////////////////////////////////////////////////////
+
   //Se crea el id_form para obtenerlo luego por metodo POST en el php
+  var id_formu = "NUYZ2"
   getForm = new FormData();
-getForm.append("id_form", "CQ5MEP");//<== Ingrese aui el id del formulario
+  getForm.append("id_form", id_formu);//<== Ingrese aui el id del formulario
   //Se manda la peticion
   fetch('../dynamics/php/Resp_form.php', {
     method: 'POST',
@@ -44,3 +46,19 @@ getForm.append("id_form", "CQ5MEP");//<== Ingrese aui el id del formulario
       $("#Preguntas").append(divOpc)
     }
   });
+  ////////////////////////////////////////////////////////////////////////////////
+  //////////////////////  Subir el formulario de respuesta  //////////////////////
+  ////////////////////////////////////////////////////////////////////////////////
+  $("#Enviar").click(()=>{
+    sendForm = new FormData(document.getElementById('Formu'));
+    sendForm.append("id_form", id_formu);//<== Ingrese aui el id del formulario
+    console.log(sendForm);
+    fetch('../dynamics/php/Respuesta_form.php', {
+      method: 'POST',
+      body: sendForm
+    }).then((response) => {
+      return response.text();
+    }).then((text) => {
+      console.log(text);
+    })
+  })

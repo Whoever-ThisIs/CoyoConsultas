@@ -10,27 +10,30 @@ function createCards(b){
         cardFeed.appendChild(card);
     }
 }
-
 function getCardsInfo(categoria){
     $.ajax({
         url:'../dynamics/php/Inicio.php',
         method:'POST',
         data:{categoria:categoria},
-        success:(resp)=>{console.log(resp)}
+        success:(resp)=>{
+            $("#cardFeed").html(resp)
+            console.log(typeof resp)
+            console.log(resp)
+        }
     })  
 }    
-        $("#todo").click(()=>{
-            getCardsInfo("1")
-        })
-        $("#ciencia").click(()=>{
-            getCardsInfo("1")
-        })
-        $("#cultura").click(()=>{
-            getCardsInfo("2")
-        })
-        $("#deportes").click(()=>{
-            getCardsInfo("3")
-        })
-        $("#actividades").click(()=>{
-            getCardsInfo("4")
-        })
+$("#todo").click(()=>{
+    getCardsInfo("1,2,3,4")
+})
+$("#ciencia").click(()=>{
+    getCardsInfo("1")
+})
+$("#cultura").click(()=>{
+    getCardsInfo("2")
+})
+$("#deportes").click(()=>{
+    getCardsInfo("3")
+})
+$("#actividades").click(()=>{
+    getCardsInfo("4")
+})
