@@ -145,6 +145,600 @@ formRegistro.addEventListener("click",()=>{
     })
 
 //-----------Acceso------------//
+//             mensajePsw.innerText = "Contraseña insegura";
+//             document.getElementsByTagName("form")[0].insertBefore(mensajePsw, tipo)
+//
+// }
+//         }
+//
+//         })
+        //---------Registro---------//
+        /////Añadimos un manejador de eventos para cuando el formulario se envíe/////
+        document.getElementById('miForm').addEventListener('submit', (e) => {
+        e.preventDefault();
+        registro();
+        })
+        })
+
+    })
+
+//-----------Acceso------------//
+//             mensajePsw.innerText = "Contraseña insegura";
+//             document.getElementsByTagName("form")[0].insertBefore(mensajePsw, tipo)
+//
+// }
+//         }
+//
+//         })
+        //---------Registro---------//
+        /////Añadimos un manejador de eventos para cuando el formulario se envíe/////
+        document.getElementById('miForm').addEventListener('submit', (e) => {
+        e.preventDefault();
+        registro();
+        })
+        })
+
+    })
+
+//-----------Acceso------------//
+//             mensajePsw.innerText = "Contraseña insegura";
+//             document.getElementsByTagName("form")[0].insertBefore(mensajePsw, tipo)
+//
+// }
+//         }
+//
+//         })
+        //---------Registro---------//
+        /////Añadimos un manejador de eventos para cuando el formulario se envíe/////
+        document.getElementById('miForm').addEventListener('submit', (e) => {
+        e.preventDefault();
+        registro();
+        })
+        })
+
+    })
+
+//-----------Acceso------------//
+//             mensajePsw.innerText = "Contraseña insegura";
+//             document.getElementsByTagName("form")[0].insertBefore(mensajePsw, tipo)
+//
+// }
+//         }
+//
+//         })
+        //---------Registro---------//
+        /////Añadimos un manejador de eventos para cuando el formulario se envíe/////
+        document.getElementById('miForm').addEventListener('submit', (e) => {
+        e.preventDefault();
+        registro();
+        })
+        })
+
+    })
+
+//-----------Acceso------------//
+//             mensajePsw.innerText = "Contraseña insegura";
+//             document.getElementsByTagName("form")[0].insertBefore(mensajePsw, tipo)
+//
+// }
+//         }
+//
+//         })
+        //---------Registro---------//
+        /////Añadimos un manejador de eventos para cuando el formulario se envíe/////
+        document.getElementById('miForm').addEventListener('submit', (e) => {
+        e.preventDefault();
+        registro();
+        })
+        })
+
+    })
+
+//-----------Acceso------------//
+//             mensajePsw.innerText = "Contraseña insegura";
+//             document.getElementsByTagName("form")[0].insertBefore(mensajePsw, tipo)
+//
+// }
+//         }
+//
+//         })
+        //---------Registro---------//
+        /////Añadimos un manejador de eventos para cuando el formulario se envíe/////
+        document.getElementById('miForm').addEventListener('submit', (e) => {
+        e.preventDefault();
+        registro();
+        })
+        })
+
+    })
+
+//-----------Acceso------------//
+//             mensajePsw.innerText = "Contraseña insegura";
+//             document.getElementsByTagName("form")[0].insertBefore(mensajePsw, tipo)
+//
+// }
+//         }
+//
+//         })
+        //---------Registro---------//
+        /////Añadimos un manejador de eventos para cuando el formulario se envíe/////
+        document.getElementById('miForm').addEventListener('submit', (e) => {
+        e.preventDefault();
+        registro();
+        })
+        })
+
+    })
+
+//-----------Acceso------------//
+//             mensajePsw.innerText = "Contraseña insegura";
+//             document.getElementsByTagName("form")[0].insertBefore(mensajePsw, tipo)
+//
+// }
+//         }
+//
+//         })
+        //---------Registro---------//
+        /////Añadimos un manejador de eventos para cuando el formulario se envíe/////
+        document.getElementById('miForm').addEventListener('submit', (e) => {
+        e.preventDefault();
+        registro();
+        })
+        })
+
+    })
+
+//-----------Acceso------------//
+//             mensajePsw.innerText = "Contraseña insegura";
+//             document.getElementsByTagName("form")[0].insertBefore(mensajePsw, tipo)
+//
+// }
+//         }
+//
+//         })
+        //---------Registro---------//
+        /////Añadimos un manejador de eventos para cuando el formulario se envíe/////
+        document.getElementById('miForm').addEventListener('submit', (e) => {
+        e.preventDefault();
+        registro();
+        })
+        })
+
+    })
+
+//-----------Acceso------------//
+//             mensajePsw.innerText = "Contraseña insegura";
+//             document.getElementsByTagName("form")[0].insertBefore(mensajePsw, tipo)
+//
+// }
+//         }
+//
+//         })
+        //---------Registro---------//
+        /////Añadimos un manejador de eventos para cuando el formulario se envíe/////
+        document.getElementById('miForm').addEventListener('submit', (e) => {
+        e.preventDefault();
+        registro();
+        })
+        })
+
+    })
+
+//-----------Acceso------------//
+//             mensajePsw.innerText = "Contraseña insegura";
+//             document.getElementsByTagName("form")[0].insertBefore(mensajePsw, tipo)
+//
+// }
+//         }
+//
+//         })
+        //---------Registro---------//
+        /////Añadimos un manejador de eventos para cuando el formulario se envíe/////
+        document.getElementById('miForm').addEventListener('submit', (e) => {
+        e.preventDefault();
+        registro();
+        })
+        })
+
+    })
+
+//-----------Acceso------------//
+//             mensajePsw.innerText = "Contraseña insegura";
+//             document.getElementsByTagName("form")[0].insertBefore(mensajePsw, tipo)
+//
+// }
+//         }
+//
+//         })
+        //---------Registro---------//
+        /////Añadimos un manejador de eventos para cuando el formulario se envíe/////
+        document.getElementById('miForm').addEventListener('submit', (e) => {
+        e.preventDefault();
+        registro();
+        })
+        })
+
+    })
+
+//-----------Acceso------------//
+//             mensajePsw.innerText = "Contraseña insegura";
+//             document.getElementsByTagName("form")[0].insertBefore(mensajePsw, tipo)
+//
+// }
+//         }
+//
+//         })
+        //---------Registro---------//
+        /////Añadimos un manejador de eventos para cuando el formulario se envíe/////
+        document.getElementById('miForm').addEventListener('submit', (e) => {
+        e.preventDefault();
+        registro();
+        })
+        })
+
+    })
+
+//-----------Acceso------------//
+//             mensajePsw.innerText = "Contraseña insegura";
+//             document.getElementsByTagName("form")[0].insertBefore(mensajePsw, tipo)
+//
+// }
+//         }
+//
+//         })
+        //---------Registro---------//
+        /////Añadimos un manejador de eventos para cuando el formulario se envíe/////
+        document.getElementById('miForm').addEventListener('submit', (e) => {
+        e.preventDefault();
+        registro();
+        })
+        })
+
+    })
+
+//-----------Acceso------------//
+//             mensajePsw.innerText = "Contraseña insegura";
+//             document.getElementsByTagName("form")[0].insertBefore(mensajePsw, tipo)
+//
+// }
+//         }
+//
+//         })
+        //---------Registro---------//
+        /////Añadimos un manejador de eventos para cuando el formulario se envíe/////
+        document.getElementById('miForm').addEventListener('submit', (e) => {
+        e.preventDefault();
+        registro();
+        })
+        })
+
+    })
+
+//-----------Acceso------------//
+//             mensajePsw.innerText = "Contraseña insegura";
+//             document.getElementsByTagName("form")[0].insertBefore(mensajePsw, tipo)
+//
+// }
+//         }
+//
+//         })
+        //---------Registro---------//
+        /////Añadimos un manejador de eventos para cuando el formulario se envíe/////
+        document.getElementById('miForm').addEventListener('submit', (e) => {
+        e.preventDefault();
+        registro();
+        })
+        })
+
+    })
+
+//-----------Acceso------------//
+//             mensajePsw.innerText = "Contraseña insegura";
+//             document.getElementsByTagName("form")[0].insertBefore(mensajePsw, tipo)
+//
+// }
+//         }
+//
+//         })
+        //---------Registro---------//
+        /////Añadimos un manejador de eventos para cuando el formulario se envíe/////
+        document.getElementById('miForm').addEventListener('submit', (e) => {
+        e.preventDefault();
+        registro();
+        })
+        })
+
+    })
+
+//-----------Acceso------------//
+//             mensajePsw.innerText = "Contraseña insegura";
+//             document.getElementsByTagName("form")[0].insertBefore(mensajePsw, tipo)
+//
+// }
+//         }
+//
+//         })
+        //---------Registro---------//
+        /////Añadimos un manejador de eventos para cuando el formulario se envíe/////
+        document.getElementById('miForm').addEventListener('submit', (e) => {
+        e.preventDefault();
+        registro();
+        })
+        })
+
+    })
+
+//-----------Acceso------------//
+//             mensajePsw.innerText = "Contraseña insegura";
+//             document.getElementsByTagName("form")[0].insertBefore(mensajePsw, tipo)
+//
+// }
+//         }
+//
+//         })
+        //---------Registro---------//
+        /////Añadimos un manejador de eventos para cuando el formulario se envíe/////
+        document.getElementById('miForm').addEventListener('submit', (e) => {
+        e.preventDefault();
+        registro();
+        })
+        })
+
+    })
+
+//-----------Acceso------------//
+//             mensajePsw.innerText = "Contraseña insegura";
+//             document.getElementsByTagName("form")[0].insertBefore(mensajePsw, tipo)
+//
+// }
+//         }
+//
+//         })
+        //---------Registro---------//
+        /////Añadimos un manejador de eventos para cuando el formulario se envíe/////
+        document.getElementById('miForm').addEventListener('submit', (e) => {
+        e.preventDefault();
+        registro();
+        })
+        })
+
+    })
+
+//-----------Acceso------------//
+//             mensajePsw.innerText = "Contraseña insegura";
+//             document.getElementsByTagName("form")[0].insertBefore(mensajePsw, tipo)
+//
+// }
+//         }
+//
+//         })
+        //---------Registro---------//
+        /////Añadimos un manejador de eventos para cuando el formulario se envíe/////
+        document.getElementById('miForm').addEventListener('submit', (e) => {
+        e.preventDefault();
+        registro();
+        })
+        })
+
+    })
+
+//-----------Acceso------------//
+//             mensajePsw.innerText = "Contraseña insegura";
+//             document.getElementsByTagName("form")[0].insertBefore(mensajePsw, tipo)
+//
+// }
+//         }
+//
+//         })
+        //---------Registro---------//
+        /////Añadimos un manejador de eventos para cuando el formulario se envíe/////
+        document.getElementById('miForm').addEventListener('submit', (e) => {
+        e.preventDefault();
+        registro();
+        })
+        })
+
+    })
+
+//-----------Acceso------------//
+//             mensajePsw.innerText = "Contraseña insegura";
+//             document.getElementsByTagName("form")[0].insertBefore(mensajePsw, tipo)
+//
+// }
+//         }
+//
+//         })
+        //---------Registro---------//
+        /////Añadimos un manejador de eventos para cuando el formulario se envíe/////
+        document.getElementById('miForm').addEventListener('submit', (e) => {
+        e.preventDefault();
+        registro();
+        })
+        })
+
+    })
+
+//-----------Acceso------------//
+//             mensajePsw.innerText = "Contraseña insegura";
+//             document.getElementsByTagName("form")[0].insertBefore(mensajePsw, tipo)
+//
+// }
+//         }
+//
+//         })
+        //---------Registro---------//
+        /////Añadimos un manejador de eventos para cuando el formulario se envíe/////
+        document.getElementById('miForm').addEventListener('submit', (e) => {
+        e.preventDefault();
+        registro();
+        })
+        })
+
+    })
+
+//-----------Acceso------------//
+//             mensajePsw.innerText = "Contraseña insegura";
+//             document.getElementsByTagName("form")[0].insertBefore(mensajePsw, tipo)
+//
+// }
+//         }
+//
+//         })
+        //---------Registro---------//
+        /////Añadimos un manejador de eventos para cuando el formulario se envíe/////
+        document.getElementById('miForm').addEventListener('submit', (e) => {
+        e.preventDefault();
+        registro();
+        })
+        })
+
+    })
+
+//-----------Acceso------------//
+//             mensajePsw.innerText = "Contraseña insegura";
+//             document.getElementsByTagName("form")[0].insertBefore(mensajePsw, tipo)
+//
+// }
+//         }
+//
+//         })
+        //---------Registro---------//
+        /////Añadimos un manejador de eventos para cuando el formulario se envíe/////
+        document.getElementById('miForm').addEventListener('submit', (e) => {
+        e.preventDefault();
+        registro();
+        })
+        })
+
+    })
+
+//-----------Acceso------------//
+//             mensajePsw.innerText = "Contraseña insegura";
+//             document.getElementsByTagName("form")[0].insertBefore(mensajePsw, tipo)
+//
+// }
+//         }
+//
+//         })
+        //---------Registro---------//
+        /////Añadimos un manejador de eventos para cuando el formulario se envíe/////
+        document.getElementById('miForm').addEventListener('submit', (e) => {
+        e.preventDefault();
+        registro();
+        })
+        })
+
+    })
+
+//-----------Acceso------------//
+//             mensajePsw.innerText = "Contraseña insegura";
+//             document.getElementsByTagName("form")[0].insertBefore(mensajePsw, tipo)
+//
+// }
+//         }
+//
+//         })
+        //---------Registro---------//
+        /////Añadimos un manejador de eventos para cuando el formulario se envíe/////
+        document.getElementById('miForm').addEventListener('submit', (e) => {
+        e.preventDefault();
+        registro();
+        })
+        })
+
+    })
+
+//-----------Acceso------------//
+//             mensajePsw.innerText = "Contraseña insegura";
+//             document.getElementsByTagName("form")[0].insertBefore(mensajePsw, tipo)
+//
+// }
+//         }
+//
+//         })
+        //---------Registro---------//
+        /////Añadimos un manejador de eventos para cuando el formulario se envíe/////
+        document.getElementById('miForm').addEventListener('submit', (e) => {
+        e.preventDefault();
+        registro();
+        })
+        })
+
+    })
+
+//-----------Acceso------------//
+//             mensajePsw.innerText = "Contraseña insegura";
+//             document.getElementsByTagName("form")[0].insertBefore(mensajePsw, tipo)
+//
+// }
+//         }
+//
+//         })
+        //---------Registro---------//
+        /////Añadimos un manejador de eventos para cuando el formulario se envíe/////
+        document.getElementById('miForm').addEventListener('submit', (e) => {
+        e.preventDefault();
+        registro();
+        })
+        })
+
+    })
+
+//-----------Acceso------------//
+//             mensajePsw.innerText = "Contraseña insegura";
+//             document.getElementsByTagName("form")[0].insertBefore(mensajePsw, tipo)
+//
+// }
+//         }
+//
+//         })
+        //---------Registro---------//
+        /////Añadimos un manejador de eventos para cuando el formulario se envíe/////
+        document.getElementById('miForm').addEventListener('submit', (e) => {
+        e.preventDefault();
+        registro();
+        })
+        })
+
+    })
+
+//-----------Acceso------------//
+//             mensajePsw.innerText = "Contraseña insegura";
+//             document.getElementsByTagName("form")[0].insertBefore(mensajePsw, tipo)
+//
+// }
+//         }
+//
+//         })
+        //---------Registro---------//
+        /////Añadimos un manejador de eventos para cuando el formulario se envíe/////
+        document.getElementById('miForm').addEventListener('submit', (e) => {
+        e.preventDefault();
+        registro();
+        })
+        })
+
+    })
+
+//-----------Acceso------------//
+//             mensajePsw.innerText = "Contraseña insegura";
+//             document.getElementsByTagName("form")[0].insertBefore(mensajePsw, tipo)
+//
+// }
+//         }
+//
+//         })
+        //---------Registro---------//
+        /////Añadimos un manejador de eventos para cuando el formulario se envíe/////
+        document.getElementById('miForm').addEventListener('submit', (e) => {
+        e.preventDefault();
+        registro();
+        })
+        })
+
+    })
+
+//-----------Acceso------------//
 formIngreso.addEventListener("click",()=>{
     fetch('./templates/Acceso.html')
     .then((response)=>{
