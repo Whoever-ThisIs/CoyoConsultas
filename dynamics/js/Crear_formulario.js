@@ -33,7 +33,7 @@ class Pregunta{
       let index = this.cOpciones;
       this.cOpciones++;
       // Crea una nueva opción dentro de pregunta
-      this.opciones.push( new Opcion(this.cOpciones));
+      this.opciones.push( new Opcion(index));
       let numOpc = this.cOpciones;
       //Se crea el p donde se guarda esto
       let newOpc = $("<p>");
@@ -91,7 +91,7 @@ class Formulario {
     let simbolos = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
     var id_form = "";
     for (var i = 0; i < 6; i++) {
-      id_form += simbolos.substr(Math.round(Math.random() * simbolos.length), 1);
+      id_form += simbolos.substr(Math.floor(Math.random() * simbolos.length), 1);
     }
     this.id = id_form;
     // Fechas //
@@ -109,7 +109,7 @@ class Formulario {
       let indexPregunta = this.cPreguntas;
       this.cPreguntas++;
       // Crea una nueva pregunta dentro de formulario
-      this.preguntas.push(new Pregunta(this.cPreguntas));
+      this.preguntas.push(new Pregunta(indexPregunta));
       //Se crea el contenedor de la nueva pregunta
       let newPreg = $("<div>")
       newPreg.addClass("Pregunta")
@@ -154,7 +154,7 @@ class Formulario {
    */
   guardarForm() {
     // Petición tipo 1
-    var data = new FormData(document.getElementById('crearForm'));
+    var data = new FormData();
     data.append("tipo", "1");
     data.append("idForm", this.id);
     data.append("categoria", this.categoria);
@@ -167,32 +167,44 @@ class Formulario {
       body: data
     })
   }
-
-  guardarPregunta () {
-    //Petición tipo 2
-    for (let i = 0; i < this.cPreguntas; i++) {
-      let data = new FormData(document.getElementById('crearForm'));
-      data.append("tipo", 2);
-      // data.append("idPregunta", this.preguntas[i].id);
-      data.append("idPregunta", this.id + "-" + i);  
-      data.append("idForm", this.id);
-      data.append("nombrePreg", this.preguntas[i].texto);
-      console.log(data);
+  guardarFecha() {
+    if (this.finDia !== "" && this.finHora !== ""){
+      let data = new FormData();
+      data.append("tipo", "4");
+      data.append("inicioDia", this.inicioDia);
+      data.append("inicioHora", this.inicioHora);
+      data.append("finDia", this.finDia);
+      data.append("finHora", this.finHora);
       fetch("../dynamics/php/Guardar-form.php", {
         method: 'POST',
         body: data
       })
+    }
+  }
+  guardarPregunta () {
+    //Petición tipo 2
+    for (let i = 0; i < this.cPreguntas; i++) {
+      let data = new FormData();
+      data.append("tipo", 2);
+      // data.append("idPregunta", this.preguntas[i].id);
+      data.append("idPregunta", this.id + "-" + i);
+      data.append("idForm", this.id);
+      data.append("nombrePreg", this.preguntas[i].texto);
+      fetch("../dynamics/php/Guardar-form.php", {
+        method: 'POST',
+        body: data
+      })
+      console.log("uwu")
       for (let j = 0; j < this.preguntas[i].cOpciones; j++) {
         // Creación de respuestas
         data = new FormData(document.getElementById('crearForm'));
         data.append("tipo",3);
         //data.append("idOpcion",this.preguntas[i][j].id);
         //data.append("idPregunta", this.preguntas[i].id);
-        data.append("idOpcion", this.id + "-" + i + "-" + j); 
+        data.append("idOpcion", this.id + "-" + i + "-" + j);
         data.append("idPreguntaOp", this.id + "-" + i);
-        data.append("valor",this.preguntas[i].opciones[j].valor);
+        data.append("valor", this.preguntas[i].opciones[j].valor);
         //data.append("apoyo",this.apoyo);
-        console.log(data);
         fetch("../dynamics/php/Guardar-form.php", {
           method: 'POST',
           body: data
@@ -332,6 +344,7 @@ let buttonGuardar = $("<button id='Guardar'>Guardar formulario</button>");
 buttonGuardar.click(()=>{
   form.guardarForm();
   form.guardarPregunta();
+  form.guardarFecha();
 })
 $('#Form_config').append(buttonGuardar)
 $('#Form_config').append("<br><br>")
