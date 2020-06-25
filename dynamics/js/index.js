@@ -70,9 +70,7 @@ formRegistro.addEventListener("click",()=>{
             //////*** Modificar Inputs ***/////
         var tipo = document.querySelector("input[name='tipo']");
         var id1 = document.querySelector("input[name='id1']");
-        var labelId1 = document.querySelector("label[for='id1']");
         var id2 = document.querySelector("input[name='id2']");
-        var labelId2 = document.querySelector("label[for='id2']");
         var password = document.querySelector("input[name='password']");
         var alumnoBtt = document.querySelector("#alumno");
         var profesorBtt = document.querySelector("#profesor");
@@ -88,28 +86,22 @@ formRegistro.addEventListener("click",()=>{
         })
         function alumno(){
             tipo.value = "alumno"
-            labelId1.innerText = "Núm. de cuenta"
             id1.placeholder = "Ingrese su Núm. de cuenta"
             id1.maxLength = "9"
-            labelId2.innerText = "CURP"
             id2.placeholder = "Ingrese su CURP"
             id2.maxLength = "18"
             }
         function profesor(){
             tipo.value = "profesor"
-            labelId1.innerText = "Núm. de RFC"
             id1.placeholder = "Ingrese su RFC"
             id1.maxLength = "13"
-            labelId2.innerText = "Núm. de Trabajador"
             id2.placeholder = "Ingrese su Núm. de Trab"
             id2.maxLength = "6"
             }
         function funcionario(){
             tipo.value = "funcionario"
-            labelId1.innerText = "Núm. de RFC"
             id1.placeholder = "Ingrese su RFC"
             id1.maxLength = "13"
-            labelId2.innerText = "Núm. de Trabajador"
             id2.placeholder = "Ingrese su Núm. de Trab"
             id2.maxLength = "6"
             }
@@ -123,6 +115,17 @@ formRegistro.addEventListener("click",()=>{
 
     })
 //-----------Acceso------------//
+fetch('./templates/Acceso.html')
+.then((response)=>{
+    return response.text();
+})
+.then((text)=>{
+    divRegistro.innerHTML = text;
+    document.getElementById('formAcceso').addEventListener('submit', (e) => {
+        e.preventDefault();
+        acceso();
+      })
+    })
 formIngreso.addEventListener("click",()=>{
     fetch('./templates/Acceso.html')
     .then((response)=>{

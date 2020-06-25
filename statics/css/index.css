@@ -235,14 +235,12 @@ input[type=text]::-webkit-input-placeholder{
 	text-align: center;
 	width:100%;
 }
-
 #indexFieldset{
 	border: 3px solid #e76c46;
 	margin: auto;
 	width: 70%;
 	height: 437.71px;
 }
-
 #publicForm{
 	width: 90%;
 	height:500px;
