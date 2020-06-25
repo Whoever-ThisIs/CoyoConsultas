@@ -64,23 +64,28 @@ class Pregunta{
 class Formulario {
   constructor() {
     // Se añade el evento input (actualiza conforme se ingresa el valor del título)
+    // Título de formulario
     this.titulo = "Formulario";
     $("#tituloForm").on('input', (e) => {
       this.titulo = $("#tituloForm").val();
     })
+    // Descripción de formulario
     this.descripcion = "Descripción";
     $("#descripcion").on('input', (e) => {
       this.descripcion = $("#descripcion").val();
     })
+    // Preguntas
     this.preguntas = new Array();
     this.cPreguntas = 0;
+    // Categorías
     this.categoria = 1;
-    $("#rango").on('input', (e) => {
-      this.rango = $("#rango").val();
-    })
-    this.rango = 1;
     $("#categoria").on('input', (e) => {
       this.categoria = $("#categoria").val();
+    })
+    // Rango
+    this.rango = 1;
+    $("#rango").on('input', (e) => {
+      this.rango = $("#rango").val();
     })
     // Crea un id único
     let simbolos = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
@@ -89,6 +94,13 @@ class Formulario {
       id_form += simbolos.substr(Math.round(Math.random() * simbolos.length), 1);
     }
     this.id = id_form;
+    // Fechas //
+    // Inicio
+    this.inicioDia = "";
+    this.inicioHora = "";
+    // Fin
+    this.finDia = "";
+    this.finHora = "";
   }
   // Método para añadir preguntas
   addPreg() {
@@ -231,38 +243,59 @@ class Formulario {
     var actual = new Date();
     //Se agrego el input date de Inicio
     $('#Form_config').append("Inicio: ")
-    let fechaInicio = $("<input type='date' name='Inicio_dia' required>")
+    let fechaInicio = $("<input type='date' name='Inicio_dia' id='Inicio_dia' required>")
+    // Obtención de fecha actual //
+    // Día
     var diaInicio = actual.getDate();
     if (diaInicio<10) {
       diaInicio = "0"+diaInicio;
     }
+    // Mes
     var mesInicio = actual.getMonth()
     if (mesInicio<10) {
       mesInicio = "0"+mesInicio;
     }
+    // Año (aaaa)
     var añoInicio = actual.getFullYear();
+    // Asignación de valores pt. 1
     fechaInicio.val(añoInicio+"-"+mesInicio+"-"+diaInicio)
+    this.inicioDia = añoInicio + "-" + mesInicio + "-" + diaInicio;
     console.log(añoInicio+"-"+mesInicio+"-"+diaInicio);
     $('#Form_config').append(fechaInicio)
-
     //Se agrego el input tyme de Inicio
-    let tiempoInicio = $("<input type='time' name='Inicio_hora' required>")
+    let tiempoInicio = $("<input type='time' name='Inicio_hora' id='Inicio_hora' required>");
+    // Hora
     var horaInicio = actual.getHours();
     if (horaInicio<10) {
       horaInicio= "0"+horaInicio
     }
+    // Minutos
     var minutosInicio = actual.getMinutes()
     if (minutosInicio<10) {
       minutosInicio= "0"+minutosInicio
     }
-    console.log(horaInicio+":"+minutosInicio);
+    // Asignación de valores pt. 2
     tiempoInicio.val(horaInicio+":"+minutosInicio)
+    this.inicioHora = horaInicio + ":" + minutosInicio;
+    console.log(horaInicio+":"+minutosInicio);
     $('#Form_config').append(tiempoInicio)
-
     //Dia y Hora de cierre de formulario
     $('#Form_config').append("Fin: ")
-    $('#Form_config').append("<input type='date' name='Fin_dia' required>")
-    $('#Form_config').append(("<input type='time' name='Fin_hora' required>"))
+    $('#Form_config').append("<input type='date' name='Fin_dia' id='Fin_dia' required>")
+    $('#Form_config').append(("<input type='time' name='Fin_hora' id='Fin_hora' required>"))
+    // Creación de eventos
+    $("#Inicio_dia").on('input', (e) => {
+      this.inicioDia = $("#Inicio_dia").val();
+    })
+    $("#Inicio_hora").on('input', (e) => {
+      this.inicioHora = $("#Inicio_hora").val();
+    })
+    $("#Fin_dia").on('input', (e) => {
+      this.finDia = $("#Fin_dia").val();
+    })
+    $("#Fin_hora").on('input', (e) => {
+      this.finHora = $("#Fin_hora").val();
+    })
   }
 }
 
