@@ -3,7 +3,7 @@
 ////////////////////////////////////////////////////////////////////////////////
 
   //Se crea el id_form para obtenerlo luego por metodo POST en el php
-  var id_formu = "NUYZ2"
+  var id_formu = "94NVUO"
   getForm = new FormData();
   getForm.append("id_form", id_formu);//<== Ingrese aui el id del formulario
   //Se manda la peticion
@@ -49,10 +49,12 @@
   ////////////////////////////////////////////////////////////////////////////////
   //////////////////////  Subir el formulario de respuesta  //////////////////////
   ////////////////////////////////////////////////////////////////////////////////
+  //Evento de subir la info
   $("#Enviar").click(()=>{
+    //Se guarda los resultados de los radio
     sendForm = new FormData(document.getElementById('Formu'));
     sendForm.append("id_form", id_formu);//<== Ingrese aui el id del formulario
-    console.log(sendForm);
+    //Se hace la peticion
     fetch('../dynamics/php/Respuesta_form.php', {
       method: 'POST',
       body: sendForm
