@@ -171,6 +171,7 @@ class Formulario {
     if (this.finDia !== "" && this.finHora !== ""){
       let data = new FormData();
       data.append("tipo", "4");
+      data.append("idForm", this.id);
       data.append("inicioDia", this.inicioDia);
       data.append("inicioHora", this.inicioHora);
       data.append("finDia", this.finDia);
@@ -194,7 +195,6 @@ class Formulario {
         method: 'POST',
         body: data
       })
-      console.log("uwu")
       for (let j = 0; j < this.preguntas[i].cOpciones; j++) {
         // Creación de respuestas
         data = new FormData();
@@ -226,7 +226,6 @@ class Formulario {
       }).then((data) => {
         let select = document.getElementById('rango');
         data.forEach(element => {
-          console.log(element);
           let new_option = document.createElement("option");
           new_option.value = element.id_rango;
           new_option.innerText = element.rango;
@@ -338,10 +337,11 @@ $("#Eliminar_preg").click(()=>{
 
 var btnCrear = $("<button type='button' name='button' id='Crear_form'>Crear Formulario</button>")
 btnCrear.click(()=>{
-  console.log("Yamete kudasai")
+  window.location.reload();
 })
 let buttonGuardar = $("<button id='Guardar'>Guardar formulario</button>");
 buttonGuardar.click(()=>{
+  console.log(form);
   form.guardarForm();
   form.guardarPregunta();
   form.guardarFecha();
