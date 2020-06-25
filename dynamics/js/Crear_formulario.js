@@ -33,7 +33,7 @@ class Pregunta{
       let index = this.cOpciones;
       this.cOpciones++;
       // Crea una nueva opción dentro de pregunta
-      this.opciones.push( new Opcion(this.cOpciones));
+      this.opciones.push( new Opcion(index));
       let numOpc = this.cOpciones;
       //Se crea el p donde se guarda esto
       let newOpc = $("<p>");
@@ -109,7 +109,7 @@ class Formulario {
       let indexPregunta = this.cPreguntas;
       this.cPreguntas++;
       // Crea una nueva pregunta dentro de formulario
-      this.preguntas.push(new Pregunta(this.cPreguntas));
+      this.preguntas.push(new Pregunta(indexPregunta));
       //Se crea el contenedor de la nueva pregunta
       let newPreg = $("<div>")
       newPreg.addClass("Pregunta")
@@ -154,7 +154,7 @@ class Formulario {
    */
   guardarForm() {
     // Petición tipo 1
-    var data = new FormData(document.getElementById('crearForm'));
+    var data = new FormData();
     data.append("tipo", "1");
     data.append("idForm", this.id);
     data.append("categoria", this.categoria);
@@ -184,17 +184,17 @@ class Formulario {
   guardarPregunta () {
     //Petición tipo 2
     for (let i = 0; i < this.cPreguntas; i++) {
-      let data = new FormData(document.getElementById('crearForm'));
+      let data = new FormData();
       data.append("tipo", 2);
       // data.append("idPregunta", this.preguntas[i].id);
       data.append("idPregunta", this.id + "-" + i);
       data.append("idForm", this.id);
       data.append("nombrePreg", this.preguntas[i].texto);
-      console.log(data);
       fetch("../dynamics/php/Guardar-form.php", {
         method: 'POST',
         body: data
       })
+      console.log("uwu")
       for (let j = 0; j < this.preguntas[i].cOpciones; j++) {
         // Creación de respuestas
         data = new FormData(document.getElementById('crearForm'));
@@ -203,9 +203,8 @@ class Formulario {
         //data.append("idPregunta", this.preguntas[i].id);
         data.append("idOpcion", this.id + "-" + i + "-" + j);
         data.append("idPreguntaOp", this.id + "-" + i);
-        data.append("valor",this.preguntas[i].opciones[j].valor);
+        data.append("valor", this.preguntas[i].opciones[j].valor);
         //data.append("apoyo",this.apoyo);
-        console.log(data);
         fetch("../dynamics/php/Guardar-form.php", {
           method: 'POST',
           body: data
