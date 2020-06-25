@@ -167,7 +167,20 @@ class Formulario {
       body: data
     })
   }
-
+  guardarFecha() {
+    if (this.finDia !== "" && this.finHora !== ""){
+      let data = new FormData();
+      data.append("tipo", "4");
+      data.append("inicioDia", this.inicioDia);
+      data.append("inicioHora", this.inicioHora);
+      data.append("finDia", this.finDia);
+      data.append("finHora", this.finHora);
+      fetch("../dynamics/php/Guardar-form.php", {
+        method: 'POST',
+        body: data
+      })
+    }
+  }
   guardarPregunta () {
     //Petición tipo 2
     for (let i = 0; i < this.cPreguntas; i++) {
@@ -332,6 +345,7 @@ let buttonGuardar = $("<button id='Guardar'>Guardar formulario</button>");
 buttonGuardar.click(()=>{
   form.guardarForm();
   form.guardarPregunta();
+  form.guardarFecha();
 })
 $('#Form_config').append(buttonGuardar)
 $('#Form_config').append("<br><br>")

@@ -37,5 +37,14 @@
       $SQL_opcion = "INSERT INTO opcion(id_opcion,id_pregunta,valor) VALUES('$id_opcion','$id_pregunta','$valor');";
       $query_opcion = mysqli_query($conexion,$SQL_opcion);
     }
+    elseif($_POST['tipo']==4){
+      $id_form = $_POST['idForm'];
+      $inicioDia = $_POST['inicioDia'];
+      $inicioHora = $_POST['inicioHora'];
+      $finDia = $_POST['finDia'];
+      $finHora = $_POST['finHora'];
+      $SQL_fecha = "UPDATE formulario SET inicio = '$inicioDia', inicio_hora = '$inicioHora', fin = '$finDia', fin_hora = '$finHora' WHERE id_form = '$id_form'";
+      $query_fecha = mysqli_query($conexion,$SQL_fecha);
     }
+  }
 ?>
