@@ -102,51 +102,6 @@ body{
     z-index: 1;
 }
 /* PERFIL*/
-#popup {
-  align-self: center;
-  color: #000;
-}
-
-#popup div, #popup div:visited {
-	position: relative;
-	display: block;
-	width: 130px;
-	line-height: 30px;
-	text-align: right;
-	padding: 0 10px;
-	margin: 0;
-	border: 1px solid #666;
-	text-decoration: none;
-	font-size: 1em;
-	font-weight: bold;
-}
-
-#popup div span {
-	display: none;
-}
-
-#popup div:hover {
-	background-color: #e9e9e2;
-}
-
-#popup div:hover	{
-	color: #f00;
-	background-color: #e9e9e2;
-	text-indent: 0;
-}
-
-#popup div:hover span {
-	display: block;
-	position: absolute;
-	top: 100px;
-	width: 500px;
-	margin: 0px;
-	padding: 10px;
-	font-weight: normal;
-	background: #252242;
-	text-align: left;
-	border: 1px solid #666;
-}
 .paleta{
   width: 450px;
   margin: 1%;
@@ -190,8 +145,53 @@ body{
     height:125px;
     background-color: royalblue;
 }
-.bearbeiten{
+/* .bearbeiten{
   display: flex;
   flex-direction: column;
-  justify-content: center;
+} */
+
+#popup {
+  align-self: center;
+  color: #000;
+}
+
+#popup div, #popup div:visited {
+  position: relative;
+  display: block;
+  width: 130px;
+  line-height: 30px;
+  text-align: right;
+  padding: 0 10px;
+  margin: 0;
+  border: 1px solid #666;
+  text-decoration: none;
+  font-size: 1em;
+  font-weight: bold;
+}
+
+#popup div span {
+  display: none;
+}
+
+#popup div:hover {
+  background-color: #e9e9e2;
+}
+
+#popup div:hover	{
+  color: #f00;
+  background-color: #e9e9e2;
+  text-indent: 0;
+}
+
+#popup div:hover span {
+  display: block;
+  position: absolute;
+  top: 100px;
+  width: 500px;
+  margin: 0px;
+  padding: 10px;
+  font-weight: normal;
+  background: #252242;
+  text-align: left;
+  border: 1px solid #666;
 }
