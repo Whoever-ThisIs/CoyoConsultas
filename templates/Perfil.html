@@ -6,41 +6,42 @@
     <link rel="stylesheet" href="../statics/css/NavInicio.css">
     <link rel="stylesheet" href="../statics/css/Tablas_perfil.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css">
+    <link rel="stylesheet" href="../statics/css/Perfil.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <title>Registro</title>
+    <title>CoCo</title>
 </head>
 <body>
     <header class="navBar">
     </header>
     <div class="profileCover" alt>
-        <div class="profileCard" id="formy" alt>
-            <div class="profile" alt></div>
-            <span class="profileName"></span>
-            </div>
-        </div>
-        <div class="containeProfile">
+      <form class="profileCard" id="formy" alt>
+        <div class="profile" alt></div>
+        <span class="profileName"></span>
         <div class="profileData">
-            <span id="profileBirth"></span>
-            <span id="profileMail"></span><br>
-            <div class="bearbeiten">
-              <button type="button" id="editar" name="Editar">Editar</button>
-              <div class="dropdown">
-                  <div class="dropbtn">Filtros
+          <span id="profileBirth"></span>
+          <span id="profileMail"></span><br>
+          <div class="bearbeiten">
+            <button type="button" id="editar" name="Editar">Editar</button><br>
+            <div class="dropdown">
+              <div class="dropbtn">Paletas</div>
+              <div class="dropdown-content">
+                <form id="Paleta">
+                  <div class="tipo">
+                    <img class="paleta" src="../statics/media/img/paletaA.jpg">
+                    <input type="radio" name="tipo" value="1">Paleta A
                   </div>
-                  <div class="dropdown-content">
-                      <div class="tipo">
-                        <img class="paleta" src="../statics/media/img/paletaA.jpg">
-                        <input type="radio" name="tipo" value="1">Paleta A
-                      </div>
-                    <div class="tipo">
-                      <img class="paleta" src="../statics/media/img/paletaB.jpg">
-                      <input type="radio" name="tipo" value="2">Paleta B
-                    </div>
+                  <div class="tipo">
+                    <img class="paleta" src="../statics/media/img/paletaB.jpg">
+                    <input type="radio" name="tipo" value="2">Paleta B
                   </div>
+                  <input type="submit" name="" value="Elegir paleta">
+                </form>
               </div>
             </div>
-        </div>
+          </div>
+        </form>
       </div>
     </div>
     <div id="stats">
@@ -75,9 +76,21 @@
         </tr>
       </table>
     </div>
+    <footer>
+      <div class="all-footer">
+        <div class="footer">
+          ©2020  Todos los derechos reservados.
+        </div>
+        <div class="social">
+          <a href="https://www.facebook.com/CoyoConsultas-COCO-110062144094022/?modal=admin_todo_tour"><span class="fab fa-facebook-f"></span></a>
+          <a href="https://twitter.com/COCO91481505"><span class="fab fa-twitter"></span></a>
+          <a href="https://www.instagram.com/coyoconsultas/?hl=es-la"><span class="fab fa-instagram"></span></a>
+          <a href="#"><span class="fas fa-envelope"></span></a>
+        </div>
+      </div>
+    </footer>
     <script src="../dynamics/js/NavInicio.js"></script>
     <script src="../dynamics/js/Perfil_datos.js" charset="utf-8"></script>
     <script src="../dynamics/js/Estadisticas_perfil.js" charset="utf-8"></script>
-    <script src="../dynamics/js/Resultados_consultar.js" charset="utf-8"></script>
-</body>
-</html>
+  </body>
+  </html>
