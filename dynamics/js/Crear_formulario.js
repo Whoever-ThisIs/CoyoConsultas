@@ -344,6 +344,7 @@ buttonGuardar.click(()=>{
   console.log(form);
   form.guardarForm();
   form.guardarPregunta();
+  form.guardarPregunta();
   form.guardarFecha();
 })
 $('#Form_config').append(buttonGuardar)
