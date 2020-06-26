@@ -12,7 +12,6 @@ fetch('../dynamics/php/Datos_sesion.php')
   })
   .then((text)=>{
     var datos = text.split("~");
-    console.log(datos);
     $(".profileName")[0].append(datos[1]+" "+datos[2]+" "+datos[3])
     $("#profileMail").text("Correo: "+datos[4])
     $("#profileBirth").text("Fecha de nacimiento: "+datos[5])
@@ -42,10 +41,8 @@ function editar(datos){
       method: 'POST',
       body: data
     }).then((response) => {
-      console.log(data);
       return response.json();
     }).then((data) => {
-      console.log(data);
       document.cookie="cookieVal=egal";
       setTimeout(()=>{
         window.location.reload();

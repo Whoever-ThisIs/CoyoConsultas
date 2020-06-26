@@ -1,0 +1,25 @@
+#stats{
+  background-color: #262626;
+  color: white;
+  display: block;
+  min-height:400px;
+  position:relative;
+  text-align: center;
+  top:180px;
+  width: 100%;
+  padding: 50px 0;
+}
+#stats > h1{
+  font-size: 40px;
+}
+.Grafica{
+  left: 10%;
+  position:relative;
+  width: 80%;
+}
+canvas{
+  border: 2px solid white;
+  border-radius: 20px;
+  margin: 50px 0;
+  padding: 30px;
+}
