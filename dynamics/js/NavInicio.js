@@ -9,9 +9,24 @@ fetch('../dynamics/php/Validar_sesion.php')
     window.location = '../'
   }else {
     //Si no te permite continuar
+    cookiePaleta();
     console.log("Sesion iniciada");
   }
 })
+
+function cookiePaleta(){
+  let data;
+  fetch("../dynamics/php/NewPaletas.php",{
+    method: 'POST',
+    body: data
+  }).then((response) => {
+    return response.text();
+  }).then((data) => {
+    //Establece la cookie que indica que algo ha sido cambiado
+    document.cookie="colores="+data;
+  });
+}
+
 function eventlis(){
     let crear = document.querySelector("#crear");
     let inicio = document.querySelector("#inicio");
@@ -27,6 +42,7 @@ function eventlis(){
         window.location = './Perfil.html'
     })
     cerrar.addEventListener("click",()=>{
+      document.cookie = "colores=;expires=Thu, 04 Jun 2010 00:00:00 GMT";
       //Consulta si ya hay una sesion abierta
       fetch('../dynamics/php/Cerrar_sesion.php')
       .then((respuesta)=>{

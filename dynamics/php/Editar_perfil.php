@@ -3,7 +3,7 @@
   include('Config.php');
   include('Des-cifrado.php');
 
-  $validador = false;
+  $validador = 0;
   $con = connect();
 
   //Recuperación de inputs
@@ -19,7 +19,7 @@
     $destino = $carpeta.$id.".".$ext;
     move_uploaded_file($_FILES['edimg']['tmp_name'],$destino);
     mysqli_query($con,"UPDATE usuario SET perfil = 1 WHERE id_usuario = $id");
-    $validador = true;
+    $validador++;
   }
 
   //Hashea la nueva contraseña solo si ambos campos han sido llenados
@@ -32,7 +32,7 @@
   if ($correo != "" && $new == "" && $old == "") {
     if (!sameMailAll($con,$correo,$id)&&!sameMailSelf($con,$correo,$id)) {
       $inquiry = "UPDATE usuario SET correo = '$correo' WHERE id_usuario = $id";
-      $validador = true;
+      $validador++;
     }
   }
 
@@ -40,7 +40,7 @@
   if ($correo == "" && $new != "" && $old != "") {
     if (checkPass($con,$old,$id)) {
       $inquiry = "UPDATE usuario SET password = '$password', sal = '$salt' WHERE id_usuario = $id";
-      $validador = true;
+      $validador++;
     }
   }
 
@@ -48,7 +48,7 @@
   if ($correo != "" && $new != "" && $old != "") {
     if (checkPass($con,$old,$id)&&!sameMailAll($con,$correo,$id)&&!sameMailSelf($con,$correo,$id)) {
       $inquiry = "UPDATE usuario SET password = '$password', sal = '$salt', correo = '$correo' WHERE id_usuario = $id";
-      $validador = true;
+      $validador++;
     }
   }
 
@@ -109,11 +109,8 @@
 
   //Realiza el cambio en la base
   function update($con,$inquiry,$validador){
-    if ($validador == true) {
+    if ($validador > 0) {
       return mysqli_query($con, $inquiry);
-    }
-    else {
-      return "Error";
     }
   }
   echo json_encode(update($con,$inquiry,$validador));

@@ -73,3 +73,16 @@ function editar(){
     });
   });
 }
+
+document.getElementById('Paleta').addEventListener('submit', (e) => {
+  e.preventDefault();
+  let dato = new FormData(document.getElementById('Paleta'));
+  fetch('../dynamics/php/Paletas.php', {
+    method: 'POST',
+    body: dato
+  }).then((response) => {
+    return response.text();
+  }).then((dato) => {
+    document.cookie="colores="+dato;
+  });
+});

@@ -47,8 +47,8 @@ function getCardsInfo(categoria){
         })
       }
     }
-  })  
-}    
+  })
+}
 $("#todo").click(()=>{
   getCardsInfo("1,2,3,4")
 })
