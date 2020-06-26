@@ -17,7 +17,7 @@
     $fecha = (isset($_POST['fecha']) && $_POST['fecha'] != "") ? $_POST['fecha'] : false ;
     $correo = (isset($_POST['correo']) && $_POST['correo'] != "") ? $_POST['correo'] : false ;
     $id1 = (isset($_POST['id1']) && $_POST['id1'] != "") ? $_POST['id1'] : false ;
-    $id2 = (isset($_POST['id2']) && $_POST['id2'] != "") ? $_POST['id2'] : false ;  
+    $id2 = (isset($_POST['id2']) && $_POST['id2'] != "") ? $_POST['id2'] : false ;
     $sal = salt();
     $password_aux = (isset($_POST['password']) && $_POST['password'] != "") ? $_POST['password'] : false ;
     $password = registro($password_aux, $sal);
@@ -35,7 +35,7 @@
         $tipo = 3;
       }
 
-      $SQL_usr = "INSERT INTO usuario(id_usuario, id_tipo, password, nacimiento, correo, extra, nombre, paterno, materno, sal) VALUES ('$id1', $tipo, '$password', '$fecha', '$correo', '$id2', '$nombre', '$paterno', '$materno', '$sal')";
+      $SQL_usr = "INSERT INTO usuario(id_usuario, id_tipo, password, nacimiento, correo, extra, nombre, paterno, materno, sal, perfil) VALUES ('$id1', $tipo, '$password', '$fecha', '$correo', '$id2', '$nombre', '$paterno', '$materno', '$sal', 0)";
       $query_usr = mysqli_query($conexion,$SQL_usr);
 
       if($query_usr){
@@ -43,6 +43,8 @@
       }else{
         echo "Problemas al crear el usuario";
       }
-    } 
+
+      copy("../../statics/media/img/profilepics/default.jpg","../../statics/media/img/profilepics/".$id1.".jpg");
+    }
   }
 ?>

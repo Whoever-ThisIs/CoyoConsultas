@@ -16,9 +16,8 @@
     $carpeta="../../statics/media/img/profilepics/";
     $destino = $carpeta.$id.".".$ext;
     move_uploaded_file($_FILES['edimg']['tmp_name'],$destino);
-    $validador = true;
-
     mysqli_query($con,"UPDATE usuario SET perfil = 1 WHERE id_usuario = $id");
+    $validador = true;
   }
 
 
@@ -105,7 +104,7 @@
   }
 
   function update($con,$inquiry,$validador){
-    if ($validador) {
+    if ($validador == true) {
       return mysqli_query($con, $inquiry);
     }
     else {
