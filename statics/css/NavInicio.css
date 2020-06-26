@@ -109,17 +109,19 @@ body{
 .profileCover{
     min-width: 100%;
     min-height: 300px;
-    background: linear-gradient(90deg, #E25050 11.84%, rgba(0, 192, 158, 0.53) 78.99%);
+    background: rgb(127,40,47);
+    background: linear-gradient(180deg, rgba(127,40,47,1) 0%, rgba(225,79,10,1) 21%, rgba(251,176,40,1) 41%, rgba(255,229,78,1) 62%, rgba(249,255,193,1) 83%);
     position: relative;
 }
 .profileCard{
     position:relative;
-    left:17%;
     top:180px;
     width: 63.5%;
     min-height:400px;
     background-color: silver;
     text-align: center;
+    margin-right: auto;
+    margin-left: auto;
 }
 .profile{
     width:242px;
@@ -139,11 +141,21 @@ body{
     top:-60px;
 
 }
-.profileData{
+
+.containProfile{
     position: relative;
     width:100%;
-    height:125px;
+    height: 500px;
+    background-color: black;
+}
+
+.profileData{
+    position: relative;
+    width:63.5%;
+    height: 500px;
     background-color: royalblue;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .dropbtn {
@@ -174,10 +186,14 @@ body{
   text-decoration: none;
   display: block;
 }
+
 input[type="radio"]:hover{
   cursor: pointer;
 }
-.dropdown-content div:hover {background-color: #f1f1f1}
+
+.dropdown-content div:hover {
+    background-color: #f1f1f1
+}
 
 .dropdown:hover .dropdown-content {
   display: block;
@@ -185,4 +201,28 @@ input[type="radio"]:hover{
 
 .dropdown:hover .dropbtn {
   background-color:#585fad;
+}
+#stats{
+  background-color: #262626;
+  color: white;
+  display: block;
+  min-height:400px;
+  position:relative;
+  text-align: center;
+  width: 100%;
+  padding: 50px 0;
+}
+#stats > h1{
+  font-size: 40px;
+}
+.Grafica{
+  left: 10%;
+  position:relative;
+  width: 80%;
+}
+canvas{
+  border: 2px solid white;
+  border-radius: 20px;
+  margin: 50px 0;
+  padding: 30px;
 }

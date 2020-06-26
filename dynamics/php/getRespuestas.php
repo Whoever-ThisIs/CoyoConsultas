@@ -4,7 +4,7 @@
   include('Config.php');
   $con = connect();
   //Obtengo el id del form,ulario a extraer
-  $id_formu = "94NVUO";
+  $id_formu = $_POST['id_form'];
   $id_usu = $_SESSION['id'];
   //Obtrengo toda la informacion de ese formulario
   $result = mysqli_query($con, "SELECT * FROM contestada
