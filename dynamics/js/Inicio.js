@@ -6,8 +6,6 @@ function newCard(category, id_form, title, descripcion, inicio, inicio_hora, fin
   let tarjeta = $("<div>");
   let titulo = $("<h1>" + title + "</h1>");
   let txt = $("<p>" + descripcion + "</p>");
-  let cardFeed = document.querySelector("#cardFeed");
-  cardFeed.appendChild(tarjeta);
   tarjeta.append(titulo, txt);
   if (fin !== null && fin_hora !== null)
   {
