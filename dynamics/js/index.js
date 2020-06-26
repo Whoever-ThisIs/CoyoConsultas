@@ -1,5 +1,6 @@
 $(document).ready(main);
-var count = 1;
+let count = 1;
+let coquito = document.querySelector(".cocoTitle")
     function main(){
         $('.menu_bar').click(function(){
 
@@ -15,6 +16,9 @@ var count = 1;
         });
         }
     });
+    $('.menu_bar').click(()=>{
+        coquito.classList.toggle("cocoTitle2")
+    })
 };
 fetch('./Templates/AnimationGraph.html')
 .then((response)=>{

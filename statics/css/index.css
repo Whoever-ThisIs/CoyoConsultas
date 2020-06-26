@@ -332,6 +332,7 @@ input[type=text]::-webkit-input-placeholder{
 		display:block;
 		height: 35px;
 		width:100%;
+		z-index:300;
 	}
 	
 	.menu_bar .bt-menu {
@@ -345,6 +346,7 @@ input[type=text]::-webkit-input-placeholder{
 		text-decoration:none;
 		-webkit-box-sizing:border-box;
 		-moz-box-sizing:border-box;
+		z-index:301;
 	}
 	
 	.menu_bar span {
@@ -382,8 +384,12 @@ input[type=text]::-webkit-input-placeholder{
 		width: 80%;
 	}
 	
-	#cocoTitle{
+	.cocoTitle{
 		font-size: 40px;
+	}
+	.cocoTitle2{
+		display: none;
+		font-size: 0px;
 	}
 
 	#photo{
