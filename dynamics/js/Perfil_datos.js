@@ -14,7 +14,6 @@ fetch('../dynamics/php/Datos_sesion.php')
   })
   .then((text)=>{
     var datos = text.split("~");
-    console.log(datos);
     $(".profile").css("background-image","url('../statics/media/img/profilepics/"+datos[0]+".jpg')");
     $(".profileName")[0].append(datos[1]+" "+datos[2]+" "+datos[3])
     $("#profileMail").text("Correo: "+datos[4])
@@ -46,7 +45,6 @@ function editar(){
     }).then((response) => {
       return response.json();
     }).then((data) => {
-      console.log(data);
       document.cookie="cookieVal=egal";
       setTimeout(()=>{
         window.location.reload();
