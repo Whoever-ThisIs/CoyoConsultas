@@ -17,18 +17,6 @@ function newCard(category, id_form, title, descripcion, inicio, inicio_hora, fin
   tarjeta.append(boton);
   $("#cardFeed").append(tarjeta);
 }
-function createCards(b){
-  let cardFeed = document.querySelector("#cardFeed");
-  cardFeed.innerHTML = "";
-  for(let i=0;i<b;i++){
-    let card = document.createElement("div");
-    card.classList.add("card")
-    card.addEventListener("click",()=>{
-      window.location = '../../templates/Perfil.html'
-    })
-    cardFeed.appendChild(card);
-  }
-}
 function getCardsInfo(categoria){
   $.ajax({
     url:'../dynamics/php/Inicio.php',
