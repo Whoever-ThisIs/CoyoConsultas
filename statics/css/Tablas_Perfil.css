@@ -1,0 +1,17 @@
+.Resultados{
+  width: 80%;
+  margin: 50px auto;
+  display: flex;
+  flex-direction: row;
+}
+table, td, th{
+  border: 1px solid #a2a2a2;
+  border: collapse;
+}
+th{
+  padding: 5px 10px;
+}
+table{
+  width: 40%;
+  margin: 0 5%;
+}

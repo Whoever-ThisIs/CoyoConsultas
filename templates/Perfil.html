@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../statics/css/NavInicio.css">
+    <link rel="stylesheet" href="../statics/css/Tablas_perfil.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <title>Registro</title>
@@ -50,8 +52,32 @@
         <canvas id="Contestadas"></canvas>
       </div>
     </div>
+    <h1>Resulardos de las encuestas</h1>
+    <div class="Resultados">
+      <table id="Tab_elab">
+        <tr>
+          <th colspan="3">Formularios Elaborados</th>
+        </tr>
+        <tr>
+          <th>Nombre encuesta</th>
+          <th>Descripcion</th>
+          <th>Ver resultados</th>
+        </tr>
+      </table>
+      <table id="Tab_contest">
+        <tr>
+          <th colspan="3">Formularios Contestados</th>
+        </tr>
+        <tr>
+          <th>Nombre encuesta</th>
+          <th>Descripcion</th>
+          <th>Ver respuesta</th>
+        </tr>
+      </table>
+    </div>
     <script src="../dynamics/js/NavInicio.js"></script>
     <script src="../dynamics/js/Perfil_datos.js" charset="utf-8"></script>
     <script src="../dynamics/js/Estadisticas_perfil.js" charset="utf-8"></script>
+    <script src="../dynamics/js/Resultados_consultar.js" charset="utf-8"></script>
 </body>
 </html>
