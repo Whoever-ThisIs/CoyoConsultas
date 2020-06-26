@@ -16,6 +16,13 @@ var count = 1;
         }
     });
 };
+fetch('./Templates/AnimationGraph.html')
+.then((response)=>{
+    return response.text();
+})
+.then((text)=>{
+    document.getElementById("cocoAnimation").innerHTML= text;
+})
 function acceso() {
     let data = new FormData(document.getElementById('formAcceso'));
     fetch('./dynamics/php/Acceso.php', {
