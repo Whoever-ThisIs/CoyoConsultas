@@ -1,3 +1,4 @@
+  
 function getCookie(name){
   var re = new RegExp(name + "=([^;]+)");
   var value = re.exec(document.cookie);
@@ -31,7 +32,7 @@ fetch('../dynamics/php/Datos_sesion.php')
 
 function editar(){
   $("#profileMail").html("<input type='text' id='edcorreo' name='edcorreo' placeholder='Nuevo correo'></input>")
-  $(".profile").html("Subir imágen<br><input type='file' name='edimg'></input><br>")//Tomar foto<br><input type='file' name='newimg'></input>")
+  $(".profile").html("<span class='fa fa-camera'></span><br><input type='file' name='edimg'></input><br>")//Tomar foto<br><input type='file' name='newimg'></input>")
   $(".bearbeiten").html("<input type='text' id='oldPass' name='oldPass' placeholder='Contraseña anterior'></input><br>"+
   "<input type='text' id='newPass' name='newPass' placeholder='Contraseña nueva'></input><br>"+
   "<input type='submit' id='save' value='Guardar Cambios'></input>")
