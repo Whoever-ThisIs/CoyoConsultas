@@ -1,9 +1,14 @@
+function getCookie(name) {
+  var re = new RegExp(name + "=([^;]+)");
+  var value = re.exec(document.cookie);
+  return (value != null) ? unescape(value[1]) : false;
+}
 ////////////////////////////////////////////////////////////////////////////////
 //////////////////////  Crear el formulario de respuesta  //////////////////////
 ////////////////////////////////////////////////////////////////////////////////
-
+var id_formu = getCookie("id_form");
+if(id_formu != false){
   //Se crea el id_form para obtenerlo luego por metodo POST en el php
-  var id_formu = "94NVUO"
   getForm = new FormData();
   getForm.append("id_form", id_formu);//<== Ingrese aui el id del formulario
   //Se manda la peticion
@@ -64,3 +69,6 @@
       console.log(text);
     })
   })
+}else{
+  window.location = "./Inicio.html";
+}

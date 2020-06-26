@@ -1,4 +1,8 @@
-function newCard(category, title, descripcion, inicio, inicio_hora, fin, fin_hora) {
+function cookieForm(id_form){
+  document.cookie = "id_form=" + id_form;
+  window.location = "./Responder_formulario.html";
+}
+function newCard(category, id_form, title, descripcion, inicio, inicio_hora, fin, fin_hora) {
   let tarjeta = $("<div>");
   let titulo = $("<h1>" + title + "</h1>");
   let txt = $("<p>" + descripcion + "</p>");
@@ -9,6 +13,8 @@ function newCard(category, title, descripcion, inicio, inicio_hora, fin, fin_hor
     let f = $("<p>Fecha límite: " + fin + "&nbsp;&nbsp;&nbsp;" + fin_hora + "</p>");
     tarjeta.append(i, f);
   }
+  let boton = $("<button onclick=cookieForm('" + id_form + "')>Contesta</button>")
+  tarjeta.append(boton);
   $("#cardFeed").append(tarjeta);
 }
 function createCards(b){
@@ -37,7 +43,7 @@ function getCardsInfo(categoria){
         $("#cardFeed").html("No hay formularios disponibles en este momento")
       }else{
         tarjetas.forEach((elem, index)=>{
-          newCard(elem.id_categoria, elem.titulo, elem.descripcion, elem.inicio, elem.inicio_hora, elem.fin, elem.fin_hora)
+          newCard(elem.id_categoria, elem.id_form, elem.titulo, elem.descripcion, elem.inicio, elem.inicio_hora, elem.fin, elem.fin_hora)
         })
       }
     }
