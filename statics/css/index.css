@@ -3,38 +3,60 @@
 	margin:0;
 	padding:0;
 }
+
+
 body {
+	background-color: #2C2A2A;
 	font-family: 'Roboto Condensed', sans-serif;
 }
+
 header {
+	background:#272626;
 	cursor: pointer;
 	width:100%;
 }
+
 header nav {
+	background:#272626;
 	margin:0px auto;
 	max-width:1000px;
 	width:100%;
 }
+
 .menu_bar {
 	display:none;
 }
+
 header nav ul {
 	list-style:none;
 	overflow:hidden;
 }
+
 header nav ul li {
 	float:right;
 }
+
 header nav ul li a {
+	color:#fff;
 	display:block;
 	font-size: 20px;
 	padding:25px;
 	text-decoration:none;
 }
+
 header nav ul li span {
 	margin-right:20px;
 }
+
+header nav ul li:nth-child(1) :hover{
+	background:#e76c46;
+}
+
+header nav ul li:nth-child(2) :hover{
+	background:#e76c46;
+}
 footer{
+	background-color: #373535;
 	width: 100%;
 }
 #miForm input[type=text], #miForm input[type=password], #miForm input[type=email], #formAcceso input[type=text], #formAcceso input[type=password], #formAcceso input[type=email]{
@@ -101,6 +123,7 @@ input[type=submit]:focus,input[type=date]:focus,input[type=password]:focus,input
 	background-color:rgb(32, 32, 32);
 	border:none;
 	border-bottom:4px solid rgb(248, 248, 248);
+	color:white;
 	height:20px;
 }
 
@@ -109,6 +132,7 @@ input[type=submit]:focus,input[type=date]:focus,input[type=password]:focus,input
 }
 
 .searchButton{
+	background-color: #e76c46;
 	border:none;
 	color:white;
 	height:20px;
@@ -136,6 +160,7 @@ input[type=text]::-webkit-input-placeholder{
 }
 
 .center{
+	color: white;
 	font-size: 20px;
 	margin-left:  20px;
 	margin-right: 20px;
@@ -262,23 +287,7 @@ input[type=text]::-webkit-input-placeholder{
 	width: 60px;
 	height: 20px;
 }
-.white{
-	color:White;
-}
-.orange{
-	background: #e76c46;
-}
-.black{
-	background-color:#2C2A2A;
-}
-.orangeh:hover{
-	background: #e76c46;
 
-}
-.black2{
-	background-color:#3a3a3a;
-
-}
 #funcionario{
 	margin-top:25px;
 	color:White;
@@ -309,6 +318,7 @@ input[type=text]::-webkit-input-placeholder{
 	}
 	
 	header nav ul li {
+		border-bottom:1px solid #272626;
 		display:block;
 		float:none;
 	}
