@@ -6,11 +6,13 @@
   $validador = false;
   $con = connect();
 
+  //Recuperación de inputs
   $correo = $_POST['edcorreo'];
   $new = $_POST['newPass'];
   $old = $_POST['oldPass'];
   $id = $_SESSION['id'];
 
+  //Mueve la imágen proporcionada a su carpeta correspondiente
   if ($_FILES['edimg']['type']=="image/png"||$_FILES['edimg']['type']=="image/jpg"||$_FILES['edimg']['type']=="image/jpeg") {
     $ext=pathinfo($_FILES['edimg']['name'],PATHINFO_EXTENSION);
     $carpeta="../../statics/media/img/profilepics/";
@@ -20,7 +22,7 @@
     $validador = true;
   }
 
-
+  //Hashea la nueva contraseña solo si ambos campos han sido llenados
   if ($old != "" && $new != "") {
     $salt = salt();
     $password = registro($new,$salt);
@@ -50,7 +52,7 @@
     }
   }
 
-
+  //Checa que la contraseña vieja ingresada sea correcta, regresa true si es correcto
   function checkPass($con,$old,$id){
     $checkPass = "SELECT password, sal FROM usuario WHERE id_usuario LIKE $id";
     $resultPass = mysqli_query($con,$checkPass);
@@ -69,6 +71,7 @@
     }
   }
 
+  //Revisa que el correo no sea el mismo que el de otra cuenta en la base, regresa tru si hay coincidencias
   function sameMailAll($con,$correo,$id){
     $checkMailAll = "SELECT correo FROM usuario WHERE correo LIKE '$correo'";
     $resultMailAll = mysqli_query($con,$checkMailAll);
@@ -86,6 +89,7 @@
     }
   }
 
+  //Revisa que el correo igresado no sea el mismo que ya existe con tu perfil, regresa true si hay coincidencia
   function sameMailSelf($con,$correo,$id){
     $checkMailSelf = "SELECT correo FROM usuario WHERE id_usuario LIKE $id AND correo LIKE '$correo'";
     $resultMailSelf = mysqli_query($con,$checkMailSelf);
@@ -103,6 +107,7 @@
     }
   }
 
+  //Realiza el cambio en la base
   function update($con,$inquiry,$validador){
     if ($validador == true) {
       return mysqli_query($con, $inquiry);
