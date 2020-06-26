@@ -3,24 +3,26 @@
   include('Config.php');
   include('Des-cifrado.php');
 
-  $validador = false;
+  $validador = 0;
   $con = connect();
 
+  //Recuperación de inputs
   $correo = $_POST['edcorreo'];
   $new = $_POST['newPass'];
   $old = $_POST['oldPass'];
   $id = $_SESSION['id'];
 
+  //Mueve la imágen proporcionada a su carpeta correspondiente
   if ($_FILES['edimg']['type']=="image/png"||$_FILES['edimg']['type']=="image/jpg"||$_FILES['edimg']['type']=="image/jpeg") {
     $ext=pathinfo($_FILES['edimg']['name'],PATHINFO_EXTENSION);
     $carpeta="../../statics/media/img/profilepics/";
     $destino = $carpeta.$id.".".$ext;
     move_uploaded_file($_FILES['edimg']['tmp_name'],$destino);
     mysqli_query($con,"UPDATE usuario SET perfil = 1 WHERE id_usuario = $id");
-    $validador = true;
+    $validador++;
   }
 
-
+  //Hashea la nueva contraseña solo si ambos campos han sido llenados
   if ($old != "" && $new != "") {
     $salt = salt();
     $password = registro($new,$salt);
@@ -30,7 +32,7 @@
   if ($correo != "" && $new == "" && $old == "") {
     if (!sameMailAll($con,$correo,$id)&&!sameMailSelf($con,$correo,$id)) {
       $inquiry = "UPDATE usuario SET correo = '$correo' WHERE id_usuario = $id";
-      $validador = true;
+      $validador++;
     }
   }
 
@@ -38,7 +40,7 @@
   if ($correo == "" && $new != "" && $old != "") {
     if (checkPass($con,$old,$id)) {
       $inquiry = "UPDATE usuario SET password = '$password', sal = '$salt' WHERE id_usuario = $id";
-      $validador = true;
+      $validador++;
     }
   }
 
@@ -46,11 +48,11 @@
   if ($correo != "" && $new != "" && $old != "") {
     if (checkPass($con,$old,$id)&&!sameMailAll($con,$correo,$id)&&!sameMailSelf($con,$correo,$id)) {
       $inquiry = "UPDATE usuario SET password = '$password', sal = '$salt', correo = '$correo' WHERE id_usuario = $id";
-      $validador = true;
+      $validador++;
     }
   }
 
-
+  //Checa que la contraseña vieja ingresada sea correcta, regresa true si es correcto
   function checkPass($con,$old,$id){
     $checkPass = "SELECT password, sal FROM usuario WHERE id_usuario LIKE $id";
     $resultPass = mysqli_query($con,$checkPass);
@@ -69,6 +71,7 @@
     }
   }
 
+  //Revisa que el correo no sea el mismo que el de otra cuenta en la base, regresa tru si hay coincidencias
   function sameMailAll($con,$correo,$id){
     $checkMailAll = "SELECT correo FROM usuario WHERE correo LIKE '$correo'";
     $resultMailAll = mysqli_query($con,$checkMailAll);
@@ -86,6 +89,7 @@
     }
   }
 
+  //Revisa que el correo igresado no sea el mismo que ya existe con tu perfil, regresa true si hay coincidencia
   function sameMailSelf($con,$correo,$id){
     $checkMailSelf = "SELECT correo FROM usuario WHERE id_usuario LIKE $id AND correo LIKE '$correo'";
     $resultMailSelf = mysqli_query($con,$checkMailSelf);
@@ -103,12 +107,10 @@
     }
   }
 
+  //Realiza el cambio en la base
   function update($con,$inquiry,$validador){
-    if ($validador == true) {
+    if ($validador > 0) {
       return mysqli_query($con, $inquiry);
-    }
-    else {
-      return "Error";
     }
   }
   echo json_encode(update($con,$inquiry,$validador));

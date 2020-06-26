@@ -1,9 +1,27 @@
 ////////////////////////////////////////////////////////////////////////////////
 //////////////////////  Crear el formulario de respuesta  //////////////////////
 ////////////////////////////////////////////////////////////////////////////////
-
+  //Funcio para obtener las cookies
+  function getCookie(cname) {
+    var name = cname + "=";
+    var decodedCookie = decodeURIComponent(document.cookie);
+    var ca = decodedCookie.split(';');
+    for(var i = 0; i <ca.length; i++) {
+      var c = ca[i];
+      while (c.charAt(0) == ' ') {
+        c = c.substring(1);
+      }
+      if (c.indexOf(name) == 0) {
+        return c.substring(name.length, c.length);
+      }
+    }
+    return "";
+  }
+if (getCookie("Res_id_form")!="") {
+  //Checa
+  var id_formu = getCookie("Res_id_form");
+  document.cookie = "Res_id_form=Hola :); expires=Mon, 8 Jun 2020 12:00:00 GMT";
   //Se crea el id_form para obtenerlo luego por metodo POST en el php
-  var id_formu = "94NVUO"
   getForm = new FormData();
   getForm.append("id_form", id_formu);//<== Ingrese aui el id del formulario
   //Se manda la peticion
@@ -62,3 +80,6 @@
         }
     })
   });
+}else {
+  window.location = '../templates/Perfil.html#Tab_elab'
+}
