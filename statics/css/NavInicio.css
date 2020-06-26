@@ -108,12 +108,12 @@ canvas{
     border-radius: 20px;
     margin: 50px 0;
     padding: 30px;
-  } 
-  
+  }
+
   input[type="radio"]:hover{
     cursor: pointer;
   }
-  
+
   .paleta{
     width: 450px;
     margin: 1%;
@@ -151,9 +151,9 @@ canvas{
     position: relative;
     font-size: 30px;
     top:-90px;
-    
+
   }
-    
+
   .containProfile{
     position: relative;
     width:100%;
@@ -161,7 +161,7 @@ canvas{
     background-color: black;
     justify-content: space-between;
   }
-    
+
   .profileData{
     position: relative;
     width:63.5%;
@@ -171,18 +171,18 @@ canvas{
     margin-left: auto;
     margin-right: auto;
   }
-  
+
   .profileBirth{
     margin-left: auto;
     margin-right: auto;
     padding-left: 70px;
   }
-  
+
   .profileMail{
     margin-left: auto;
     margin-right: auto;
   }
-    
+
   .dropbtn {
     background-color: #e76c46;
     color: white;
@@ -191,7 +191,7 @@ canvas{
     border: none;
     cursor: pointer;
   }
-    
+
   .dropdown {
     position: relative;
     display: inline-block;
@@ -199,28 +199,28 @@ canvas{
   .dropdown-content {
     display: none;
     position: absolute;
-    background-color: #f9f9f9;
+    background-color: #3e3c3c;
     min-width: 225px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
   }
-    
+
   .dropdown-content div {
     color: black;
     padding: 12px 16px;
     text-decoration: none;
     display: block;
   }
-    
-    
+
+
   .dropdown-content div:hover {
-    background-color: #f1f1f1
+    background-color: #4c4949
   }
-    
+
   .dropdown:hover .dropdown-content {
     display: block;
   }
-    
+
   .dropdown:hover .dropbtn {
     background-color:#122334;
   }
@@ -229,7 +229,7 @@ canvas{
     position:relative;
     width: 80%;
   }
-  
+
   #stats{
     background-color: #262626;
     color: white;
@@ -243,7 +243,7 @@ canvas{
   #stats > h1{
     font-size: 40px;
   }
-  
+
   #editar{
     margin-top:25px;
       color:White;
@@ -252,7 +252,7 @@ canvas{
     font-size: 16px;
     border: none;
     cursor: pointer;
-  
+
   }
 
 /*Footer*/

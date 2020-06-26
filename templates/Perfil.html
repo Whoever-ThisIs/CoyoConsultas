@@ -14,36 +14,35 @@
     <header class="navBar">
     </header>
     <div class="profileCover" alt>
-        <div class="profileCard" id="formy" alt>
-            <div class="profile" alt></div>
-            <span class="profileName"></span>
-            </div>
-        </div>
-        <div class="containeProfile">
+      <form class="profileCard" id="formy" alt>
+        <div class="profile" alt></div>
+        <span class="profileName"></span>
         <div class="profileData">
-            <span id="profileBirth"></span>
-            <span id="profileMail"></span><br>
-            <div class="bearbeiten">
-              <button type="button" id="editar" name="Editar">Editar</button>
-              <div class="dropdown">
-                  <div class="dropbtn">Filtros
+          <span id="profileBirth"></span>
+          <span id="profileMail"></span><br>
+          <div class="bearbeiten">
+            <button type="button" id="editar" name="Editar">Editar</button><br>
+            <div class="dropdown">
+              <div class="dropbtn">Paletas</div>
+              <div class="dropdown-content">
+                <form id="Paleta">
+                  <div class="tipo">
+                    <img class="paleta" src="../statics/media/img/paletaA.jpg">
+                    <input type="radio" name="tipo" value="1">Paleta A
                   </div>
-                  <div class="dropdown-content">
-                      <div class="tipo">
-                        <img class="paleta" src="../statics/media/img/paletaA.jpg">
-                        <input type="radio" name="tipo" value="1">Paleta A
-                      </div>
-                    <div class="tipo">
-                      <img class="paleta" src="../statics/media/img/paletaB.jpg">
-                      <input type="radio" name="tipo" value="2">Paleta B
-                    </div>
+                  <div class="tipo">
+                    <img class="paleta" src="../statics/media/img/paletaB.jpg">
+                    <input type="radio" name="tipo" value="2">Paleta B
                   </div>
+                  <input type="submit" name="" value="Elegir paleta">
+                </form>
               </div>
             </div>
-        </div>
+          </div>
+        </form>
       </div>
     </div>
-    <div id="stats">
+    <!-- <div id="stats">
       <h1>Estadisticas Usuario</h1>
       <div class="Grafica">
         <canvas id="Elaboradas"></canvas>
@@ -51,7 +50,7 @@
       <div class="Grafica">
         <canvas id="Contestadas"></canvas>
       </div>
-    </div>
+    </div> -->
     <!--footer-->
     <footer>
       <div class="all-footer">
