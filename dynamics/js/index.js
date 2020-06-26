@@ -1,5 +1,6 @@
 $(document).ready(main);
-var count = 1;
+let count = 1;
+let coquito = document.querySelector(".cocoTitle")
     function main(){
         $('.menu_bar').click(function(){
 
@@ -15,7 +16,17 @@ var count = 1;
         });
         }
     });
+    $('.menu_bar').click(()=>{
+        coquito.classList.toggle("cocoTitle2")
+    })
 };
+fetch('./Templates/AnimationGraph.html')
+.then((response)=>{
+    return response.text();
+})
+.then((text)=>{
+    document.getElementById("cocoAnimation").innerHTML= text;
+})
 function acceso() {
     let data = new FormData(document.getElementById('formAcceso'));
     fetch('./dynamics/php/Acceso.php', {

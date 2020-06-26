@@ -214,7 +214,7 @@ input[type=text]::-webkit-input-placeholder{
 
 #photo{
 	background: linear-gradient(180deg, #0C0B0B 0%, rgba(56, 55, 55, 0.83) 100%);
-	height: 360px;
+	height: 400px;
 	left: 0px;
 	top: 60px;
 	width: 100%;
@@ -246,7 +246,6 @@ input[type=text]::-webkit-input-placeholder{
 	height:500px;
 	margin: auto;
 }
-
 #formRegistro:hover{
 	color: #e76c46;
 }
@@ -297,11 +296,20 @@ input[type=text]::-webkit-input-placeholder{
 	width: 75px;
 	height: 20px;
 }
-
+#cocoAnimation{
+	display: flex;
+	position: absolute;
+	top:-25%;
+	width:100%;
+	height:300px;
+}
+#cocoTitle{
+	position: relative;
+	top:10%;
+}
 @media screen and (max-width:800px ) {
 	
 	header nav {
-		background:#272626;
 		width:100%;
 		height:220px;
 		left:-100%;
@@ -324,6 +332,7 @@ input[type=text]::-webkit-input-placeholder{
 		display:block;
 		height: 35px;
 		width:100%;
+		z-index:300;
 	}
 	
 	.menu_bar .bt-menu {
@@ -337,6 +346,7 @@ input[type=text]::-webkit-input-placeholder{
 		text-decoration:none;
 		-webkit-box-sizing:border-box;
 		-moz-box-sizing:border-box;
+		z-index:301;
 	}
 	
 	.menu_bar span {
@@ -345,7 +355,6 @@ input[type=text]::-webkit-input-placeholder{
 	}
 	
 	.grid-item1{
-		background: #2C2A2A;
 		margin: 1px;
 		padding: 10px;
 	}
@@ -357,11 +366,9 @@ input[type=text]::-webkit-input-placeholder{
 	}
 
 	.center{
-		color: white;
 		font-size: 20px;
 		margin-left:  20px;
 		margin-right: 20px;
-		text-align: center;
 	}
 
 	.image{
@@ -377,14 +384,17 @@ input[type=text]::-webkit-input-placeholder{
 		width: 80%;
 	}
 	
-	#logo-header{
+	.cocoTitle{
+		font-size: 40px;
+	}
+	.cocoTitle2{
 		display: none;
+		font-size: 0px;
 	}
 
 	#photo{
-		background: linear-gradient(180deg, #0C0B0B 0%, rgba(56, 55, 55, 0.83) 100%);
 		display:block;
-		height: 300px;
+		height: 250px;
 		width:100%;
 	}
 
@@ -395,11 +405,8 @@ input[type=text]::-webkit-input-placeholder{
 	}
 	
 	#register{
-		background: #0B0B0B;
-		color: white;
 		font-size: 20px;
 		height: 600px;
-		text-align: center;
 	}
 	
 }
