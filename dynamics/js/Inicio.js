@@ -7,15 +7,28 @@ function newCard(category, id_form, title, descripcion, inicio, inicio_hora, fin
   let titulo = $("<h1>" + title + "</h1>");
   let txt = $("<p>" + descripcion + "</p>");
   tarjeta.append(titulo, txt);
+  let boton = $("<button>")
+  boton.text("Contesta")
+  boton.attr("onclick", "cookieForm('" + id_form + "')")
+  tarjeta.append(boton);
+  $("#cardFeed").append(tarjeta);
   if (fin !== null && fin_hora !== null)
   {
+    let i_ms = Date.parse(inicio + " " + inicio_hora);
+    console.log(title)
+    console.log("Inicio: " + i_ms)
+    let f_ms = Date.parse(fin + " " + fin_hora);
+    console.log("Fin: " + f_ms)
+    let ahora = new Date();
+    ahora = ahora.getTime();
+    console.log("Ahora: " + ahora)
     let i = $("<p>Fecha de inicio: " + inicio + "&nbsp;&nbsp;&nbsp;" + inicio_hora + "</p>");
     let f = $("<p>Fecha límite: " + fin + "&nbsp;&nbsp;&nbsp;" + fin_hora + "</p>");
     tarjeta.append(i, f);
+    if (ahora < i_ms || ahora > f_ms){
+      boton.attr("disabled", true);
+    }
   }
-  let boton = $("<button onclick=cookieForm('" + id_form + "')>Contesta</button>")
-  tarjeta.append(boton);
-  $("#cardFeed").append(tarjeta);
 }
 function createCards(b){
   let cardFeed = document.querySelector("#cardFeed");
@@ -64,3 +77,4 @@ $("#deportes").click(()=>{
 $("#actividades").click(()=>{
   getCardsInfo("4")
 })
+$("#todo").trigger("click")
