@@ -1,14 +1,9 @@
-function getCookie(name) {
-  var re = new RegExp(name + "=([^;]+)");
-  var value = re.exec(document.cookie);
-  return (value != null) ? unescape(value[1]) : false;
-}
 ////////////////////////////////////////////////////////////////////////////////
 //////////////////////  Crear el formulario de respuesta  //////////////////////
 ////////////////////////////////////////////////////////////////////////////////
-var id_formu = getCookie("id_form");
-if(id_formu != false){
+
   //Se crea el id_form para obtenerlo luego por metodo POST en el php
+  var id_formu = "94NVUO"
   getForm = new FormData();
   getForm.append("id_form", id_formu);//<== Ingrese aui el id del formulario
   //Se manda la peticion
@@ -38,11 +33,7 @@ if(id_formu != false){
       var divOpc = $("<div>")
       //Imprimo todas las opciones de cada pregunta en input radio
       for (var i = 0; i < opciones.length; i++) {
-        var opc = $("<input type='radio' id='"+opciones[i].id_opc+"' name='"+id_preg+"' value='"+i+"'>");
-        //Si es la primera pregunta la preseleciona
-        if (i==0) {
-          opc.prop('checked', true)
-        }
+        var opc = $("<input type='radio' id='"+opciones[i].id_opc+"' name='"+id_preg+"' value='"+i+"' disabled>");
         divOpc.append(opc)
         // La respuesta (el texto que el usuario ve) de la pregunta
         divOpc.append("<label for='"+opciones[i].id_opc+"'>"+opciones[i].valor+"</label><br>")
@@ -50,25 +41,24 @@ if(id_formu != false){
       //Imprimo esa pregunta
       $("#Preguntas").append(divOpc)
     }
-  });
-  ////////////////////////////////////////////////////////////////////////////////
-  //////////////////////  Subir el formulario de respuesta  //////////////////////
-  ////////////////////////////////////////////////////////////////////////////////
-  //Evento de subir la info
-  $("#Enviar").click(()=>{
-    //Se guarda los resultados de los radio
-    sendForm = new FormData(document.getElementById('Formu'));
-    sendForm.append("id_form", id_formu);//<== Ingrese aui el id del formulario
-    //Se hace la peticion
-    fetch('../dynamics/php/Respuesta_form.php', {
-      method: 'POST',
-      body: sendForm
-    }).then((response) => {
-      return response.text();
-    }).then((text) => {
-      console.log(text);
-    })
   })
-}else{
-  window.location = "./Inicio.html";
-}
+  .then((response) => {
+    getRes = new FormData();
+    getRes.append("id_form", id_formu);//<== Ingrese aui el id del formulario
+    //Se manda la peticion
+    fetch('../dynamics/php/getRespuestas.php', {
+      method: 'POST',
+      body: getRes
+    }).then((response) => {
+      // Se decodifica el resultado de JSON y genera un objeto
+      return response.json();
+    }).then((resp) => {
+        console.log(resp);
+        for (var i = 0; i < resp.length; i++) {
+          console.log(resp[i]);
+           $("#"+resp[i].respuesta)
+            $("#"+resp[i].respuesta).prop('checked', true)
+            $("#"+resp[i].respuesta).prop('disabled', false)
+        }
+    })
+  });
