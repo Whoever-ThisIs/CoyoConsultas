@@ -3,60 +3,38 @@
 	margin:0;
 	padding:0;
 }
-
-
 body {
-	background-color: #2C2A2A;
 	font-family: 'Roboto Condensed', sans-serif;
 }
-
 header {
-	background:#272626;
 	cursor: pointer;
 	width:100%;
 }
-
 header nav {
-	background:#272626;
 	margin:0px auto;
 	max-width:1000px;
 	width:100%;
 }
-
 .menu_bar {
 	display:none;
 }
-
 header nav ul {
 	list-style:none;
 	overflow:hidden;
 }
-
 header nav ul li {
 	float:right;
 }
-
 header nav ul li a {
-	color:#fff;
 	display:block;
 	font-size: 20px;
 	padding:25px;
 	text-decoration:none;
 }
-
 header nav ul li span {
 	margin-right:20px;
 }
-
-header nav ul li:nth-child(1) :hover{
-	background:#e76c46;
-}
-
-header nav ul li:nth-child(2) :hover{
-	background:#e76c46;
-}
 footer{
-	background-color: #373535;
 	width: 100%;
 }
 #miForm input[type=text], #miForm input[type=password], #miForm input[type=email], #formAcceso input[type=text], #formAcceso input[type=password], #formAcceso input[type=email]{
@@ -123,7 +101,6 @@ input[type=submit]:focus,input[type=date]:focus,input[type=password]:focus,input
 	background-color:rgb(32, 32, 32);
 	border:none;
 	border-bottom:4px solid rgb(248, 248, 248);
-	color:white;
 	height:20px;
 }
 
@@ -132,7 +109,6 @@ input[type=submit]:focus,input[type=date]:focus,input[type=password]:focus,input
 }
 
 .searchButton{
-	background-color: #e76c46;
 	border:none;
 	color:white;
 	height:20px;
@@ -160,7 +136,6 @@ input[type=text]::-webkit-input-placeholder{
 }
 
 .center{
-	color: white;
 	font-size: 20px;
 	margin-left:  20px;
 	margin-right: 20px;
@@ -246,7 +221,6 @@ input[type=text]::-webkit-input-placeholder{
 	height:500px;
 	margin: auto;
 }
-
 #formRegistro:hover{
 	color: #e76c46;
 }
@@ -288,7 +262,23 @@ input[type=text]::-webkit-input-placeholder{
 	width: 60px;
 	height: 20px;
 }
+.white{
+	color:White;
+}
+.orange{
+	background: #e76c46;
+}
+.black{
+	background-color:#2C2A2A;
+}
+.orangeh:hover{
+	background: #e76c46;
 
+}
+.black2{
+	background-color:#3a3a3a;
+
+}
 #funcionario{
 	margin-top:25px;
 	color:White;
@@ -311,7 +301,6 @@ input[type=text]::-webkit-input-placeholder{
 @media screen and (max-width:800px ) {
 	
 	header nav {
-		background:#272626;
 		width:100%;
 		height:220px;
 		left:-100%;
@@ -320,7 +309,6 @@ input[type=text]::-webkit-input-placeholder{
 	}
 	
 	header nav ul li {
-		border-bottom:1px solid #272626;
 		display:block;
 		float:none;
 	}
@@ -355,7 +343,6 @@ input[type=text]::-webkit-input-placeholder{
 	}
 	
 	.grid-item1{
-		background: #2C2A2A;
 		margin: 1px;
 		padding: 10px;
 	}
@@ -367,11 +354,9 @@ input[type=text]::-webkit-input-placeholder{
 	}
 
 	.center{
-		color: white;
 		font-size: 20px;
 		margin-left:  20px;
 		margin-right: 20px;
-		text-align: center;
 	}
 
 	.image{
@@ -387,14 +372,13 @@ input[type=text]::-webkit-input-placeholder{
 		width: 80%;
 	}
 	
-	#logo-header{
-		display: none;
+	#cocoTitle{
+		font-size: 40px;
 	}
 
 	#photo{
-		background: linear-gradient(180deg, #0C0B0B 0%, rgba(56, 55, 55, 0.83) 100%);
 		display:block;
-		height: 300px;
+		height: 250px;
 		width:100%;
 	}
 
@@ -405,11 +389,8 @@ input[type=text]::-webkit-input-placeholder{
 	}
 	
 	#register{
-		background: #0B0B0B;
-		color: white;
 		font-size: 20px;
 		height: 600px;
-		text-align: center;
 	}
 	
 }
