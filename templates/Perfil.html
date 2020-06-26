@@ -3,7 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../Statics/Css/NavInicio.css">
+    <link rel="stylesheet" href="../statics/css/NavInicio.css">
+    <link rel="stylesheet" href="../statics/css/Estadisticas-perfil.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <title>Registro</title>
 </head>
@@ -19,11 +21,34 @@
               <span id="profileMail"></span><br>
               <div class="bearbeiten">
                 <button type="button" id="editar" name="Editar">Editar</button>
+                <div class="dropdown">
+                <div class="dropbtn">Filtros</div>
+                <div class="dropdown-content">
+                  <div class="tipo">
+                    <img class="paleta" src="../statics/media/img/paletaA.jpg">
+                    <input type="radio" name="tipo" value="1">Paleta A
+                  </div>
+                  <div class="tipo">
+                    <img class="paleta" src="../statics/media/img/paletaB.jpg">
+                    <input type="radio" name="tipo" value="2">Paleta B
+                  </div>
+
+                </div>
               </div>
             </div>
         </form>
     </div>
+    <div id="stats">
+      <h1>Estadisticas Usuario</h1>
+      <div class="Grafica">
+        <canvas id="Elaboradas"></canvas>
+      </div>
+      <div class="Grafica">
+        <canvas id="Contestadas"></canvas>
+      </div>
+    </div>
     <script src="../dynamics/js/NavInicio.js"></script>
     <script src="../dynamics/js/Perfil_datos.js" charset="utf-8"></script>
+    <script src="../dynamics/js/Estadisticas_perfil.js" charset="utf-8"></script>
 </body>
 </html>

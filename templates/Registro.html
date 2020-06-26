@@ -12,15 +12,15 @@
     <button id="funcionario">Funcionario</button>
   </div>
     <form action="../dynamics/php/Registro.php" method="post" id="miForm">
-      <input type="text" name="nombre" placeholder="Nombre" pattern="^[A-ZÁÉÍÓÚÜÑ][a-záéíóúüñ]*$" required><br>
-      <input type="text" name="paterno" placeholder="Apellido Paterno" pattern="^[A-ZÁÉÍÓÚÜÑ][a-záéíóúüñ]*$" required><br>
-      <input type="text" placeholder="Apellido Materno" name="materno" pattern="^[A-ZÁÉÍÓÚÜÑ][a-záéíóúüñ]*$" required><br>
+      <input type="text" name="nombre" placeholder="Nombre" autocomplete="off" pattern="^[A-ZÁÉÍÓÚÜÑ][a-záéíóúüñ]*$" required><br>
+      <input type="text" name="paterno" placeholder="Apellido Paterno" autocomplete="off" pattern="^[A-ZÁÉÍÓÚÜÑ][a-záéíóúüñ]*$" required><br>
+      <input type="text" placeholder="Apellido Materno" name="materno" autocomplete="off" pattern="^[A-ZÁÉÍÓÚÜÑ][a-záéíóúüñ]*$" required><br>
       <input type="date" name="fecha" required><br>
-      <input type="email" name="correo" placeholder="Correo" required><br>
-      <input type="text" name="id1" placeholder="Núm. de cuenta" pattern="^\d{9}$" required maxlength="9"><br>
-      <input type="text" name="id2" placeholder="CURP" required maxlength="18"><br>
-      <input type="password" name="password" placeholder="Contraseña" required><br>
-      <input type="hidden" name="tipo" value="alumno">
+      <input type="email" name="correo" placeholder="Correo" autocomplete="off" required><br>
+      <input type="text" name="id1" placeholder="Núm. de cuenta" pattern="^\d{9}$" autocomplete="off" required maxlength="9"><br>
+      <input type="text" name="id2" placeholder="CURP" autocomplete="off" required maxlength="18"><br>
+      <input type="password" name="password" placeholder="Contraseña" autocomplete="off" required><br>
+      <input type="hidden" name="tipo" autocomplete="off" value="alumno">
       <input type="submit" value="Registrarme">
     </form>
 </body>
