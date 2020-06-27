@@ -2,15 +2,14 @@ button{
   display: block;
   margin-left: auto;
   margin-right: auto;
-  background-color: #453564;
   color: #bccfdf;
-  border: 2px solid #6260c0;
+  background-color: #1d1d1d;
   border-radius: 1em 0;
   transition: border-radius 1s, background-color 1s, color 1s;
 }
 button:hover{
-  background-color: #bccfdf;
-  color: #453564;
+  background-color: #d4d5d6;
+  color: #080808;
   border-radius: 0 1em;
 }
 h1{
@@ -22,10 +21,28 @@ p{
 .tarjeta{
   width: 30%;
   min-width: 300px;
-  background-color: #47468b;
   padding: 10px;
   margin: 5px;
+  border-radius: 4px;
+  background-color: #1d1d1d;
+  box-shadow: 6px 7px 28px 0 rgba(16, 16, 16, 0.7);
 }
+.tarjeta:hover{
+  animation:tarjeta 5s linear 1;
+}
+.ciencia, .ciencia button{
+  border: 3px solid #2ecc71;
+}
+.cultura, .cultura button{
+  border: 3px solid #f1c40f;
+}
+.deportes, .deportes button{
+  border: 3px solid #e74c3c;
+}
+.actividades, .actividades button{
+  border: 3px solid #2980b9;
+}
+
 #cardFeed{
   width: 100%;
   display: flex;
@@ -33,4 +50,12 @@ p{
   justify-content: space-around;
   flex-wrap: wrap;
   color: #bccfdf;
+}
+@keyframes tarjeta{
+  0%{
+    box-shadow: 6px 7px 28px 0 rgba(16, 16, 16, 0.7);
+  }
+  100%{
+    box-shadow: 0 14px 28px rgba(148, 148, 148, 0.719), 0 10px 10px rgba(97, 96, 96, 0.795);
+  }
 }
