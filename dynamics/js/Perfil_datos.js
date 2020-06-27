@@ -73,9 +73,6 @@ function editar(){
       })
     });
   });
-<<<<<<< HEAD
-}
-=======
 }
 
 document.getElementById('Paleta').addEventListener('submit', (e) => {
@@ -90,4 +87,3 @@ document.getElementById('Paleta').addEventListener('submit', (e) => {
     document.cookie="colores="+dato;
   });
 });
->>>>>>> 43c285d9ec9357f01a9a13ac28733a8de061a001

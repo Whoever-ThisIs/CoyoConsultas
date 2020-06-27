@@ -4,10 +4,10 @@ function cookieForm(id_form){
 }
 function newCard(category, id_form, title, descripcion, inicio, inicio_hora, fin, fin_hora) {
   let tarjeta = $("<div>");
-  tarjeta.addClass("card")
   let titulo = $("<h1>" + title + "</h1>");
   let txt = $("<p>" + descripcion + "</p>");
   tarjeta.append(titulo, txt);
+  tarjeta.addClass("card");
   let boton = $("<button>")
   boton.text("Contesta")
   boton.attr("onclick", "cookieForm('" + id_form + "')")
@@ -37,12 +37,14 @@ function getCardsInfo(categoria){
     method:'POST',
     data:{categoria:categoria},
     success:(resp)=>{
+      $("#cardFeed").html("")
       console.log(typeof resp)
       console.log(JSON.parse(resp))
       let tarjetas = JSON.parse(resp);
       if(tarjetas.length == 0){
         $("#cardFeed").html("No hay formularios disponibles en este momento")
       }else{
+        $("#cardFeed").html("")
         tarjetas.forEach((elem, index)=>{
           newCard(elem.id_categoria, elem.id_form, elem.titulo, elem.descripcion, elem.inicio, elem.inicio_hora, elem.fin, elem.fin_hora)
         })
