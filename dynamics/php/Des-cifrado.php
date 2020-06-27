@@ -1,10 +1,10 @@
 <?php
-  include("Condig.php");
+  include("Config.php");
   define("KENNWORT","DagehtmeinSchlafrhythmuslos");
   define("HASH","sha256");
   define("METHOD","SEED-OFB");
 
-
+  //Cifrado inicial
   function cifrar($text){
     $key=openssl_digest(KENNWORT, HASH);
     $iv_len=openssl_cipher_iv_length(METHOD);
@@ -15,6 +15,7 @@
     return $textoCifrado;
   }
 
+  //Descifrado
   function descifrar($textoCifrado){
     $key=openssl_digest(KENNWORT, HASH);
     $iv_len=openssl_cipher_iv_length(METHOD);
@@ -26,6 +27,7 @@
     return $original;
   }
 
+  //Codificación Atbash para una capa extra de seguridad
   function atbash($text)
   {
     $a_z = range('a', 'z');
@@ -47,6 +49,7 @@
     return implode('', $codificado);
   }
 
+  //Creación de la sal
   function salt(){
     $todo="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!#$%&/()=?";
     $len=strlen($todo);
@@ -57,6 +60,7 @@
     return $salt;
   }
 
+  //Creación de la pimienta
   function pepper($text){
     $abc="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
     $lon=strlen($abc);
@@ -68,6 +72,7 @@
     return $text;
   }
 
+  //Hasheo de contraseña
   function registro($contra,$salt){
     $contra1=atbash($contra);
     $contra2=pepper($contra1);
@@ -77,6 +82,7 @@
     return $password1;
   }
 
+  //Consulta de contraseña guardada en base datos (proporcionada)
   function acceso($icontra,$password1,$salt){
     $password2=descifrar($password1);
     $icontra1=atbash($icontra);
@@ -97,6 +103,7 @@
     // return $true;
   }
 
+  //Seguridad
   function escapeAll($cadena){
     $con = connect();
     $a = htmlentities($cadena, ENT_QUOTES | ENT_HTML5, 'UTF-8');

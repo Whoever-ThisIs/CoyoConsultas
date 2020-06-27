@@ -2,7 +2,7 @@
   include("Config.php");
   include("Des-cifrado.php");
   //Puse de input del post un "usuario". Cambienlo a lo que pongan bien en el formulario.
-  $id = $_POST['id'];
+  $id = escapeAll($_POST['id']);
   if (preg_match('/.+\@.+\..+/',$id)) {
     $preresult = "SELECT * FROM usuario LEFT JOIN tipo ON usuario.id_tipo=tipo.id_tipo WHERE correo LIKE '%$id%'";
   }

@@ -8,13 +8,13 @@
   $con = connect();
 
   //Recuperación de inputs
-  $correo = $_POST['edcorreo'];
-  $new = $_POST['newPass'];
-  $old = $_POST['oldPass'];
-  $id = $_SESSION['id'];
+  $correo = escapeAll($_POST['edcorreo']);
+  $new = escapeAll($_POST['newPass']);
+  $old = escapeAll($_POST['oldPass']);
+  $id = escapeAll($_SESSION['id']);
 
   //Mueve la imágen proporcionada a su carpeta correspondiente
-  if ($_FILES['edimg']['type']=="image/png"||$_FILES['edimg']['type']=="image/jpg"||$_FILES['edimg']['type']=="image/jpeg") {
+  if ($_FILES['edimg']['type']=="image/jpg") {
     $ext=pathinfo($_FILES['edimg']['name'],PATHINFO_EXTENSION);
     $carpeta="../../statics/media/img/profilepics/";
     $destino = $carpeta.$id.".".$ext;
@@ -112,7 +112,7 @@
   function update($con,$inquiry,$validador){
     return mysqli_query($con, $inquiry);
   }
-  
+
   if ($validador > 0 && !$imagen) {
     echo json_encode(update($con,$inquiry,$validador));
   }

@@ -20,7 +20,7 @@ fetch('../dynamics/php/Datos_sesion.php')
     $(".profileName")[0].append(datos[1]+" "+datos[2]+" "+datos[3])
     $("#profileMail").text("Correo: "+datos[4])
     $("#profileBirth").text("Fecha de nacimiento: "+datos[5])
-    $("#editar").click(editar());
+    $("#editar").click(editar);
     //Esta cookies dice que algo ha sido cambiado en el perfil
     if (cookieVal) {
       //Si existe la borra y despliega el mensaje adecuado
@@ -75,15 +75,16 @@ function editar(){
   });
 }
 
-document.getElementById('Paleta').addEventListener('submit', (e) => {
-  e.preventDefault();
-  let dato = new FormData(document.getElementById('Paleta'));
-  fetch('../dynamics/php/Paletas.php', {
-    method: 'POST',
-    body: dato
-  }).then((response) => {
-    return response.text();
-  }).then((dato) => {
-    document.cookie="colores="+dato;
-  });
-});
+// console.log(document.getElementById("Paleta"));
+// document.getElementById('Paleta').addEventListener('submit', (e) => {
+//   e.preventDefault();
+//   let dato = new FormData(document.getElementById('Paleta'));
+//   fetch('../dynamics/php/Paletas.php', {
+//     method: 'POST',
+//     body: dato
+//   }).then((response) => {
+//     return response.text();
+//   }).then((dato) => {
+//     document.cookie="colores="+dato;
+//   });
+// });

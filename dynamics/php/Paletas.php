@@ -1,9 +1,9 @@
 <?php
   session_start();
   include("Config.php");
-
+  include("Des-cifrado.php");
   function setColors(){
-    $tipo = $_POST['tipo'];
+    $tipo = escapeAll($_POST['tipo']);
     switch ($tipo) {
       case 1:
         $array = ["#F9FFC1","#FFE54E","#FBB028","#E14F0A","#7F282F"];

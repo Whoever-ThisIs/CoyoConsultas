@@ -1,8 +1,9 @@
 <?php
   include("Config.php");
+  include("Des-cifrado.php");
   $con = connect();
   session_start();
-  $id_form = isset($_POST['id_form']) ? $_POST['id_form'] : "";
+  $id_form = isset($_POST['id_form']) ? escapeAll($_POST['id_form']) : "";
   $id_usr = isset($_SESSION['id']) ? $_SESSION['id'] : "";
 
   $SQL_tipo_usr = "SELECT tipo_usr FROM tipo WHERE id_tipo IN(SELECT id_tipo FROM usuario WHERE id_usuario = '$id_usr');";

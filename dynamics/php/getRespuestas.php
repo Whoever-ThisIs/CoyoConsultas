@@ -2,10 +2,11 @@
   session_start();
   //Me conecto con la base de datos
   include('Config.php');
+  include("Des-cifrado.php");
   $con = connect();
   //Obtengo el id del form,ulario a extraer
-  $id_formu = $_POST['id_form'];
-  $id_usu = $_SESSION['id'];
+  $id_formu = escapeAll($_POST['id_form']);
+  $id_usu = escapeAll($_SESSION['id']);
   //Obtrengo toda la informacion de ese formulario
   $result = mysqli_query($con, "SELECT * FROM contestada
     LEFT JOIN respuesta ON contestada.id_contestada=respuesta.id_contestada
