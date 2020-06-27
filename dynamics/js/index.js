@@ -12,7 +12,7 @@ function acceso() {
       body: data
     }).then((response) => {
       console.log(response);
-      return response.json();
+      return response.text();
     }).then((respuesta) => {
       console.log(respuesta);
       if (respuesta) {
