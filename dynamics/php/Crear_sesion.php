@@ -4,10 +4,10 @@
   //Puse de input del post un "usuario". Cambienlo a lo que pongan bien en el formulario.
   $id = $_POST['id'];
   if (preg_match('/.+\@.+\..+/',$id)) {
-    $preresult = "SELECT * FROM usuario WHERE correo LIKE '%$id%'";
+    $preresult = "SELECT * FROM usuario LEFT JOIN tipo ON usuario.id_tipo=tipo.id_tipo WHERE correo LIKE '%$id%'";
   }
   else {
-    $preresult = "SELECT * FROM usuario WHERE id_usuario LIKE '%$id%'";
+    $preresult = "SELECT * FROM usuario LEFT JOIN tipo ON usuario.id_tipo=tipo.id_tipo WHERE id_usuario LIKE '%$id%'";
   }
   	$con = connect();
   	$result = mysqli_query($con,$preresult);
@@ -23,3 +23,5 @@
     $_SESSION['ApellidoM']=$response[0]["materno"];
     $_SESSION['Correo']=$response[0]["correo"];
     $_SESSION['nacimiento']=$response[0]["nacimiento"];
+    $_SESSION['Bloqueado']=$response[0]["bloqueado"];
+    $_SESSION['tipo']=$response[0]["tipo_usr"];
