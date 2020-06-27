@@ -37,6 +37,12 @@ if(id_formu != false){
         // Se decodifica el resultado de JSON y genera un objeto
         return response.json();
       }).then((data) => {
+        /**Si después de hacer la petición, se regresa un objeto vacío,
+         * Se redirige a la pantalla de inicio
+        */
+        if (data[0].Preguntas.length == 0){
+          window.location = "../index.html";
+        }
         // Se guarda el objeto como "Formulario"
         var formulario = data;
         // Se pone en la página su nombre y descripcion
