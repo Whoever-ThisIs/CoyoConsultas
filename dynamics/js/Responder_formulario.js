@@ -1,3 +1,9 @@
+/**Este programa verifica si un usuario puede
+ * responder una encuesta y le permite contestarla y guarda sus
+ * resultados si cuenta con la autorización, o lo devuelve a la
+ * página de inicio
+ */
+// Función para obtener el valor de una cookie
 function getCookie(name) {
   var re = new RegExp(name + "=([^;]+)");
   var value = re.exec(document.cookie);
@@ -6,116 +12,86 @@ function getCookie(name) {
 ////////////////////////////////////////////////////////////////////////////////
 //////////////////////  Crear el formulario de respuesta  //////////////////////
 ////////////////////////////////////////////////////////////////////////////////
+// Se obtiene el valor del formulario
 var id_formu = getCookie("id_form");
-console.log(id_formu);
+// Verifica que existe
 if(id_formu != false){
-  //Se crea el id_form para obtenerlo luego por metodo POST en el php
+  // Se crea el id_form para obtenerlo luego por metodo POST en el php
   getForm = new FormData();
-  getForm.append("id_form", id_formu);//<== Ingrese aui el id del formulario
-  //Se manda la peticion
-  fetch('../dynamics/php/Resp_form.php', {
+  getForm.append("id_form", id_formu);
+  // Se obtiene la autorización del usuario
+  fetch('../dynamics/php/Verif_usr.php', {
     method: 'POST',
     body: getForm
   })
-  .then((response) => {
-    // Se decodifica el resultado de JSON y genera un objeto
-    return response.json();
-  }).then((data) => {
-    // Guarado ese objeto como "Formulario"
-    var formulario = data;
-    // Pongo en la página su nombre y descripcion
-    $("#Nom_form").text(formulario.Titulo)
-    $("#Desc_form").text(formulario.Desc)
-    // Guardo variable de las preguntas de Formulario
-    var preguntas = formulario[0].Preguntas;
-    // Imprimo todas las preguntas
-    for (var n = 0; n < preguntas.length; n++) {
-      // Imprimo el nombre de la pregunta
-      $("#Preguntas").append("<h3>Pregunta "+(n+1)+": "+preguntas[n].Titulo+"</h3>");
-      //Guardo el id de esa pregunta, sus opciones
-      var id_preg = preguntas[n].id_preg;
-      var opciones = formulario[0].Preguntas[n].Opciones;
-      //Creo el contenedor donde van a estar las opciones
-      var divOpc = $("<div>")
-      //Imprimo todas las opciones de cada pregunta en input radio
-      for (var i = 0; i < opciones.length; i++) {
-        var opc = $("<input type='radio' id='"+opciones[i].id_opc+"' name='"+id_preg+"' value='"+i+"'>");
-        //Si es la primera pregunta la preseleciona
-        if (i==0) {
-          opc.prop('checked', true)
+  .then(respuesta => respuesta.text())
+  .then((bool_usr) => {
+    // Si tiene la autorización, se muestra
+    if(bool_usr == 1){
+      // Se pide el formulario
+      fetch('../dynamics/php/Resp_form.php', {
+        method: 'POST',
+        body: getForm
+      })
+      .then((response) => {
+        // Se decodifica el resultado de JSON y genera un objeto
+        return response.json();
+      }).then((data) => {
+        // Se guarda el objeto como "Formulario"
+        var formulario = data;
+        // Se pone en la página su nombre y descripcion
+        $("#Nom_form").text(formulario.Titulo)
+        $("#Desc_form").text(formulario.Desc)
+        // Guardo variable de las preguntas de Formulario
+        var preguntas = formulario[0].Preguntas;
+        // Se imprimen las preguntas
+        for (var n = 0; n < preguntas.length; n++) {
+          // Se imprime el nombre de la pregunta
+          $("#Preguntas").append("<h3>Pregunta "+(n+1)+": "+preguntas[n].Titulo+"</h3>");
+          // Se guarda el id de esa pregunta, sus opciones
+          var id_preg = preguntas[n].id_preg;
+          var opciones = formulario[0].Preguntas[n].Opciones;
+          // Se crea el contenedor donde van a estar las opciones
+          var divOpc = $("<div>")
+          // Imprimo todas las opciones de cada pregunta en input radio
+          for (var i = 0; i < opciones.length; i++) {
+            var opc = $("<input type='radio' id='"+opciones[i].id_opc+"' name='"+id_preg+"' value='"+i+"'>");
+            // Si es la primera opcion la preseleciona
+            if (i==0) {
+              opc.prop('checked', true)
+            }
+            divOpc.append(opc)
+            // La respuesta (el texto que el usuario ve) de la pregunta
+            divOpc.append("<label for='"+opciones[i].id_opc+"'>"+opciones[i].valor+"</label><br>")
+          }
+          // Se imprime esa pregunta
+          $("#Preguntas").append(divOpc)
         }
-        divOpc.append(opc)
-        // La respuesta (el texto que el usuario ve) de la pregunta
-        divOpc.append("<label for='"+opciones[i].id_opc+"'>"+opciones[i].valor+"</label><br>")
-      }
-      //Imprimo esa pregunta
-      $("#Preguntas").append(divOpc)
+      });
+      ////////////////////////////////////////////////////////////////////////////////
+      //////////////////////  Subir el formulario de respuesta  //////////////////////
+      ////////////////////////////////////////////////////////////////////////////////
+      // Evento de subir la info
+      $("#Enviar").click(()=>{
+        //Se guarda los resultados de los radio
+        sendForm = new FormData(document.getElementById('Formu'));
+        sendForm.append("id_form", id_formu);//<== Ingrese aui el id del formulario
+        // Se hace la peticion
+        fetch('../dynamics/php/Respuesta_form.php', {
+          method: 'POST',
+          body: sendForm
+        }).then((response) => {
+          return response.text();
+        }).then((text) => {
+          console.log(text);
+        })
+      })
+      // Sin autorización se redirige a inicio
+    }else{
+      window.location = "./Inicio.html";
     }
-  });
-  ////////////////////////////////////////////////////////////////////////////////
-  //////////////////////  Subir el formulario de respuesta  //////////////////////
-  ////////////////////////////////////////////////////////////////////////////////
-  //Evento de subir la info
-  $("#Enviar").click(()=>{
-    //Se guarda los resultados de los radio
-    sendForm = new FormData(document.getElementById('Formu'));
-    sendForm.append("id_form", id_formu);//<== Ingrese aui el id del formulario
-    //Se hace la peticion
-    fetch('../dynamics/php/Respuesta_form.php', {
-      method: 'POST',
-      body: sendForm
-    }).then((response) => {
-      return response.text();
-    }).then((text) => {
-      console.log(text);
-      if (text=="YA HAS CONTESTADO ESE FORMULARIO") {
-        let alerta = $("<div id='alerta-mostar'>")
-        alerta.addClass("alerta-fond")
-        let contenido = $("<div>")
-        contenido.addClass("alerta-cont")
-        contenido.append("<h1 class='Titulo'>ERROR 403</h1>");
-        contenido.append("<h4> Usted ya resolvió este formulario y no tiene permitido responder más de una vez, si desea contestar más formularios redirigase a la página de Inicio</h4>");
-        alerta.append(contenido);
-        alerta.click(()=>{
-          alerta.remove();
-        })
-        $("body").append(alerta)
-        setTimeout(()=>{
-          window.location = "./Inicio.html";
-        }, 2000)
-      }else if (text=="Subir info"){
-          let alerta = $("<div id='alerta-mostar'>")
-          alerta.addClass("alerta-fond")
-          let contenido = $("<div>")
-          contenido.addClass("alerta-cont")
-          contenido.append("<h1 class='Titulo'>Respuesta subido</h1>");
-          contenido.append("<h4> Su respuesta ha sido almacenada de forma exitosa</h4>");
-          alerta.append(contenido);
-          alerta.click(()=>{
-            alerta.remove();
-          })
-          $("body").append(alerta)
-          setTimeout(()=>{
-            window.location = "./Inicio.html";
-          }, 1500)
-      }else{
-        let alerta = $("<div id='alerta-mostar'>")
-        alerta.addClass("alerta-fond")
-        let contenido = $("<div>")
-        contenido.addClass("alerta-cont")
-        contenido.append("<h1 class='Titulo'>ERROR 500</h1>");
-        contenido.append("<h4> Ha sucedido un error inesperado con el servidor, será redirigida a la página de Inicio</h4>");
-        alerta.append(contenido);
-        alerta.click(()=>{
-          alerta.remove();
-        })
-        $("body").append(alerta)
-        setTimeout(()=>{
-          window.location = "./Inicio.html";
-        }, 3000)
-      }
-    })
   })
 }else{
+  // Si no existe el formulario se redirige a inicio
   window.location = "./Inicio.html";
 }
