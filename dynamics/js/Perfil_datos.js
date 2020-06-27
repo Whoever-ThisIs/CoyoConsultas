@@ -51,7 +51,7 @@ function editar(){
       method: 'POST',
       body: data
     }).then((response) => {
-      return response.json();
+      return response.text();
     }).then((data) => {
       //Establece la cookie que indica que algo ha sido cambiado
       document.cookie="cookieVal=egal";

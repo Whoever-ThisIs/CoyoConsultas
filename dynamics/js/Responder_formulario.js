@@ -7,6 +7,7 @@ function getCookie(name) {
 //////////////////////  Crear el formulario de respuesta  //////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 var id_formu = getCookie("id_form");
+console.log(id_formu);
 if(id_formu != false){
   //Se crea el id_form para obtenerlo luego por metodo POST en el php
   getForm = new FormData();
@@ -67,6 +68,52 @@ if(id_formu != false){
       return response.text();
     }).then((text) => {
       console.log(text);
+      if (text=="YA HAS CONTESTADO ESE FORMULARIO") {
+        let alerta = $("<div id='alerta-mostar'>")
+        alerta.addClass("alerta-fond")
+        let contenido = $("<div>")
+        contenido.addClass("alerta-cont")
+        contenido.append("<h1 class='Titulo'>ERROR 403</h1>");
+        contenido.append("<h4> Usted ya resolvió este formulario y no tiene permitido responder más de una vez, si desea contestar más formularios redirigase a la página de Inicio</h4>");
+        alerta.append(contenido);
+        alerta.click(()=>{
+          alerta.remove();
+        })
+        $("body").append(alerta)
+        setTimeout(()=>{
+          window.location = "./Inicio.html";
+        }, 2000)
+      }else if (text=="Subir info"){
+          let alerta = $("<div id='alerta-mostar'>")
+          alerta.addClass("alerta-fond")
+          let contenido = $("<div>")
+          contenido.addClass("alerta-cont")
+          contenido.append("<h1 class='Titulo'>Respuesta subido</h1>");
+          contenido.append("<h4> Su respuesta ha sido almacenada de forma exitosa</h4>");
+          alerta.append(contenido);
+          alerta.click(()=>{
+            alerta.remove();
+          })
+          $("body").append(alerta)
+          setTimeout(()=>{
+            window.location = "./Inicio.html";
+          }, 1500)
+      }else{
+        let alerta = $("<div id='alerta-mostar'>")
+        alerta.addClass("alerta-fond")
+        let contenido = $("<div>")
+        contenido.addClass("alerta-cont")
+        contenido.append("<h1 class='Titulo'>ERROR 500</h1>");
+        contenido.append("<h4> Ha sucedido un error inesperado con el servidor, será redirigida a la página de Inicio</h4>");
+        alerta.append(contenido);
+        alerta.click(()=>{
+          alerta.remove();
+        })
+        $("body").append(alerta)
+        setTimeout(()=>{
+          window.location = "./Inicio.html";
+        }, 3000)
+      }
     })
   })
 }else{
