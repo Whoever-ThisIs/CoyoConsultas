@@ -60,19 +60,28 @@ fetch('NavInicio.html')
     let navBar = document.querySelector(".navBar");
     navBar.innerHTML = text;
     eventlis();
-}).then((respuesta)=>{
-        console.log(respuesta.text());
-        console.log("Sesion cerrada");
-        window.location.reload()
-      })
-    })
+})
+
+function eventfoo(){
+  let insta = document.querySelector("#insta");
+  let twitter = document.querySelector("#twitter");
+  let facebook = document.querySelector("#facebook");
+  crear.addEventListener("click",()=>{
+      window.location = 'https://www.instagram.com/coyoconsultas/?hl=es-la'
+  })
+  twitter.addEventListener("click",()=>{
+      window.location = 'https://twitter.com/COCO91481505'
+  })
+  facebook.addEventListener("click",()=>{
+      window.location = 'https://www.facebook.com/CoyoConsultas-COCO-110062144094022/?modal=admin_todo_tour'
+  })
 }
-fetch('NavInicio.html')
+fetch('./FooterInicio.html')
 .then((respuesta)=>{
-    return respuesta.text();
+  return respuesta.text();
 })
 .then((text)=>{
-    let navBar = document.querySelector(".navBar");
-    navBar.innerHTML = text;
-    eventlis();
+  let footerInicio = document.querySelector(".footerInicio");
+  footerInicio.innerHTML = text;
+  eventfoo();
 })

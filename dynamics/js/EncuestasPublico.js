@@ -1,5 +1,10 @@
-function newCard(category, id_form, title, descripcion, inicio, inicio_hora, fin, fin_hora) {
+function cookieForm(id_form){
+    document.cookie = "id_form=" + id_form;
+    window.location = "./Responder_formulario.html";
+  }
+  function newCard(category, id_form, title, descripcion, inicio, inicio_hora, fin, fin_hora) {
     let tarjeta = $("<div>");
+    tarjeta.addClass("tarjeta");
     let titulo = $("<h1>" + title + "</h1>");
     let txt = $("<p>" + descripcion + "</p>");
     tarjeta.append(titulo, txt);
@@ -29,7 +34,7 @@ function newCard(category, id_form, title, descripcion, inicio, inicio_hora, fin
   }
   function getCardsInfo(categoria){
     $.ajax({
-      url:'../dynamics/php/Inicio.php',
+      url:'../dynamics/php/EncuestasPublicas.php',
       method:'POST',
       data:{categoria:categoria},
       success:(resp)=>{
