@@ -72,6 +72,56 @@ fetch('../dynamics/php/Datos_sesion.php')
           var columnBloq = $("<td>");
           columnBloq.append(btnBloq)
           row.append(columnBloq);
+          /*************** Boton de eliminar usuario ***************/
+          /*********************************************************/
+          var btnElim = $("<button>")
+          btnElim.html("<i class='fas fa-trash'></i>");
+          btnElim.click(()=>{
+            let alerta = $("<div id='alerta-mostar'>")
+            alerta.css( "cursor", "inherit")
+            alerta.addClass("alerta-fond")
+            let contenido = $("<div>")
+            contenido.addClass("alerta-cont")
+            contenido.append("<h1 class='Titulo'>¿Desea eliminas a "+elem.Nombre+"?</h1>");
+            contenido.append("<h4> Si elimina a un usurario sus formularios y respuestas seran eliminadas tambien, esto puede llegar a influir en la respuestas y estadisticas de otros usuarios</h4>");
+            let btnNop = $("<button>");
+            btnNop.text("NO");
+            btnNop.css( "background-color", "gray")
+            btnNop.click(()=>{
+              alerta.remove();
+            })
+            let btnSip = $("<button>");
+            btnSip.text("SI")
+            btnSip.css( "background-color", "red")
+            btnSip.click(()=>{
+              alerta.remove();
+              var elimUs = new FormData();
+              elimUs.append("id_us", elem.id_us);
+              // Se obtiene la autorización del usuario
+              fetch('../dynamics/php/Eliminar_usuario.php', {
+                method: 'POST',
+                body: elimUs
+              })
+              .then((respuesta) => {
+                return respuesta.text();
+              }).then((mensaje) => {
+                if (mensaje=="Datos eliminados") {
+                  console.log("Todo Ok");
+                  window.location.reload()
+                }else {
+                  console.log("Algo salio mal");
+                }
+              })
+            })
+            contenido.append(btnNop)
+            contenido.append(btnSip)
+            alerta.append(contenido);
+            $("body").append(alerta)
+            console.log("Eliminar usuario");
+          })
+          var columnElim = $("<td>");
+          columnElim.append(btnElim)
+          row.append(columnElim);
           //Inserta todo en la tabla
           $("#List_usu").append(row);
         });

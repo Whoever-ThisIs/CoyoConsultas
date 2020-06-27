@@ -29,15 +29,34 @@
   margin: 10px 10%;
 }
 .alerta-cont>.Titulo{
-  border-radius: 20px 20px 0 0;
-  padding: 15px 0;
-  position: relative;
-  width: 100%;
   background: rgb(58,116,180);
   background: -webkit-linear-gradient(left, rgba(58,116,180,1) 0%, rgba(93,83,126,1) 18%, rgba(208,36,36,1) 64%, rgba(185,16,16,1) 100%);
   background: -o-linear-gradient(left, rgba(58,116,180,1) 0%, rgba(93,83,126,1) 18%, rgba(208,36,36,1) 64%, rgba(185,16,16,1) 100%);
   background: linear-gradient(to right, rgba(58,116,180,1) 0%, rgba(93,83,126,1) 18%, rgba(208,36,36,1) 64%, rgba(185,16,16,1) 100%);
-  text-shadow: 4px 4px 8px #000000;
+  border-radius: 20px 20px 0 0;
   color: white;
   margin: 0;
+  padding: 15px 0;
+  position: relative;
+  text-shadow: 4px 4px 8px #000000;
+  width: 100%;
+}
+.alerta-cont>button{
+  cursor: pointer;
+  padding: 10px;
+  width: 80px;
+  color: white;
+  text-shadow: 2px 2px 5px #000000;
+  text-align: center;
+  font-weight: bolder;
+  margin: 20px;
+  border-radius: 10px;
+  box-shadow: 4px 4px #292929;
+  transition: box-shadow 0.5s linear;
+}
+.alerta-cont>button:hover{
+  box-shadow: 1px 1px #292929;
+}
+.alerta-cont>button:focus{
+  outline: none;
 }
