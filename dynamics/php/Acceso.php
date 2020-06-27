@@ -2,8 +2,8 @@
   include("Config.php");
   include("Des-cifrado.php");
   //Puse de input del post un "usuario". Cambienlo a lo que pongan bien en el formulario.
-  $id = $_POST['id'];
-  $psw = $_POST['password'];
+  $id = escapeAll($_POST['id']);
+  $psw = escapeAll($_POST['password']);
   if (preg_match('/.+\@.+\..+/',$id)) {
     $preresult = "SELECT password, sal FROM usuario WHERE correo LIKE '%$id%'";
   }

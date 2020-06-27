@@ -1,9 +1,10 @@
 <?php
   //Me conecto con la base de datos
   include('Config.php');
+  include("Des-cifrado.php");
   $con = connect();
   //Obtengo el id del form,ulario a extraer
-  $id_formu = $_POST['id_form'];
+  $id_formu = escapeAll($_POST['id_form']);
   //Obtrengo toda la informacion de ese formulario
   $result = mysqli_query($con, "SELECT * FROM formulario WHERE id_form='$id_formu'");
   //Creo el arreglo que se me va a devolver

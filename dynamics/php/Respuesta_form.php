@@ -1,6 +1,7 @@
 <?php
   session_start();
-  include ("Config.php");
+  include("Config.php");
+  include("Des-cifrado.php");
   $conexion = connect();
   //Conecta con la base de datos
   if(!$conexion) {
@@ -11,7 +12,7 @@
     exit();
   }else{
     //Consultas si el usuario si el usuario ya resolvio ese formulario
-    $id_form = $_POST['id_form'];
+    $id_form = escapeAll($_POST['id_form']);
     $id_usu = $_SESSION['id'];
     $query_opc = mysqli_query($conexion, "SELECT id_form  FROM contestada WHERE id_usuario='$id_usu'");
     $Contestar=true;
