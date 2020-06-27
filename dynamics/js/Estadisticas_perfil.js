@@ -23,8 +23,7 @@ fetch('../dynamics/php/Estadisticas_perfil.php')
     data: {
       labels: categorias,
       datasets: [{
-        borderColor: "#242424",
-        backgroundColor: ["#8A2BE2", "#FFD700", "#DC143C", "#00FF7F"],
+        backgroundColor: ["#2ecc71", "#f1c40f", "#e74c3c", "#2980b9"],
         data: resulElaboradas
       }]
     },
@@ -32,7 +31,7 @@ fetch('../dynamics/php/Estadisticas_perfil.php')
       title:{
         display: true,
         text: "Formularios creados",
-        fontSize: 30,
+        fontSize: 20,
         fontColor: "#f6f6f6",
       }
     }
@@ -47,8 +46,7 @@ fetch('../dynamics/php/Estadisticas_perfil.php')
     data: {
       labels: categorias,
       datasets: [{
-        borderColor: "#242424",
-        backgroundColor: ["#8A2BE2", "#FFD700", "#DC143C", "#00FF7F"],
+        backgroundColor: ["#2ecc71", "#f1c40f", "#e74c3c", "#2980b9"],
         data: resulContestadas
       }]
     },
@@ -56,7 +54,7 @@ fetch('../dynamics/php/Estadisticas_perfil.php')
       title:{
         display: true,
         text: "Formularios contestados",
-        fontSize: 30,
+        fontSize: 20,
         fontColor: "#f6f6f6",
       }
     }

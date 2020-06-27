@@ -66,7 +66,7 @@ function eventfoo(){
   let insta = document.querySelector("#insta");
   let twitter = document.querySelector("#twitter");
   let facebook = document.querySelector("#facebook");
-  crear.addEventListener("click",()=>{
+  insta.addEventListener("click",()=>{
       window.location = 'https://www.instagram.com/coyoconsultas/?hl=es-la'
   })
   twitter.addEventListener("click",()=>{

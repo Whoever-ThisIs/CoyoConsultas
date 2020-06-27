@@ -20,7 +20,7 @@ fetch('../dynamics/php/Datos_sesion.php')
     $(".profileName")[0].append(datos[1]+" "+datos[2]+" "+datos[3])
     $("#profileMail").text("Correo: "+datos[4])
     $("#profileBirth").text("Fecha de nacimiento: "+datos[5])
-    $("#editar").click(editar);
+    $("#editar").click(editar());
     //Esta cookies dice que algo ha sido cambiado en el perfil
     if (cookieVal) {
       //Si existe la borra y despliega el mensaje adecuado
