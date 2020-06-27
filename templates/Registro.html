@@ -18,8 +18,8 @@
       <input type="date" name="fecha" required><br>
       <input type="email" name="correo" placeholder="Correo" autocomplete="off" required><br>
       <input type="text" name="id1" placeholder="Núm. de cuenta" pattern="^\d{9}$" autocomplete="off" required maxlength="9"><br>
-      <input type="text" name="id2" placeholder="CURP" autocomplete="off" required maxlength="18"><br>
-      <input type="password" name="password" placeholder="Contraseña" autocomplete="off" required><br>
+      <input type="text" name="id2" placeholder="CURP" autocomplete="off" required maxlength="18" title='Asegurate de que el CRUP tenga el formato correcto' pattern='/^(([A-Z]{4})(\d{2})((0[1-9])|(1[0-2]))((0[1-9])|(1[0-9])|(2[0-9])|(3[0-1]))([HM])(AS|BC|BS|CC|CL|CM|CS|CH|DF|DG|GT|GR|HG|JC|MC|MN|MS|NT|NL|OC|PL|QT|QR|SP|SL|SR|TC|TS|TL|VZ|YN|ZS|NE)([A-Z]{2})(([A-Z0-9]{2})))$/'><br>
+      <input type="password" name="password" placeholder="Contraseña" autocomplete="off" title='La contraseña debe de contener más de 8 carácteres, al menos una mayuscula, una minúscula y un número' pattern='/^(?=\P{Ll}*\p{Ll})(?=\P{Lu}*\p{Lu})(?=\P{N}*\p{N})(?=[\p{L}\p{N}]*[^\p{L}\p{N}])[\s\S]{8,}$/' required><br>
       <input type="hidden" name="tipo" autocomplete="off" value="alumno">
       <input type="submit" value="Registrarme">
     </form>
