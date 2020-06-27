@@ -1,3 +1,4 @@
+/* Agrega eventos a la navbar, como index y las paginas no estan en el mismo directorio entonces un condicional asigna las rutas */
 function eventlis(){
     let creditosP = document.querySelector("#creditosP");
     let ayudaP = document.querySelector("#ayudaP");
@@ -14,7 +15,7 @@ function eventlis(){
             window.location = './templates/EncuestasPublico.html'
         })
         resultadosP.addEventListener("click",()=>{
-            window.location = './templates/Resultados.html'
+            window.location.reload();
         })
     }
     else{
@@ -28,7 +29,7 @@ function eventlis(){
             window.location = './EncuestasPublico.html'
         })
         resultadosP.addEventListener("click",()=>{
-            window.location = './Resultados.html'
+            window.location = '../../index.html'
         })
     }
 }
@@ -42,10 +43,8 @@ fetch(path)
     header.innerHTML = text;
     eventlis();
     let count = 1;
-    let coquito = document.querySelector(".cocoTitle")
-        function main(){
-            $('.menu_bar').click(function(){
-
+    function main(){
+        $('.menu_bar').click(()=>{
             if(count == 1){
             $('nav').animate({
                 left: '0'
@@ -58,10 +57,8 @@ fetch(path)
             });
             }
         });
-        $('.menu_bar').click(()=>{
-            coquito.classList.toggle("cocoTitle2")
-        })
     };
+    main();
 })
 }
 if(window.location.pathname=='/CoyoConsultas/'){

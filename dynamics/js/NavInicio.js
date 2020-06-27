@@ -26,7 +26,7 @@ function cookiePaleta(){
     document.cookie="colores="+data;
   });
 }
-
+/* Permite que la navbar te ayude a navegar por el sitio  */
 function eventlis(){
     let crear = document.querySelector("#crear");
     let inicio = document.querySelector("#inicio");

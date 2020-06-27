@@ -2,6 +2,7 @@ function cookieForm(id_form){
     document.cookie = "id_form=" + id_form;
     window.location = "./Responder_formulario.html";
   }
+  /* Crea una nueva tarjeta por cada encuesta, dependiendo su categoria la clase y por lo tanto el color asignado */
   function newCard(category, id_form, title, descripcion, inicio, inicio_hora, fin, fin_hora) {
     let tarjeta = $("<div>");
     tarjeta.addClass("tarjeta");
@@ -44,6 +45,7 @@ function cookieForm(id_form){
       }
     }
   }
+  /* Realiza la peticion de la informacion que necesita dependiendo la categoria que se busca */
   function getCardsInfo(categoria){
     $.ajax({
       url:'../dynamics/php/EncuestasPublicas.php',
@@ -65,6 +67,7 @@ function cookieForm(id_form){
       }
     })
   }
+  /* Selectores que asignan los valores por categoria a cada opcion del nav */
   $("#todo").click(()=>{
     getCardsInfo("1,2,3,4")
   })
@@ -81,6 +84,7 @@ function cookieForm(id_form){
     getCardsInfo("4")
   })
   $("#todo").trigger("click")
+  /* Para evitar volver complicado de leer el html, el grafico se pide a su correspondiente html y se coloca en la pagina */
   function bars(id){
     fetch('./BarsGraph.html')
     .then((response)=>{

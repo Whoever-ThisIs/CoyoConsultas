@@ -1,3 +1,4 @@
+/* Evita que el codigo sea tedioso pidiendo la animacion */
 fetch('./Templates/AnimationGraph.html')
 .then((response)=>{
     return response.text();
@@ -5,6 +6,7 @@ fetch('./Templates/AnimationGraph.html')
 .then((text)=>{
     document.getElementById("cocoAnimation").innerHTML= text;
 })
+
 function acceso() {
     let data = new FormData(document.getElementById('formAcceso'));
     fetch('./dynamics/php/Acceso.php', {
@@ -49,6 +51,7 @@ function acceso() {
 let formIngreso = document.querySelector("#formIngreso");
 let formRegistro = document.querySelector("#formRegistro");
 let divRegistro = document.querySelector("#publicForm");
+/* Permite traer la paginad e registro cuando se selecciona esa opcion */
 formRegistro.addEventListener("click",()=>{
     fetch('./templates/Registro.html')
     .then((respuesta)=>{
@@ -104,6 +107,7 @@ formRegistro.addEventListener("click",()=>{
 
     })
 //-----------Acceso------------//
+/* Por default se ejecuta para que aparezca al entrar el ingreso */
 fetch('./templates/Acceso.html')
 .then((response)=>{
     return response.text();
@@ -128,3 +132,10 @@ formIngreso.addEventListener("click",()=>{
           })
         })
     })
+function colors(){
+    linearGradientB[0].classList.toggle("lineargradientG")
+    }
+/* let linearGradientB = document.querySelectorAll(".lineargradientB")
+let boton = document.querySelector(".slider");
+boton.addEventListener("click",colors());
+ */
