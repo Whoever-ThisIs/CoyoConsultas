@@ -35,7 +35,7 @@
         $tipo = 3;
       }
 
-      $SQL_usr = "INSERT INTO usuario(id_usuario, id_tipo, password, nacimiento, correo, extra, nombre, paterno, materno, sal, perfil) VALUES ('$id1', $tipo, '$password', '$fecha', '$correo', '$id2', '$nombre', '$paterno', '$materno', '$sal', 0)";
+      $SQL_usr = "INSERT INTO usuario(id_usuario, id_tipo, password, nacimiento, correo, extra, nombre, paterno, materno, sal, perfil) VALUES ('$id1', $tipo, '$password', '$fecha', '$correo', '$id2', '$nombre', '$paterno', '$materno', '$sal', 1)";
       $query_usr = mysqli_query($conexion,$SQL_usr);
 
       if($query_usr){
