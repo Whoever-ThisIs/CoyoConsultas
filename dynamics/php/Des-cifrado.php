@@ -1,4 +1,5 @@
 <?php
+  include("Condig.php");
   define("KENNWORT","DagehtmeinSchlafrhythmuslos");
   define("HASH","sha256");
   define("METHOD","SEED-OFB");
@@ -97,10 +98,10 @@
   }
 
   function escapeAll($cadena){
-    $a=mysql_real_escape_string($cadena);
-    $b=strip_tags($a);
-    $c=htmlspecialchars($b);
-    return htmlentities($c, ENT_QUOTES | ENT_HTML5, 'UTF-8');
+    $con = connect();
+    $a = htmlentities($cadena, ENT_QUOTES | ENT_HTML5, 'UTF-8');
+    $b = strip_tags($a);
+    return mysql_real_escape_string($con,$b);
   }
 
 ?>
