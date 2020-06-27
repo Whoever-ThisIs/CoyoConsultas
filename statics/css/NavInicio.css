@@ -72,34 +72,9 @@ body{
     padding: 0.5rem;
 }
 .card{
-    border: 0px solid aqua;
-    margin: 0.5rem;
-    position: relative;
-    height: 12rem;
-    overflow: hidden;
-    border-radius: 0.5rem;
-    flex: 1;
-    min-width: 290px;
-    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.5);
-    background-color: sandybrown;
-}
-.card::before{
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0) linear-gradient(to bottom, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0.7) 80%);;
-    z-index: 0;
-}
-.link{
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 1;
+    background-color: rgb(239, 239, 239);
+    width:300px;
+    height:300px;
 }
 
 /*Perfil*/
@@ -164,25 +139,15 @@ canvas{
 
   .profileData{
     position: relative;
-    width:63.5%;
-    height: 200px;
+    width: 63.5%;
+    height: 500px;
     background-color: #CECBCB;
     justify-content: space-between;
     margin-left: auto;
     margin-right: auto;
   }
 
-  .profileBirth{
-    margin-left: auto;
-    margin-right: auto;
-    padding-left: 70px;
-  }
-
-  .profileMail{
-    margin-left: auto;
-    margin-right: auto;
-  }
-
+  
   .dropbtn {
     background-color: #e76c46;
     color: white;
@@ -191,7 +156,7 @@ canvas{
     border: none;
     cursor: pointer;
   }
-
+  
   .dropdown {
     position: relative;
     display: inline-block;
@@ -204,23 +169,23 @@ canvas{
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
   }
-
+  
   .dropdown-content div {
     color: black;
     padding: 12px 16px;
     text-decoration: none;
     display: block;
   }
-
-
+  
+  
   .dropdown-content div:hover {
     background-color: #4c4949
   }
-
+  
   .dropdown:hover .dropdown-content {
     display: block;
   }
-
+  
   .dropdown:hover .dropbtn {
     background-color:#122334;
   }
@@ -230,6 +195,13 @@ canvas{
     width: 80%;
   }
 
+  .fa-camera{
+    color: white;
+	  text-decoration: none;
+    padding:20px;
+    font-size: 30px;
+  }
+  
   #stats{
     background-color: #262626;
     color: white;
@@ -243,12 +215,24 @@ canvas{
   #stats > h1{
     font-size: 40px;
   }
+  
+  #profileBirth{
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 20px; 
+  }
+
+  #profileMail{
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 20px; 
+  }
 
   #editar{
     margin-top:25px;
-      color:White;
-      background: #e76c46;
-      padding: 16px;
+    color:White;
+    background: #e76c46;
+    padding: 16px;
     font-size: 16px;
     border: none;
     cursor: pointer;

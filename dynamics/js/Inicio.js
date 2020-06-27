@@ -8,6 +8,7 @@ function newCard(category, id_form, title, descripcion, inicio, inicio_hora, fin
   let titulo = $("<h1>" + title + "</h1>");
   let txt = $("<p>" + descripcion + "</p>");
   tarjeta.append(titulo, txt);
+  tarjeta.addClass("card");
   let boton = $("<button>")
   boton.text("Contesta")
   boton.attr("onclick", "cookieForm('" + id_form + "')")
@@ -31,18 +32,6 @@ function newCard(category, id_form, title, descripcion, inicio, inicio_hora, fin
     }
   }
 }
-function createCards(b){
-  let cardFeed = document.querySelector("#cardFeed");
-  cardFeed.innerHTML = "";
-  for(let i=0;i<b;i++){
-    let card = document.createElement("div");
-    card.classList.add("card")
-    card.addEventListener("click",()=>{
-      window.location = '../../templates/Perfil.html'
-    })
-    cardFeed.appendChild(card);
-  }
-}
 function getCardsInfo(categoria){
   $.ajax({
     url:'../dynamics/php/Inicio.php',
@@ -56,6 +45,7 @@ function getCardsInfo(categoria){
       if(tarjetas.length == 0){
         $("#cardFeed").html("No hay formularios disponibles en este momento")
       }else{
+        $("#cardFeed").html("")
         tarjetas.forEach((elem, index)=>{
           newCard(elem.id_categoria, elem.id_form, elem.titulo, elem.descripcion, elem.inicio, elem.inicio_hora, elem.fin, elem.fin_hora)
         })

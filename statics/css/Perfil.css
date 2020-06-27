@@ -3,7 +3,7 @@ canvas{
   border-radius: 20px;
   margin: 50px 0;
   padding: 30px;
-} 
+}
 
 input[type="radio"]:hover{
   cursor: pointer;
@@ -47,9 +47,9 @@ input[type="radio"]:hover{
   position: relative;
   font-size: 30px;
   top:-90px;
-  
+
 }
-  
+
 .containProfile{
   position: relative;
   width:100%;
@@ -57,7 +57,7 @@ input[type="radio"]:hover{
   background-color: black;
   justify-content: space-between;
 }
-  
+
 .profileData{
   position: relative;
   width:63.5%;
@@ -78,7 +78,7 @@ input[type="radio"]:hover{
   margin-left: auto;
   margin-right: auto;
 }
-  
+
 .dropbtn {
   background-color: #e76c46;
   color: white;
@@ -87,7 +87,7 @@ input[type="radio"]:hover{
   border: none;
   cursor: pointer;
 }
-  
+
 .dropdown {
   position: relative;
   display: inline-block;
@@ -100,23 +100,23 @@ input[type="radio"]:hover{
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
 }
-  
+
 .dropdown-content div {
   color: black;
   padding: 12px 16px;
   text-decoration: none;
   display: block;
 }
-  
-  
+
+
 .dropdown-content div:hover {
   background-color: #f1f1f1
 }
-  
+
 .dropdown:hover .dropdown-content {
   display: block;
 }
-  
+
 .dropdown:hover .dropbtn {
   background-color:#585fad;
 }
@@ -130,11 +130,12 @@ input[type="radio"]:hover{
   background-color: #262626;
   color: white;
   display: block;
+  margin: 200px 0;
   min-height:400px;
-  position:relative;
+  padding: 50px 0;
+  position: relative;
   text-align: center;
   width: 100%;
-  padding: 50px 0;
 }
 #stats > h1{
   font-size: 40px;
@@ -150,4 +151,3 @@ input[type="radio"]:hover{
   cursor: pointer;
 
 }
-
