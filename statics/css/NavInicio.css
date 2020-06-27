@@ -8,6 +8,10 @@
   margin: 0;
   border: 0;
 }
+body{
+  overflow-x: hidden;
+
+}
 .nav nav{
     padding-top:10px;
     height: 60px;
