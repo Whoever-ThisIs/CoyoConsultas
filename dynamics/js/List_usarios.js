@@ -20,6 +20,7 @@ fetch('../dynamics/php/Datos_sesion.php')
           row.append("<td>"+elem.Nombre+"</td>");
           row.append("<td>"+elem.tipo+"</td>");
           var btnBloq = $("<button>")
+          btnBloq.addClass("bloq")
           if (elem.bloqueado==true) {
             /*************** Boton de desbloquear usuario ***************/
             /*********************************************************/
@@ -76,6 +77,7 @@ fetch('../dynamics/php/Datos_sesion.php')
           /*********************************************************/
           var btnElim = $("<button>")
           btnElim.html("<i class='fas fa-trash'></i>");
+          btnElim.addClass("Elim")
           btnElim.click(()=>{
             let alerta = $("<div id='alerta-mostar'>")
             alerta.css( "cursor", "inherit")
