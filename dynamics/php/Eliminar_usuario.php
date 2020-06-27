@@ -1,9 +1,10 @@
 <?php
   //Inicio Session
   session_start();
+  include("Des-crifrado.php");
   //Me conecto con la base de datos
   if ($_SESSION["tipo"]=="Alumno") {
-    $id_usu = $_POST['id_us'];
+    $id_usu = escapeAll($_POST['id_us']);
     include('Config.php');
     $con = connect();
     ///////////   Elimina los registros que de el en contestada y respuesta    /////////////

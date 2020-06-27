@@ -3,10 +3,11 @@
   session_start();
   //Me conecto con la base de datos
   include('Config.php');
+  include("Des-cifrado.php");
   $con = connect();
   //id del usuario a Bloquear
-  $id_usu = $_POST['id_us'];
-  $Accion = $_POST['Accion'];
+  $id_usu = escapeAll($_POST['id_us']);
+  $Accion = escapeAll($_POST['Accion']);
   //Obtengo el id del formulario a extraer
   if ($Accion=="Bloquear") {
     $result = mysqli_query($con, "SELECT bloqueado FROM usuario WHERE id_usuario='$id_usu'");

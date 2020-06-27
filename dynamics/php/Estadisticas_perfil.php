@@ -2,9 +2,10 @@
   session_start();
   //Me conecto con la base de datos
   include('Config.php');
+  include("Des-cifrado.php");
   $con = connect();
   //Obtengo el id del form,ulario a extraer
-  $id_usu = $_SESSION['id'];
+  $id_usu = escapeAll($_SESSION['id']);
   //Obtengo todas las categorias que hay
   $result = mysqli_query($con, "SELECT * FROM categoria");
   $categorias=[];
