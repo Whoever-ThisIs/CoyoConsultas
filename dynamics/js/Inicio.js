@@ -80,3 +80,14 @@ $("#actividades").click(()=>{
   getCardsInfo("4")
 })
 $("#todo").trigger("click")
+function bars(){
+  fetch('./BarsGraph.html')
+  .then((response)=>{
+    return response.text();
+  })
+  .then((text)=>{
+    let barsAnimation = document.querySelector("#barsAnimation");
+    barsAnimation.innerHTML=text;
+  })
+}
+bars();

@@ -81,3 +81,15 @@ function cookieForm(id_form){
     getCardsInfo("4")
   })
   $("#todo").trigger("click")
+  function bars(id){
+    fetch('./BarsGraph.html')
+    .then((response)=>{
+      return response.text();
+    })
+    .then((text)=>{
+      let barsAnimation = document.querySelector(id);
+      barsAnimation.innerHTML=text;
+    })
+  }
+  bars("#barsAnimation");
+  bars("#barsAnimation2");
