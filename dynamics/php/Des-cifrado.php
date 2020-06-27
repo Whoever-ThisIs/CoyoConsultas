@@ -96,44 +96,11 @@
     // return $true;
   }
 
-  // function consultapass($conexion,$id,$contra){
-  //   $sql = "SELECT condimento FROM usuarios WHERE id_usuario='$id'";
-  //   $consulta_sql = mysqli_query($conexion, $sql);
-  //   $salt = mysqli_fetch_array($consulta_sql);
-  //   $sql2 = "SELECT password FROM usuarios WHERE id_usuario='$id'";
-  //   $consulta_sql2 = mysqli_query($conexion, $sql2);
-  //   $password = mysqli_fetch_array($consulta_sql2);
-  //   $true=acceso($contra,$password[0],$salt[0]);
-  //   return $true;
-  // }
-  //
-  // function consultapass2($conexion,$id,$contra){
-  //   $sql = "SELECT condimento FROM administradores WHERE id_admin='$id'";
-  //   $consulta_sql = mysqli_query($conexion, $sql);
-  //   $salt = mysqli_fetch_array($consulta_sql);
-  //   $sql2 = "SELECT password FROM administradores WHERE id_admin='$id'";
-  //   $consulta_sql2 = mysqli_query($conexion, $sql2);
-  //   $password = mysqli_fetch_array($consulta_sql2);
-  //   $true=acceso($contra,$password[0],$salt[0]);
-  //   return $true;
-  // }
-  //
-  // function consultapass3($conexion,$id,$contra){
-  //   $sql = "SELECT condimento FROM mensajeros WHERE nIdentificador='$id'";
-  //   $consulta_sql = mysqli_query($conexion, $sql);
-  //   $salt = mysqli_fetch_array($consulta_sql);
-  //   $sql2 = "SELECT password FROM mensajeros WHERE nIdentificador='$id'";
-  //   $consulta_sql2 = mysqli_query($conexion, $sql2);
-  //   $password = mysqli_fetch_array($consulta_sql2);
-  //   $true=acceso($contra,$password[0],$salt[0]);
-  //   return $true;
-  // }
-
-  function escapeall($cadena){
-    $a=strip_tags($cadena);
-    $b=htmlspecialchars($cadena);
-    $c=strip_tags($b);
-    return $c;
+  function escapeAll($cadena){
+    $a=mysql_real_escape_string($cadena);
+    $b=strip_tags($a);
+    $c=htmlspecialchars($b);
+    return htmlentities($c, ENT_QUOTES | ENT_HTML5, 'UTF-8');
   }
 
 ?>
