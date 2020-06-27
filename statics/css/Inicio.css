@@ -1,0 +1,36 @@
+button{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #453564;
+  color: #bccfdf;
+  border: 2px solid #6260c0;
+  border-radius: 1em 0;
+  transition: border-radius 1s, background-color 1s, color 1s;
+}
+button:hover{
+  background-color: #bccfdf;
+  color: #453564;
+  border-radius: 0 1em;
+}
+h1{
+  text-align: center;
+}
+p{
+  text-align: justify;
+}
+.tarjeta{
+  width: 30%;
+  min-width: 300px;
+  background-color: #47468b;
+  padding: 10px;
+  margin: 5px;
+}
+#cardFeed{
+  width: 100%;
+  display: flex;
+  /* flex-direction: column; */
+  justify-content: space-around;
+  flex-wrap: wrap;
+  color: #bccfdf;
+}

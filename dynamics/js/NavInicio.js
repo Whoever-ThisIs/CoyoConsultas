@@ -60,4 +60,19 @@ fetch('NavInicio.html')
     let navBar = document.querySelector(".navBar");
     navBar.innerHTML = text;
     eventlis();
+}).then((respuesta)=>{
+        console.log(respuesta.text());
+        console.log("Sesion cerrada");
+        window.location.reload()
+      })
+    })
+}
+fetch('NavInicio.html')
+.then((respuesta)=>{
+    return respuesta.text();
+})
+.then((text)=>{
+    let navBar = document.querySelector(".navBar");
+    navBar.innerHTML = text;
+    eventlis();
 })

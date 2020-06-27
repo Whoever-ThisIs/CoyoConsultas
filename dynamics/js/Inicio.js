@@ -4,6 +4,7 @@ function cookieForm(id_form){
 }
 function newCard(category, id_form, title, descripcion, inicio, inicio_hora, fin, fin_hora) {
   let tarjeta = $("<div>");
+  tarjeta.addClass("tarjeta");
   let titulo = $("<h1>" + title + "</h1>");
   let txt = $("<p>" + descripcion + "</p>");
   tarjeta.append(titulo, txt);
