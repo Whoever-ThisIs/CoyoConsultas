@@ -36,7 +36,6 @@ function eventlis(){
     }
 }
 function navPublic(path){
-<<<<<<< HEAD
 fetch(path)
 .then((response)=>{
     return response.text();
@@ -71,7 +70,6 @@ if(window.location.pathname=='/CoyoConsultas/'){
 else{
     navPublic('./NavPublico.html')
 }
-=======
     fetch(path)
     .then((response)=>{
         return response.text();
@@ -93,14 +91,9 @@ else{
         })
         }
     })
-}
-<<<<<<< HEAD
->>>>>>> 548d20b011e53469304ab5cff6120e7cd2e75ca4
-=======
 if(window.location.pathname=='/CoyoConsultas/'){
   navPublic('./templates/NavPublico.html')
 }
 else{
   navPublic('./NavPublico.html')
 }
->>>>>>> 1194c47573b1e651df8ee7a2d0b91fddb02d2fde
