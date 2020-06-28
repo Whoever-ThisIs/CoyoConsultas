@@ -1,6 +1,6 @@
 <?php
-  include("Config.php");
   include("Des-cifrado.php");
+  include_once "Config.php";
   //Puse de input del post un "usuario". Cambienlo a lo que pongan bien en el formulario.
   $id = escapeAll($_POST['id']);
   $psw = escapeAll($_POST['password']);
