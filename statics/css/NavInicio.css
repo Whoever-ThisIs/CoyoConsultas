@@ -71,6 +71,7 @@ body{
   padding-left: 20px;
   font-size: 15px;
   cursor: pointer;
+  
 }
 #categories ul li:nth-child(1):hover{
   color:rgba(221, 220, 220, 0.925);
@@ -171,14 +172,16 @@ footer{
 	position: relative;
   width:100%;
   margin: auto;
+  overflow: hidden;
 }
 #barsAnimation2{
   display: flex;
 	position: relative;
   width:100%;
   z-index: 10;
-  top:-80%;
-  left:68%;
+  top:-60%;
+  left:58%;
+  overflow: hidden;
 }
 /*Colores*/
 /*Modo oscuro*/
@@ -205,7 +208,7 @@ footer{
 
   }
   #barsAnimation2{
-    top:-100%;
+    top:-80%;
   }
 }
 @media screen and (max-width:600px ) {
@@ -216,7 +219,7 @@ footer{
   height:200px;
 }
 #barsAnimation2{
-  top:-130%;
+  top:-100%;
 }
 }
 @media only screen and (min-width: 150px) and (max-width: 1200px) {
