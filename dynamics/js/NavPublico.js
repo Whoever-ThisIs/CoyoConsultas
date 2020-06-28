@@ -1,3 +1,11 @@
+//Favicon
+$("head").append("<link rel='apple-touch-icon' sizes='180x180' href='../statics/media/favicon/apple-touch-icon.png'>")
+$("head").append("<link rel='icon' type='image/png' sizes='32x32' href='../statics/media/favicon/favicon-32x32.png'>")
+$("head").append("<link rel='icon' type='image/png' sizes='16x16' href='../statics/media/favicon/favicon-16x16.png'>")
+$("head").append("<link rel='manifest' href='../statics/media/favicon/site.webmanifest'>")
+$("head").append("<link rel='mask-icon' href='../statics/media/favicon/safari-pinned-tab.svg' color='#5bbad5'>")
+$("head").append("<meta name='msapplication-TileColor' content='#b91d47'>")
+$("head").append("<meta name='theme-color' content='#ffffff'>")
 /* Agrega eventos a la navbar, como index y las paginas no estan en el mismo directorio entonces un condicional asigna las rutas */
 function eventlis(){
     let creditosP = document.querySelector("#creditosP");
@@ -36,7 +44,6 @@ function eventlis(){
     }
 }
 function navPublic(path){
-<<<<<<< HEAD
 fetch(path)
 .then((response)=>{
     return response.text();
@@ -71,36 +78,9 @@ if(window.location.pathname=='/CoyoConsultas/'){
 else{
     navPublic('./NavPublico.html')
 }
-=======
-    fetch(path)
-    .then((response)=>{
-        return response.text();
-    })
-    .then((text)=>{
-        console.log(text);
-        let header = document.querySelector(".publicNav")
-        header.innerHTML = text;
-        eventlis();
-        let count = 1;
-        function main(){
-            $('.menu_bar').click(()=>{
-                if(count == 1){
-                $('nav').animate({
-                    left: '0'
-                });
-            };
-            main();
-        })
-        }
-    })
-}
-<<<<<<< HEAD
->>>>>>> 548d20b011e53469304ab5cff6120e7cd2e75ca4
-=======
 if(window.location.pathname=='/CoyoConsultas/'){
   navPublic('./templates/NavPublico.html')
 }
 else{
   navPublic('./NavPublico.html')
 }
->>>>>>> 1194c47573b1e651df8ee7a2d0b91fddb02d2fde
