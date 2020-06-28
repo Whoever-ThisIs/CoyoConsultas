@@ -1,5 +1,11 @@
 # CoyoConsultas
-
+Sitio Web para crear y responder formularios hecho por **NEMPP10**.
+### Características:
+* Creación de formularios con un máximo de 5 preguntas cerradas y 10 opciones en cada una.
+* Interfaz gráfica para el seguimiento de los resultados.
+* Opciones de privacidad para los formularios (Público, sólo alumnos, sólo maestros, alumnos y maestros)
+* Interfaz para responder formularios
+* Almacenamiento de resultados, formularios y usuarios en la misma base de datos
 ## Instalación del proyecto
 ### Requerimentos:
 * Servidor Apache con PHP7 o posterior y Maria DB.
