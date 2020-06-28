@@ -1,5 +1,5 @@
 <?php
-  include("Config.php");
+  // include("Config.php");
   define("KENNWORT","DagehtmeinSchlafrhythmuslos");
   define("HASH","sha256");
   define("METHOD","SEED-OFB");
@@ -103,12 +103,13 @@
     // return $true;
   }
 
-  //Seguridad
+  // Seguridad
   function escapeAll($cadena){
-    $con = connect();
+    // $server = connect();
     $a = htmlentities($cadena, ENT_QUOTES | ENT_HTML5, 'UTF-8');
     $b = strip_tags($a);
-    return mysql_real_escape_string($con,$b);
+    // return mysql_real_escape_string($server,$b);
+    return $b;
   }
 
 ?>

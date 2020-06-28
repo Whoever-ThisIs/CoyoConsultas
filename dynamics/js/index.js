@@ -19,7 +19,6 @@ function acceso() {
       if (respuesta) {
         let usuario = new FormData();
         let id_us = document.querySelector("input[name='id']")
-        console.log(id_us.value);
         usuario.append("id", id_us.value);
         fetch('./dynamics/php/Crear_sesion.php', {
           method: 'POST',
