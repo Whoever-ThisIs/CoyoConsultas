@@ -15,8 +15,14 @@
 #### Base de datos
 * Dentro de la carpeta del proyecto se encuentra la carpeta *data* con el archivo **DB_coco.sql**, que contiene la base de datos del proyecto.
 * Se debe de importar al SGBD que use su servidor (por ejemplo, MySQL).
+* Se debe crear un usuario con los siguientes permisos
+  - DELETE
+  - INSERT
+  - SELECT
+  - UPDATE
+  * La configuración por defecto es la de un usuario de nombre **coco** cuya contraseña es su mismo nombre.
 * Se recomienda que la base de datos se llame "coco". En caso de elegir otro nombre, modificar **Config.php**.
-* Se recomienda tener los caracteres de la base de datos codificados en utf8mb4, de otro modo podrían surgir errores al realizar las consultas.
+* Se recomienda tener los caracteres de la base de datos codificados en utf8mb4, aunque debido a las configuraciones de seguridad no es necesario.
 ## Créditos
 #### Creado por **NEMPP10**(Nos Esforzamos Mucho, porfi ponganos 10)
 ##### Integrantes

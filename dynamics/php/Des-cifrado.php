@@ -106,7 +106,7 @@
   // Seguridad
   function escapeAll($cadena){
     // $server = connect();
-    $a = htmlentities($cadena, ENT_QUOTES | ENT_HTML5, 'UTF-8');
+    $a = htmlspecialchars($cadena);
     $b = strip_tags($a);
     // return mysql_real_escape_string($server,$b);
     return $b;
