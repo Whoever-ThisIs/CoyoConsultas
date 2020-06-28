@@ -34,6 +34,7 @@ header nav ul {
 
 header nav ul li {
 	float:right;
+	transition: background 0.5s linear;
 }
 
 header nav ul li a {
@@ -270,6 +271,7 @@ input[type=submit]:focus,input[type=date]:focus,input[type=password]:focus,input
 	float: left;
 	padding: 3px 0 0 20px;
 	text-decoration: none;
+	transition: color 0.5s linear;
 }
 
 #logo-header:hover {

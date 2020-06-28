@@ -10,7 +10,15 @@
 }
 body{
   overflow-x: hidden;
-
+  background-color:#302e2e;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-family: 'Roboto Condensed', sans-serif;
+}
+footer{
+	background-color: #202020;
+	width: 100%;
 }
 .nav nav{
     padding-top:10px;
@@ -42,13 +50,6 @@ body{
   color: #ffffff;
   font-size: 20px;
 }
-body{
-  background-color:#302e2e;
-  margin: 0;
-  padding: 0;
-  border: 0;
-  font-family: 'Roboto Condensed', sans-serif;
-}
 /*PAGINA PRINCIPAL */
 .CoyoConsultasTitle{
   width:100%;
@@ -63,6 +64,72 @@ body{
   color: #DCDBDB;
   font-size: 80px;
 }
+.cardFeed{
+    margin: 0 auto;
+    max-width: 1200px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    padding: 0.5rem;
+}
+.card{
+    background-color: rgb(239, 239, 239);
+    width:300px;
+    height:300px;
+}
+/*Formulario*/
+.formOption{
+  margin-top: 25px;
+  padding: 20px;
+}
+.all-footer{
+	display: flex;
+	justify-content: space-between;
+	margin: auto;
+	max-width:1000px;
+	padding: 20px;
+	width:100%;
+}
+
+.footer{
+	color: white;
+	padding:20px;
+}
+
+.social span{
+	color: white;
+	text-decoration: none;
+	padding:20px;
+}
+#barsAnimation{
+  display: flex;
+	position: relative;
+  width:100%;
+  margin: auto;
+  overflow: hidden;
+}
+#barsAnimation2{
+  display: flex;
+	position: relative;
+  width:100%;
+  z-index: 10;
+  top:-60%;
+  left:58%;
+  overflow: hidden;
+}
+#formTitle{
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 25px;
+  text-align: center;
+  color: white;
+}
+#tituloForm{
+  background-color: transparent;
+	border:none;
+	border-bottom: 3px solid #fff;
+	width:80%;
+}
 #opinion{
   font-size: 20px;
 }
@@ -71,7 +138,6 @@ body{
   padding-left: 20px;
   font-size: 15px;
   cursor: pointer;
-  
 }
 #categories ul li:nth-child(1):hover{
   color:rgba(221, 220, 220, 0.925);
@@ -109,80 +175,6 @@ body{
     background: #1f1e1e;
 }
 
-.cardFeed{
-    margin: 0 auto;
-    max-width: 1200px;
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: center;
-    padding: 0.5rem;
-}
-.card{
-    background-color: rgb(239, 239, 239);
-    width:300px;
-    height:300px;
-}
-/*Formulario*/
-#formTitle{
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 25px;
-  text-align: center;
-  color: white;
-}
-
-.formOption{
-  margin-top: 25px;
-  padding: 20px;
-}
-
-#tituloForm{
-  background-color: transparent;
-	border:none;
-	border-bottom: 3px solid #fff;
-	width:80%;
-}
-
-/*Footer*/
-footer{
-	background-color: #202020;
-	width: 100%;
-}
-.all-footer{
-	display: flex;
-	justify-content: space-between;
-	margin: auto;
-	max-width:1000px;
-	padding: 20px;
-	width:100%;
-}
-
-.footer{
-	color: white;
-	padding:20px;
-}
-
-.social span{
-	color: white;
-	text-decoration: none;
-	padding:20px;
-}
-#barsAnimation{
-  display: flex;
-	position: relative;
-  width:100%;
-  margin: auto;
-  overflow: hidden;
-}
-#barsAnimation2{
-  display: flex;
-	position: relative;
-  width:100%;
-  z-index: 10;
-  top:-60%;
-  left:58%;
-  overflow: hidden;
-}
 /*Colores*/
 /*Modo oscuro*/
 @media screen and (max-width:800px ) {
@@ -212,15 +204,15 @@ footer{
   }
 }
 @media screen and (max-width:600px ) {
-.CoyoConsultasTitle span{
-  font-size: 20px;
-}
-.CoyoConsultasTitle{
-  height:200px;
-}
-#barsAnimation2{
-  top:-100%;
-}
+  .CoyoConsultasTitle span{
+    font-size: 20px;
+  }
+  .CoyoConsultasTitle{
+    height:200px;
+  }
+  #barsAnimation2{
+    top:-100%;
+  }  
 }
 @media only screen and (min-width: 150px) and (max-width: 1200px) {
   .navBar nav{
@@ -237,5 +229,17 @@ footer{
     display: block;
     height: 20px;
     padding: 10px 25px;
+  }
+  #categories{
+    height:200px;
+  }
+  #categories ul{
+    padding-left: 0;
+  }
+  #categories ul li{
+    text-align: center;
+    width: 100%;
+    display: block;
+    padding:10px 25px;
   }
 }
