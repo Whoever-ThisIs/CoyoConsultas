@@ -1,16 +1,16 @@
 button{
+  background-color: #1d1d1d;
+  border-radius: 1em 0;
+  color: #bccfdf;
   display: block;
   margin-left: auto;
   margin-right: auto;
-  color: #bccfdf;
-  background-color: #1d1d1d;
-  border-radius: 1em 0;
   transition: border-radius 1s, background-color 1s, color 1s;
 }
 button:hover{
   background-color: #d4d5d6;
-  color: #080808;
   border-radius: 0 1em;
+  color: #080808;
 }
 h1{
   text-align: center;
@@ -19,13 +19,13 @@ p{
   text-align: justify;
 }
 .tarjeta{
-  width: 30%;
-  min-width: 300px;
-  padding: 10px;
-  margin: 5px;
-  border-radius: 4px;
   background-color: #1d1d1d;
   box-shadow: 6px 7px 28px 0 rgba(16, 16, 16, 0.7);
+  border-radius: 4px;
+  margin: 5px;
+  min-width: 300px;
+  padding: 10px;
+  width: 30%;
 }
 .tarjeta:hover{
   animation:tarjeta 5s linear 1;
@@ -43,13 +43,13 @@ p{
   border: 3px solid #2980b9;
 }
 #cardFeed{
-  width: 100%;
   display: flex;
+  width: 100%;
   /* flex-direction: column; */
-  justify-content: space-around;
-  flex-wrap: wrap;
-  margin: 80px auto;
   color: #bccfdf;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin: 80px auto;
 }
 @media screen and (max-width:600px ) {
   .tarjeta{

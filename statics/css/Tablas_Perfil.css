@@ -3,15 +3,15 @@
   text-align: center;
 }
 .Resultados{
-  width: 80%;
-  margin: 50px auto;
   display: flex;
   flex-direction: row;
   flex-wrap:  wrap;
+  margin: 50px auto;
+  width: 80%;
 }
 td{
-  text-align: center;
   overflow: hidden;
+  text-align: center;
 }
 th{
   background-color: #3d3d3d;
@@ -28,8 +28,8 @@ tr:nth-child(odd){
   background-color: #7d7d7d;
 }
 table{
-  width: 550px;
   margin: 40px auto;
+  width: 550px;
 }
 .Resultados button{
   border-radius: 10px;

@@ -1,13 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap');
 *{
-	padding: 0;
-	margin: 0;
 	border: 0;
+	margin: 0;
+	padding: 0;
   }
 body {
-	overflow-x: hidden;
 	background-color: #2C2A2A;
 	font-family: 'Roboto Condensed', sans-serif;
+	overflow-x: hidden;
 }
 
 header {
@@ -75,14 +75,14 @@ footer{
 	width:80%;
 }
 #miForm input[type=text], #miForm input[type=password], #miForm input[type=email], #miForm input[type=date], #formAcceso input[type=text], #formAcceso input[type=password], #formAcceso input[type=email], #formAcceso input[type=date]{
-	padding-top:10px;
 	color:white;
+	padding-top:10px;
 }
 #miForm input[type=submit], #formAcceso input[type=submit], #miForm input[type=date], #formAcceso input[type=date]{
-	margin-top:25px;
-	color:White;
 	background: #e76c46;
 	border:none;
+	color:White;
+	margin-top:25px;
 }
 #miForm input[type=submit]:hover, #formAcceso input[type=submit]:hover, #miForm input[type=date]:hover,#alumno:hover,#profesor:hover,#funcionario:hover{
 	background: #c4502d;
@@ -98,8 +98,8 @@ footer{
 }
 input[type=date]{
 	appearance: none;
-	padding: 8px;
 	border:none;
+	padding: 8px;
 }
 input[type=date]::-webkit-datetime-edit-month-field {
 	text-transform: uppercase;
@@ -114,9 +114,9 @@ input[type=date]::-webkit-calendar-picker-indicator {
 	color:white;
 }
 input[type=submit]{
-	text-align: center;
-	left:80%;
 	height:40px;
+	left:80%;
+	text-align: center;
 	width:90px;
 }
 input[type=submit]:focus,input[type=date]:focus,input[type=password]:focus,input[type=text]:focus,input[type=email]:focus,input[type=email]:focus,#alumno,#profesor,#funcionario{
@@ -207,8 +207,8 @@ input[type=text]::-webkit-input-placeholder{
 
 .social span{
 	color: white;
-	text-decoration: none;
 	padding:20px;
+	text-decoration: none;
 }
 .lineargradientB{
 	background: linear-gradient(180deg, #0C0B0B 0%, rgba(56, 55, 55, 0.83) 100%);
@@ -223,14 +223,14 @@ input[type=text]::-webkit-input-placeholder{
 	color: #e76c46;
 }
 .aiudaa{
-	display:block;
-	width:60%;
-	height:1300px;
 	background-color: rgb(170, 170, 170);
+	display:block;
+	font-size: 18px;
+	height:1300px;
 	margin: auto;
 	padding: 50px;
-	font-size: 18px;
 	text-align: justify;
+	width:60%;
 }
 .ayudaTitle{
 	top:10%;
@@ -242,19 +242,19 @@ input[type=text]::-webkit-input-placeholder{
 	top:20%;
 }
 .imgEncPub{
-	width:60%;
 	float: right;
 	padding: 5px;
+	width:60%;
 }
 .formin{
 	float: right;
-	width:30%;
 	padding:5px;
+	width:30%;
 }
 .perfil{
 	float: right;
-	width:50%;
 	padding:5px;
+	width:50%;
 }
 #logo-header {
 	float: left;
@@ -290,14 +290,14 @@ input[type=text]::-webkit-input-placeholder{
 }
 #indexFieldset{
 	border: 3px solid #e76c46;
+	height: 437.71px;
 	margin: auto;
 	width: 70%;
-	height: 437.71px;
 }
 #publicForm{
-	width: 90%;
 	height:500px;
 	margin: auto;
+	width: 90%;
 }
 #formRegistro:hover{
 	color: #e76c46;
@@ -311,96 +311,96 @@ input[type=text]::-webkit-input-placeholder{
 
 #formRegistro,#formIngreso{
 	font-weight: bold;
-	text-decoration-line: underline;
 	letter-spacing: 2px;
+	text-decoration-line: underline;
 	text-transform: capitalize;
 }
 
 #cocoHeader{
 	font-size: 80px;
 	line-height: 100px;
-	text-align: center;
 	position: relative;
+	text-align: center;
 	top:20%;
 }
 #alumno{
-	margin-top:20px;
-	color:White;
 	background: #e76c46;
 	border:none;
-	width: 60px;
+	color:White;
 	height: 20px;
+	margin-top:20px;
+	width: 60px;
 }
 
 #profesor{
-	margin-top:25px;
-	color:White;
 	background: #e76c46;
 	border:none;
-	width: 60px;
+	color:White;
 	height: 20px;
+	margin-top:25px;
+	width: 60px;
 }
 
 #funcionario{
-	margin-top:25px;
-	color:White;
 	background: #e76c46;
 	border:none;
-	width: 75px;
+	color:White;
 	height: 20px;
+	margin-top:25px;
+	width: 75px;
 }
 #cocoAnimation{
 	display: flex;
+	height:300px;
 	position: absolute;
 	top:-25%;
 	width:100%;
-	height:300px;
 }
 #cocoTitle{
 	position: relative;
 	top:10%;
 }
 #Cont-Creditos{
-	width: 80%;
 	margin: 0 auto;
+	width: 80%;
 }
 li{
 	list-style: none;
 }
 .switch{
-    position: relative;
-    display:inline-block;
-    width: 60px;
+	display:inline-block;
     height:34px;
+    position: relative;
+    width: 60px;
 }
 .switch input{
+	height:0;
     opacity:0;
     width:0;
-    height:0;
 }
 .slider{
-    position: absolute;
-    cursor: pointer;
-    top:0;
-    left:0;
-    right:0;
-    bottom:0;
     background-color: rgb(74, 199, 221);
     background-size: cover;
-    transition: 1s;
     border-radius: 36px;
+    bottom:0;
+    cursor: pointer;
+    left:0;
+    position: absolute;
+    right:0;
+    top:0;
+    transition: 1s;
 }
 .slider:before{
-    position: absolute;
+    background: #7e0303;
+    background-size: cover;
+    border-radius: 50%;
+    bottom:4px;
     content:"";
     height:26px;
-    width:26px;
     left:4px;
-    bottom:4px;
-    background: #7e0303;;
-    background-size: cover;
+    position: absolute;
     transition: 1s;
-    border-radius: 50%;
+    width:26px;
 }
 .SHC{
     background: #525252;
@@ -416,19 +416,19 @@ input:focus+.slider{
     box-shadow: 0 0 1px rgb(156, 134, 134);
 }
 input:checked+.slider::before{
-    transform: translate(26px);
-    transform: translate(26px);
-    background-color:#c4502d;
+	background-color:#c4502d;
     background-size: cover;
+    transform: translate(26px);
+    transform: translate(26px);
 }
 @media screen and (max-width:800px ) {
 
 	header nav {
-		width:100%;
 		height:220px;
 		left:-100%;
 		margin:0;
 		position: absolute;
+		width:100%;
 	}
 
 	header nav ul li {
@@ -458,9 +458,9 @@ input:checked+.slider::before{
 		font-size:25px;
 		padding:5px;
 		text-decoration:none;
+		z-index:301;
 		-webkit-box-sizing:border-box;
 		-moz-box-sizing:border-box;
-		z-index:301;
 	}
 
 	.menu_bar span {

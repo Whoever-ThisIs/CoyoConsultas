@@ -59,7 +59,6 @@ input:focus{
 
 .profileCover{
   background: rgb(127,40,47);
-  background:;
   min-height: 300px;
   min-width: 100%;
   position: relative;
@@ -68,8 +67,8 @@ input:focus{
 .profileCard{
   background-color: white;
   min-height:400px;
-  margin-right: auto;
   margin-left: auto;
+  margin-right: auto;
   position:relative;
   text-align: center;
   top:180px;
@@ -91,8 +90,8 @@ input:focus{
 
 .profileName{
   font-family: 'Roboto Slab', serif;
-  position: relative;
   font-size: 30px;
+  position: relative;
   top:-90px;
 }
 
