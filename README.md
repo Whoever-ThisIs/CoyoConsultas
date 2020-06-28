@@ -29,6 +29,9 @@ Sitio Web para crear y responder formularios hecho por **NEMPP10**.
   * La configuración por defecto es la de un usuario de nombre **coco** cuya contraseña es su mismo nombre.
 * Se recomienda que la base de datos se llame "coco". En caso de elegir otro nombre, modificar **Config.php**.
 * Se recomienda tener los caracteres de la base de datos codificados en utf8mb4, aunque debido a las configuraciones de seguridad no es necesario.
+### Configuración del Proyecto:
+* Se debe de adaptar el archivo **Config.php** para adaptarse al SGBD y poder conectarse a él.
+* El administrador usa el id *MELM8305281H0* y la contraseña *ContraSegura6178_* con el correo *uwu@example.com*. Se puede cambiar su perfil.
 ## Créditos
 #### Creado por **NEMPP10**(Nos Esforzamos Mucho, porfi ponganos 10)
 ##### Integrantes
