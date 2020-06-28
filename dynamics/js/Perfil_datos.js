@@ -5,6 +5,7 @@ function getCookie(name){
   return (value != null) ? unescape(value[1]) : false;
 }
 
+let colores = JSON.parse(getCookie("colores"));
 let dismissVal = 1;
 let cookieVal = getCookie("cookieVal");
 
@@ -21,6 +22,7 @@ fetch('../dynamics/php/Datos_sesion.php')
     $("#profileMail").text("Correo: "+datos[4])
     $("#profileBirth").text("Fecha de nacimiento: "+datos[5])
     $("#editar").click(editar);
+    $(".profileCover").css("background","linear-gradient(180deg, "+colores[0]+" 0%, "+colores[1]+" 21%, "+colores[2]+" 41%, "+colores[3]+" 62%, "+colores[4]+" 83%)")
     //Esta cookies dice que algo ha sido cambiado en el perfil
     if (cookieVal) {
       //Si existe la borra y despliega el mensaje adecuado
@@ -75,16 +77,18 @@ function editar(){
   });
 }
 
-// console.log(document.getElementById("Paleta"));
-// document.getElementById('Paleta').addEventListener('submit', (e) => {
-//   e.preventDefault();
-//   let dato = new FormData(document.getElementById('Paleta'));
-//   fetch('../dynamics/php/Paletas.php', {
-//     method: 'POST',
-//     body: dato
-//   }).then((response) => {
-//     return response.text();
-//   }).then((dato) => {
-//     document.cookie="colores="+dato;
-//   });
-// });
+document.getElementById('Paleta').addEventListener('submit', (e) => {
+  e.preventDefault();
+  let dato = new FormData(document.getElementById('Paleta'));
+  fetch('../dynamics/php/Paletas.php', {
+    method: 'POST',
+    body: dato
+  }).then((response) => {
+    return response.text();
+  }).then((dato) => {
+    document.cookie="colores="+dato;
+    setTimeout(()=>{
+      window.location.reload()
+    },500)
+  })
+});

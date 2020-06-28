@@ -14,7 +14,7 @@
   $id = escapeAll($_SESSION['id']);
 
   //Mueve la imágen proporcionada a su carpeta correspondiente
-  if ($_FILES['edimg']['type']=="image/jpg") {
+  if ($_FILES['edimg']['type']=="image/jpg"||$_FILES['edimg']['type']=="image/jpeg"||$_FILES['edimg']['type']=="image/png") {
     $ext=pathinfo($_FILES['edimg']['name'],PATHINFO_EXTENSION);
     $carpeta="../../statics/media/img/profilepics/";
     $destino = $carpeta.$id.".".$ext;

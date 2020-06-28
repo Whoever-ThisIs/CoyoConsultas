@@ -59,7 +59,7 @@ input:focus{
 
 .profileCover{
   background: rgb(127,40,47);
-  background: linear-gradient(180deg, rgba(127,40,47,1) 0%, rgba(225,79,10,1) 21%, rgba(251,176,40,1) 41%, rgba(255,229,78,1) 62%, rgba(249,255,193,1) 83%);
+  background:;
   min-height: 300px;
   min-width: 100%;
   position: relative;
