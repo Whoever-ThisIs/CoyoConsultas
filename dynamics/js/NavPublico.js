@@ -1,3 +1,11 @@
+//Favicon
+$("head").append("<link rel='apple-touch-icon' sizes='180x180' href='../statics/media/favicon/apple-touch-icon.png'>")
+$("head").append("<link rel='icon' type='image/png' sizes='32x32' href='../statics/media/favicon/favicon-32x32.png'>")
+$("head").append("<link rel='icon' type='image/png' sizes='16x16' href='../statics/media/favicon/favicon-16x16.png'>")
+$("head").append("<link rel='manifest' href='../statics/media/favicon/site.webmanifest'>")
+$("head").append("<link rel='mask-icon' href='../statics/media/favicon/safari-pinned-tab.svg' color='#5bbad5'>")
+$("head").append("<meta name='msapplication-TileColor' content='#b91d47'>")
+$("head").append("<meta name='theme-color' content='#ffffff'>")
 /* Agrega eventos a la navbar, como index y las paginas no estan en el mismo directorio entonces un condicional asigna las rutas */
 function eventlis(){
     let creditosP = document.querySelector("#creditosP");
