@@ -5,6 +5,31 @@
     margin:auto;
 }
 button{
+    color:white;
+    border-radius:3px;
     background-color: rgb(226, 83, 0);
     padding:3px;
+}
+button:hover{
+    background-color: rgb(180, 70, 6);
+}
+button:focus{
+    outline:none;
+}
+input[type=date],input[type=time]{
+	appearance: none;
+	padding: 8px;
+	border:none;
+}
+input[type=date]::-webkit-datetime-edit-month-field ,input[type=time]::-webkit-datetime-edit-month-field{
+	text-transform: uppercase;
+}
+input[type=date]::-webkit-datetime-edit-day-field ,input[type=time]::-webkit-datetime-edit-month-field{
+	text-transform: uppercase;
+}
+input[type=date]::-webkit-datetime-edit-year-field ,input[type=time]::-webkit-datetime-edit-month-field{
+	text-transform: uppercase;
+}
+input[type=date]::-webkit-calendar-picker-indicator ,input[type=time]::-webkit-datetime-edit-month-field{
+	color:white;
 }
