@@ -174,24 +174,7 @@ footer{
     padding:5px;
     background: #1f1e1e;
 }
-
-/*Colores*/
-/*Modo oscuro*/
 @media screen and (max-width:800px ) {
-  .profile{
-    width:150px;
-    height:150px;
-  }
-  .profileCard{
-    height:200px;
-  }
-  .profileData{
-    height:100px;
-    top:0%;
-  }
-  .profileName{
-    font-size: 15px;
-  }
   .CoyoConsultasTitle span{
     font-size: 40px;
   }
