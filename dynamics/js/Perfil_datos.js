@@ -5,6 +5,7 @@ function getCookie(name){
   return (value != null) ? unescape(value[1]) : false;
 }
 
+let colores = JSON.parse(getCookie("colores"));
 let dismissVal = 1;
 let cookieVal = getCookie("cookieVal");
 
@@ -21,6 +22,7 @@ fetch('../dynamics/php/Datos_sesion.php')
     $("#profileMail").text("Correo: "+datos[4])
     $("#profileBirth").text("Fecha de nacimiento: "+datos[5])
     $("#editar").click(editar);
+    $(".profileCover").css("background","linear-gradient(180deg, "+colores[0]+" 0%, "+colores[1]+" 21%, "+colores[2]+" 41%, "+colores[3]+" 62%, "+colores[4]+" 83%)")
     //Esta cookies dice que algo ha sido cambiado en el perfil
     if (cookieVal) {
       //Si existe la borra y despliega el mensaje adecuado
@@ -37,11 +39,11 @@ fetch('../dynamics/php/Datos_sesion.php')
 //Inserta los campos de cambio y realiza la petición
 function editar(){
   //Inputs del form
-  $("#profileMail").html("<input type='text' id='edcorreo' name='edcorreo' placeholder='Nuevo correo'></input>")
-  $(".profile").html("<span class='fa fa-camera'></span><br><input type='file' name='edimg'></input><br>")//Tomar foto<br><input type='file' name='newimg'></input>")
-  $(".bearbeiten").html("<input type='text' id='oldPass' name='oldPass' placeholder='Contraseña anterior'></input><br>"+
-  "<input type='text' id='newPass' name='newPass' placeholder='Contraseña nueva'  title='La contraseña debe de contener más de 8 carácteres, al menos una mayuscula, una minúscula y un número' pattern='^(?=\P{Ll}*\p{Ll})(?=\P{Lu}*\p{Lu})(?=\P{N}*\p{N})(?=[\p{L}\p{N}]*[^\p{L}\p{N}])[\s\S]{8,}$'></input><br>"+
-  "<input type='submit' id='save' value='Guardar Cambios'></input>")
+  $("#profileMail").html("<input type='email' id='edcorreo' name='edcorreo' placeholder='Nuevo correo'>")
+  $(".profile").html("<span class='fa fa-camera'></span><br><input type='file' name='edimg'><br>")//Tomar foto<br><input type='file' name='newimg'>")
+  $(".bearbeiten").html("<input type='text' id='oldPass' name='oldPass' placeholder='Contraseña anterior'><br>"+
+  "<input type='text' id='newPass' name='newPass' placeholder='Contraseña nueva'  title='La contraseña debe de contener más de 8 carácteres, al menos una mayuscula, una minúscula y un número' pattern='^(?=\P{Ll}*\p{Ll})(?=\P{Lu}*\p{Lu})(?=\P{N}*\p{N})(?=[\p{L}\p{N}]*[^\p{L}\p{N}])[\s\S]{8,}$'><br>"+
+  "<input type='submit' id='save' value='Guardar Cambios'>")
   //Al presionar submit
   document.getElementById('formy').addEventListener('submit', (e) => {
     e.preventDefault();
@@ -75,16 +77,18 @@ function editar(){
   });
 }
 
-// console.log(document.getElementById("Paleta"));
-// document.getElementById('Paleta').addEventListener('submit', (e) => {
-//   e.preventDefault();
-//   let dato = new FormData(document.getElementById('Paleta'));
-//   fetch('../dynamics/php/Paletas.php', {
-//     method: 'POST',
-//     body: dato
-//   }).then((response) => {
-//     return response.text();
-//   }).then((dato) => {
-//     document.cookie="colores="+dato;
-//   });
-// });
+document.getElementById('Paleta').addEventListener('submit', (e) => {
+  e.preventDefault();
+  let dato = new FormData(document.getElementById('Paleta'));
+  fetch('../dynamics/php/Paletas.php', {
+    method: 'POST',
+    body: dato
+  }).then((response) => {
+    return response.text();
+  }).then((dato) => {
+    document.cookie="colores="+dato;
+    setTimeout(()=>{
+      window.location.reload()
+    },500)
+  })
+});

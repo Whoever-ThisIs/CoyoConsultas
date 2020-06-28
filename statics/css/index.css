@@ -222,6 +222,40 @@ input[type=text]::-webkit-input-placeholder{
 .orange{
 	color: #e76c46;
 }
+.aiudaa{
+	display:block;
+	width:60%;
+	height:1300px;
+	background-color: rgb(170, 170, 170);
+	margin: auto;
+	padding: 50px;
+	font-size: 18px;
+	text-align: justify;
+}
+.ayudaTitle{
+	top:10%;
+	font-size:40px;
+	margin-left:auto;
+	margin-right:auto;
+}
+.indexAiuda{
+	top:20%;
+}
+.imgEncPub{
+	width:60%;
+	float: right;
+	padding: 5px;
+}
+.formin{
+	float: right;
+	width:30%;
+	padding:5px;
+}
+.perfil{
+	float: right;
+	width:50%;
+	padding:5px;
+}
 #logo-header {
 	float: left;
 	padding: 3px 0 0 20px;

@@ -8,13 +8,13 @@
   $con = connect();
 
   //Recuperación de inputs
-  $correo = escapeAll($_POST['edcorreo']);
-  $new = escapeAll($_POST['newPass']);
-  $old = escapeAll($_POST['oldPass']);
-  $id = escapeAll($_SESSION['id']);
+  $correo = strip_tags($_POST['edcorreo']);
+  $new = strip_tags($_POST['newPass']);
+  $old = strip_tags($_POST['oldPass']);
+  $id = strip_tags($_SESSION['id']);
 
   //Mueve la imágen proporcionada a su carpeta correspondiente
-  if ($_FILES['edimg']['type']=="image/jpg") {
+  if ($_FILES['edimg']['type']=="image/jpg"||$_FILES['edimg']['type']=="image/jpeg"||$_FILES['edimg']['type']=="image/png") {
     $ext=pathinfo($_FILES['edimg']['name'],PATHINFO_EXTENSION);
     $carpeta="../../statics/media/img/profilepics/";
     $destino = $carpeta.$id.".".$ext;
