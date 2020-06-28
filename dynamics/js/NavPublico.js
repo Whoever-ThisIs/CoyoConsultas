@@ -41,6 +41,7 @@ function navPublic(path){
         return response.text();
     })
     .then((text)=>{
+        console.log(text);
         let header = document.querySelector(".publicNav")
         header.innerHTML = text;
         eventlis();
@@ -51,21 +52,15 @@ function navPublic(path){
                 $('nav').animate({
                     left: '0'
                 });
-                count = 0;
-                } else {
-                count = 1;
-                $('nav').animate({
-                    left: '-100%'
-                });
-                }
-            });
-        };
-        main();
+            };
+            main();
+        })
+        }
+        if(window.location.pathname=='/CoyoConsultas/'){
+            navPublic('./templates/NavPublico.html')
+        }
+        else{
+            navPublic('./NavPublico.html')
+        }
     })
-}
-if(window.location.pathname=='/CoyoConsultas/'){
-    navPublic('./templates/NavPublico.html')
-}
-else{
-    navPublic('./NavPublico.html')
 }

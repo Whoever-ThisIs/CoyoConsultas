@@ -6,7 +6,7 @@ fetch('../dynamics/php/Datos_sesion.php')
     var datos = text.split("~");
     //Sustituye el true por : datos[7]=="Admin"
     //Confirma que quien entro aqui tenga rango admin en su usuario
-    if (true) {
+    if (datos[7]=="Admin") {
       //Si lo es hace la consulta de toda la informacion del usuario
       fetch('../dynamics/php/List_usuarios.php')
       .then((response) => {
@@ -128,7 +128,6 @@ fetch('../dynamics/php/Datos_sesion.php')
         });
       });
     }else {
-      alert("No tiene permiso de entrar en esta página")
       window.location = './Inicio.html'
     }
   })
