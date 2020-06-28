@@ -18,7 +18,7 @@ input[type="radio"]:hover{
   background-color: #262626;
   cursor: pointer;
 }
-input[type="text"]{
+#edcorreo,input[type="text"]{
   background-color: #f18a48;
   border-bottom: 2px solid white;
   color: white;
@@ -27,7 +27,6 @@ input[type="text"]{
   text-align: center;
   width: 40%;
 }
-
 input:focus{
   outline: none;
 }
