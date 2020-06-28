@@ -70,27 +70,6 @@ if(window.location.pathname=='/CoyoConsultas/'){
 else{
     navPublic('./NavPublico.html')
 }
-    fetch(path)
-    .then((response)=>{
-        return response.text();
-    })
-    .then((text)=>{
-        console.log(text);
-        let header = document.querySelector(".publicNav")
-        header.innerHTML = text;
-        eventlis();
-        let count = 1;
-        function main(){
-            $('.menu_bar').click(()=>{
-                if(count == 1){
-                $('nav').animate({
-                    left: '0'
-                });
-            };
-            main();
-        })
-        }
-    })
 if(window.location.pathname=='/CoyoConsultas/'){
   navPublic('./templates/NavPublico.html')
 }
