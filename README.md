@@ -46,9 +46,11 @@ Sitio Web para crear y responder formularios hecho por **NEMPP10**.
 
 ## Comentarios adicionales
 * Se debe de iniciar sesión para contestar una encuesta
+* Falta implementar la búsqueda por código
+* Los elementos que modifica la paleta son pocos
 * Los compañeros que sacamos 3.5 en el primer proyecto agradecemos eternamente el tener la oportunidad de trabajar con un equipo tan talentoso, inteligente, creativo y capaz como lo es éste, y de igual forma agradecemos a los instructores por asignarnos estos compañeros.
 * Hay diversos programas sin comentarios o sin comentarios de la calidad necesaria, esperamos que no dificulte el entendimiento el código
-* Agradecemos a los mentores del Curso Web 2020 por su incansable esfuerzo, su apoyo y el habernos podido dar este espacio de crecimiento personal y grupal. En serio, muchísimas gracias.
+* Agradecemos a los mentores del Curso Web 2020 por su incansable esfuerzo, su apoyo y el habernos podido dar este espacio de crecimiento personal y grupal. En serio, muchísimas gracias.🦖
 
 
 
