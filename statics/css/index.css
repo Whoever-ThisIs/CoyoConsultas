@@ -301,10 +301,12 @@ input[type=text]::-webkit-input-placeholder{
 }
 #formRegistro:hover{
 	color: #e76c46;
+	cursor: pointer;
 }
 
 #formIngreso:hover{
 	color:#e76c46;
+	cursor: pointer;
 }
 
 #formRegistro,#formIngreso{

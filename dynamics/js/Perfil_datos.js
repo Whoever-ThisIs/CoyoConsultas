@@ -19,7 +19,7 @@ fetch('../dynamics/php/Datos_sesion.php')
     //Elige la imagen
     $(".profile").css("background-image","url('../statics/media/img/profilepics/"+datos[0]+".jpg')");
     $(".profileName")[0].append(datos[1]+" "+datos[2]+" "+datos[3])
-    $("#profileMail").text("Correo: "+datos[4])
+    $("#profileMail").html("Correo: "+datos[4])
     $("#profileBirth").text("Fecha de nacimiento: "+datos[5])
     $("#editar").click(editar);
     $(".profileCover").css("background","linear-gradient(180deg, "+colores[0]+" 0%, "+colores[1]+" 21%, "+colores[2]+" 41%, "+colores[3]+" 62%, "+colores[4]+" 83%)")
