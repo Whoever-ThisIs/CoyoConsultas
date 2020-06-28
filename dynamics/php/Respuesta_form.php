@@ -11,9 +11,15 @@
     echo mysqli_connect_errno()."<br>";
     exit();
   }else{
+    function obtenerNumUsr(){
+      $SQL_num = "SELECT COUNT(id_usuario) FROM usuario";
+      $query_num = mysqli_query($conexion, $SQL_num);
+      $array_num = mysqli_fetch_array($query_num);
+      return $array_num[0];
+    }
     //Consultas si el usuario si el usuario ya resolvio ese formulario
     $id_form = escapeAll($_POST['id_form']);
-    $id_usu = $_SESSION['id'];
+    $id_usu = isset($_SESSION['id']) ? $_SESSION['id'] : obtenerNumUsr();
     $query_opc = mysqli_query($conexion, "SELECT id_form  FROM contestada WHERE id_usuario='$id_usu'");
     $Contestar=true;
       while ($opc = mysqli_fetch_array($query_opc)) {

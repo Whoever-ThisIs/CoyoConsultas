@@ -1,4 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap');
+@font-face{
+    src: url('../../libs/fonts/Roboto_Condensed/RobotoCondensed-Regular.ttf');
+    font-family: 'Roboto Condensed', sans-serif;
+}
 *{
 	padding: 0;
 	margin: 0;
