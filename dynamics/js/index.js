@@ -15,7 +15,6 @@ function acceso() {
     }).then((response) => {
       return response.text();
     }).then((respuesta) => {
-      console.log(respuesta);
       if (respuesta) {
         let usuario = new FormData();
         let id_us = document.querySelector("input[name='id']")

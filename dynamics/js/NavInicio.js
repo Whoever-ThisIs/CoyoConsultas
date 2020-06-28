@@ -46,7 +46,6 @@ function eventlis(){
       //Consulta si ya hay una sesion abierta
       fetch('../dynamics/php/Cerrar_sesion.php')
       .then((respuesta)=>{
-        console.log(respuesta.text());
         console.log("Sesion cerrada");
         window.location.reload()
       })

@@ -6,8 +6,6 @@ fetch('../dynamics/php/Estadisticas_perfil.php')
   // Se decodifica el resultado de JSON y genera un objeto
   return response.json();
 }).then((data) => {
-  console.log(data["Elaboradas"]);
-  console.log(data["Contestadas"]);
   //Extraigo las categorias, (son las mismas para ambas :p)
   var categorias = new Array;
   for (var i = 0; i < data["Elaboradas"].Categorias.length; i++) {

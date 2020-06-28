@@ -119,7 +119,6 @@ fetch('../dynamics/php/Datos_sesion.php')
             contenido.append(btnSip)
             alerta.append(contenido);
             $("body").append(alerta)
-            console.log("Eliminar usuario");
           })
           var columnElim = $("<td>");
           columnElim.append(btnElim)
