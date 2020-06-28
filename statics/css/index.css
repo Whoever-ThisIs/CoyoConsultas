@@ -1,4 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap');
+@font-face{
+    src: url('../../libs/fonts/Roboto_Condensed/RobotoCondensed-Regular.ttf');
+    font-family: 'Roboto Condensed', sans-serif;
+}
 *{
 	border: 0;
 	margin: 0;
@@ -23,9 +26,6 @@ header nav {
 	width:100%;
 }
 
-.menu_bar {
-	display:none;
-}
 
 header nav ul {
 	list-style:none;
@@ -34,6 +34,7 @@ header nav ul {
 
 header nav ul li {
 	float:right;
+	transition: background 0.5s linear;
 }
 
 header nav ul li a {
@@ -119,55 +120,48 @@ input[type=submit]{
 	text-align: center;
 	width:90px;
 }
+li{
+	list-style: none;
+}
+input:checked+.slider{
+    background-color: rgb(158, 150, 202) ;
+}
+input:focus+.slider{
+    box-shadow: 0 0 1px rgb(156, 134, 134);
+}
+input:checked+.slider::before{
+    transform: translate(26px);
+    transform: translate(26px);
+    background-color:#c4502d;
+    background-size: cover;
+}
+input[type=text]::-webkit-input-placeholder{
+	color:white;
+}
 input[type=submit]:focus,input[type=date]:focus,input[type=password]:focus,input[type=text]:focus,input[type=email]:focus,input[type=email]:focus,#alumno,#profesor,#funcionario{
 	outline: none;
 }
+.menu_bar {
+	display:none;
+}
+
 .logo{
 	float: left;
 	height: 50px;
 	width: 50px;
 }
 
-.search{
-	background-color:rgb(32, 32, 32);
-	border:none;
-	border-bottom:4px solid rgb(248, 248, 248);
-	color:white;
-	height:20px;
-}
-
-.search:hover,.search:focus,.search:active{
-	outline:none;
-}
-
-.searchButton{
-	background-color: #e76c46;
-	border:none;
-	color:white;
-	height:20px;
-	outline:none;
-	width:20px;
-}
-input[type=text]::-webkit-input-placeholder{
-	color:white;
-}
-.searchButton:hover,.searchButton:focus,.searchButton:active{
-	background-color: #ca5734;
-}
 
 .fa-search{
 	margin-left: auto;
 	margin-right: auto;
 }
-
 .grid-item1{
 	grid-column: 1/3;
 }
-
 .grid-item2{
 	grid-column: 3;
 }
-
 .center{
 	color: white;
 	font-size: 20px;
@@ -175,36 +169,21 @@ input[type=text]::-webkit-input-placeholder{
 	margin-right: 20px;
 	text-align: center;
 }
-
 .image{
 	height: 250px;
 	padding: 10px;
 	width: 250px;
 }
-
-
 .form{
 	margin-left:  auto;
 	margin-right: auto;
 	text-align: center;
 	width: 80%;
 }
-
-
-.all-footer{
-	display: flex;
-	justify-content: space-between;
-	margin: auto;
-	max-width:1000px;
-	padding: 20px;
-	width:100%;
-}
-
 .footer{
 	color: white;
 	padding:20px;
 }
-
 .social span{
 	color: white;
 	padding:20px;
@@ -215,9 +194,6 @@ input[type=text]::-webkit-input-placeholder{
 }
 .white{
 	color: rgb(247, 247, 247);
-}
-.black{
-	color: rgb(32, 32, 32);
 }
 .orange{
 	color: #e76c46;
@@ -238,6 +214,17 @@ input[type=text]::-webkit-input-placeholder{
 	margin-left:auto;
 	margin-right:auto;
 }
+.all-footer{
+	display: flex;
+	justify-content: space-between;
+	margin: auto;
+	max-width:1000px;
+	padding: 20px;
+	width:100%;
+}
+.black{
+	color: rgb(32, 32, 32);
+}
 .indexAiuda{
 	top:20%;
 }
@@ -256,10 +243,64 @@ input[type=text]::-webkit-input-placeholder{
 	padding:5px;
 	width:50%;
 }
+.search{
+	background-color:rgb(32, 32, 32);
+	border:none;
+	border-bottom:4px solid rgb(248, 248, 248);
+	color:white;
+	height:20px;
+}
+
+.search:hover,.search:focus,.search:active{
+	outline:none;
+}
+
+.searchButton{
+	background-color: #e76c46;
+	border:none;
+	color:white;
+	height:20px;
+	outline:none;
+	width:20px;
+}
+.searchButton:hover,.searchButton:focus,.searchButton:active{
+	background-color: #ca5734;
+}
+
+#miForm input[type=text], #miForm input[type=password], #miForm input[type=email], #formAcceso input[type=text], #formAcceso input[type=password], #formAcceso input[type=email]{
+	background-color: transparent;
+	border:none;
+	border-bottom: 3px solid #fff;
+	width:80%;
+}
+#miForm input[type=text], #miForm input[type=password], #miForm input[type=email], #miForm input[type=date], #formAcceso input[type=text], #formAcceso input[type=password], #formAcceso input[type=email], #formAcceso input[type=date]{
+	padding-top:10px;
+	color:white;
+}
+#miForm input[type=submit], #formAcceso input[type=submit], #miForm input[type=date], #formAcceso input[type=date]{
+	margin-top:25px;
+	color:White;
+	background: #e76c46;
+	border:none;
+}
+#miForm input[type=submit]:hover, #formAcceso input[type=submit]:hover, #miForm input[type=date]:hover,#alumno:hover,#profesor:hover,#funcionario:hover{
+	background: #c4502d;
+}
+#miForm input[type=text]::-webkit-input-placeholder, #miForm input[type=password]::-webkit-input-placeholder, #miForm input[type=email]::-webkit-input-placeholder, #miForm input[type=date]::-webkit-input-placeholder, #formAcceso input[type=text]::-webkit-input-placeholder, #formAcceso input[type=password]::-webkit-input-placeholder, #formAcceso input[type=email]::-webkit-input-placeholder, #formAcceso input[type=date]::-webkit-input-placeholder{
+	color: rgb(255, 255, 255);
+}
+#formAcceso{
+	padding:40px;
+}
+#formAcceso input[type=text], #formAcceso input[type=password]{
+	margin-top: 20px;
+}
+
 #logo-header {
 	float: left;
 	padding: 3px 0 0 20px;
 	text-decoration: none;
+	transition: color 0.5s linear;
 }
 
 #logo-header:hover {
@@ -505,6 +546,18 @@ input:checked+.slider::before{
 		display: none;
 		font-size: 0px;
 	}
+	.imgEncPub{
+		width:100%;
+		padding: 5px;
+	}
+	.formin{
+		width:100%;
+		padding:5px;
+	}
+	.perfil{
+		width:100%;
+		padding:5px;
+	}
 
 	#photo{
 		display:block;
@@ -524,5 +577,26 @@ input:checked+.slider::before{
 	}
 	#cocoAnimation{
 		top:50%;
+	}
+
+}
+@media screen and (max-width:800px ) {
+	.aiudaa{
+		display:block;
+		width:60%;
+		background-color: rgb(170, 170, 170);
+		margin: auto;
+		padding: 50px;
+		font-size: 12px;
+		text-align: justify;
+	}
+	.ayudaTitle{
+		top:10%;
+		font-size:20px;
+		margin-left:auto;
+		margin-right:auto;
+	}
+	.indexAiuda{
+		top:20%;
 	}
 }

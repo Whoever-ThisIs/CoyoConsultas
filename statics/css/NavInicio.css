@@ -10,7 +10,15 @@
 }
 body{
   overflow-x: hidden;
-
+  background-color:#302e2e;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-family: 'Roboto Condensed', sans-serif;
+}
+footer{
+	background-color: #202020;
+	width: 100%;
 }
 .nav nav{
   height: 60px;
@@ -135,19 +143,6 @@ body{
   margin-top: 25px;
   padding: 20px;
 }
-
-#tituloForm{
-  background-color: transparent;
-	border:none;
-	border-bottom: 3px solid #fff;
-	width:80%;
-}
-
-/*Footer*/
-footer{
-	background-color: #202020;
-	width: 100%;
-}
 .all-footer{
 	display: flex;
 	justify-content: space-between;
@@ -183,8 +178,63 @@ footer{
   width:100%;
   z-index: 10;
 }
-/*Colores*/
-/*Modo oscuro*/
+#formTitle{
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 25px;
+  text-align: center;
+  color: white;
+}
+#tituloForm{
+  background-color: transparent;
+	border:none;
+	border-bottom: 3px solid #fff;
+	width:80%;
+}
+#opinion{
+  font-size: 20px;
+}
+#categories ul li{
+  display: inline;
+  padding-left: 20px;
+  font-size: 15px;
+  cursor: pointer;
+}
+#categories ul li:nth-child(1):hover{
+  color:rgba(221, 220, 220, 0.925);
+}
+#categories ul li:nth-child(2):hover{
+  color:#23b35f;
+}
+#categories ul li:nth-child(3):hover{
+  color:#dab10e;
+}
+#categories ul li:nth-child(4):hover{
+  color:#c44031;
+}
+#categories ul li:nth-child(5):hover{
+  color:#1d699c;
+}
+#categories ul li:nth-child(1){
+  color:rgba(255, 255, 255, 0.925);
+}
+#categories ul li:nth-child(2){
+  color:#2ecc71;
+}
+#categories ul li:nth-child(3){
+  color:#f1c40f;
+}
+#categories ul li:nth-child(4){
+  color:#e74c3c;
+}
+#categories ul li:nth-child(5){
+  color:#2980b9;
+}
+
+#categories{
+    padding:5px;
+    background: #1f1e1e;
+}
 @media screen and (max-width:800px ) {
   .profile{
     height:150px;
@@ -212,15 +262,15 @@ footer{
   }
 }
 @media screen and (max-width:600px ) {
-.CoyoConsultasTitle span{
-  font-size: 20px;
-}
-.CoyoConsultasTitle{
-  height:200px;
-}
-#barsAnimation2{
-  top:-100%;
-}
+  .CoyoConsultasTitle span{
+    font-size: 20px;
+  }
+  .CoyoConsultasTitle{
+    height:200px;
+  }
+  #barsAnimation2{
+    top:-100%;
+  }  
 }
 @media only screen and (min-width: 150px) and (max-width: 1200px) {
   .navBar nav{
@@ -237,5 +287,17 @@ footer{
     display: block;
     height: 20px;
     padding: 10px 25px;
+  }
+  #categories{
+    height:200px;
+  }
+  #categories ul{
+    padding-left: 0;
+  }
+  #categories ul li{
+    text-align: center;
+    width: 100%;
+    display: block;
+    padding:10px 25px;
   }
 }

@@ -43,3 +43,14 @@ table{
   color: white;
   cursor: pointer;
 }
+.Resultados{
+  width: 80%;
+  margin: 50px auto;
+  display: flex;
+  flex-direction: row;
+  flex-wrap:  wrap;
+}
+#resultTitle{
+  color: white;
+  text-align: center;
+}

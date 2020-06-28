@@ -4,17 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../statics/css/NavInicio.css">
-    <link rel="stylesheet" href="../statics/css/Inicio.css">
     <link rel="stylesheet" href="../statics/css/index.css">
     <script src="../libs/jQuery/jquery-3.5.1.min.js"></script>
     <title>CoCo</title>
     <link rel="stylesheet" href="../libs/bootstrap-4.5.0-dist/css/bootstrap.min.css">
+    <style>
+      .publicNav,.publicNav:hover,a:hover,#creditosTitle,#agradecimientosTitle{
+        color:white;
+      }
+      a:hover{
+        text-decoration: none;
+      }
+      body{
+        text-align: center;
+      }
+    </style>
 </head>
 <body>
     <header class="publicNav">
 
     </header>
-    <h1>Creditos</h1>
+    <h1 id="creditosTitle">Creditos</h1>
     <section id="Cont-Creditos">
       <div class="row row-cols-1 row-cols-md-3">
         <div class="col mb-4">
@@ -82,7 +92,7 @@
         </div>
       </div>
 
-  <h2 class="d-flex justify-content-center">Agradecimientos:</h2>
+  <h2 class="d-flex justify-content-center " id="agradecimientosTitle">Agradecimientos:</h2>
   <br>
   <div class="container">
   <div class="row">
@@ -128,8 +138,8 @@
     </section>
 
       <script src="../dynamics/js/NavPublico.js"></script>
-      <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+      <script src="../libs/jQuery/jquery-3.5.1.min.js"></script>
       <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+      <script src="../libs/bootstrap-4.5.0-dist/js/bootstrap.min.js"></script>
 </body>
 </html>
