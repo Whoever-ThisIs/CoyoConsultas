@@ -1,25 +1,40 @@
-.crearFormContainer{
-    background-color: rgb(199, 196, 195);
-    width:70%;
-    padding:20px;
-    margin:auto;
-}
 button{
-    color:white;
     border-radius:3px;
-    background-color: rgb(226, 83, 0);
+    background-color: rgb(39, 39, 39);
+    color:white;
+    margin:5px;
     padding:3px;
 }
 button:hover{
-    background-color: rgb(180, 70, 6);
+    background-color: rgb(131, 130, 130);
 }
 button:focus{
     outline:none;
 }
-input[type=date],input[type=time]{
-	appearance: none;
+select{
+    border:none;
+    background-color: rgb(131, 127, 126);
+    color:white;
+    margin:5px;
+    padding:5px;
+}
+input[type=date],input[type=time],button{
+    appearance: none;
+    border:none;
+    color:White;
 	padding: 8px;
-	border:none;
+    margin-top:25px;
+}
+input[type=date],input[type=time]{
+	background: #e76c46;
+}
+input[type=text]{
+    background:transparent;
+    border:none;
+    border-bottom:3px solid rgb(46, 45, 45);
+}
+input[type=text]::-webkit-input-placeholder{
+    color: rgb(27, 27, 27);
 }
 input[type=date]::-webkit-datetime-edit-month-field ,input[type=time]::-webkit-datetime-edit-month-field{
 	text-transform: uppercase;
@@ -33,3 +48,12 @@ input[type=date]::-webkit-datetime-edit-year-field ,input[type=time]::-webkit-da
 input[type=date]::-webkit-calendar-picker-indicator ,input[type=time]::-webkit-datetime-edit-month-field{
 	color:white;
 }
+.crearFormContainer{
+    background-color: rgb(194, 194, 194);
+    border-left: 5px solid rgb(226, 83, 0);
+    border-right: 5px solid rgb(226, 83, 0);
+    margin:auto;
+    padding:20px;
+    width:70%;
+}
+

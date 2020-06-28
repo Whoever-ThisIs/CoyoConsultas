@@ -220,6 +220,7 @@ class Formulario {
         return response.json();
       }).then((data) => {
         let select = document.getElementById('rango');
+        $('#Form_config').append("<br><br>")
         data.forEach(element => {
           let new_option = document.createElement("option");
           new_option.value = element.id_rango;
@@ -249,6 +250,7 @@ class Formulario {
     var actual = new Date();
     //Se agrego el input date de Inicio
     $('#Form_config').append("Inicio: ")
+    $('#Form_config').append("<br>")
     let fechaInicio = $("<input type='date' name='Inicio_dia' id='Inicio_dia' required>")
     // Obtención de fecha actual //
     // Día
@@ -284,9 +286,12 @@ class Formulario {
     this.inicioHora = horaInicio + ":" + minutosInicio;
     $('#Form_config').append(tiempoInicio)
     //Dia y Hora de cierre de formulario
+    $('#Form_config').append("<br><br>")
     $('#Form_config').append("Fin: ")
+    $('#Form_config').append("<br>")
     $('#Form_config').append("<input type='date' name='Fin_dia' id='Fin_dia' required>")
     $('#Form_config').append(("<input type='time' name='Fin_hora' id='Fin_hora' required>"))
+    $('#Form_config').append("<br>")
     // Creación de eventos
     $("#Inicio_dia").on('input', (e) => {
       this.inicioDia = $("#Inicio_dia").val();
@@ -327,7 +332,6 @@ $("#Eliminar_preg").click(()=>{
 })
 
 
-
 var btnCrear = $("<button type='button' name='button' id='Crear_form'>Crear Formulario</button>")
 btnCrear.click(()=>{
   window.location.reload();
@@ -339,6 +343,6 @@ buttonGuardar.click(()=>{
   form.guardarPregunta();
   form.guardarFecha();
 })
-$('#Form_config').append(buttonGuardar)
 $('#Form_config').append("<br><br>")
+$('#Form_config').append(buttonGuardar)
 $('#Form_config').append(btnCrear)
