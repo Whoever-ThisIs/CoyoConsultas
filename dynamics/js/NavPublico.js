@@ -31,9 +31,12 @@ function eventlis(){
         resultadosP.addEventListener("click",()=>{
             window.location = '../'
         })
+        $("#fontAwesome").attr("href", "../libs/fontawesome_free-5-13-0/css/all.min.css");
+        $("#indexCss").attr("href", "../statics/css/index.css");
     }
 }
 function navPublic(path){
+<<<<<<< HEAD
 fetch(path)
 .then((response)=>{
     return response.text();
@@ -68,3 +71,33 @@ if(window.location.pathname=='/CoyoConsultas/'){
 else{
     navPublic('./NavPublico.html')
 }
+=======
+    fetch(path)
+    .then((response)=>{
+        return response.text();
+    })
+    .then((text)=>{
+        console.log(text);
+        let header = document.querySelector(".publicNav")
+        header.innerHTML = text;
+        eventlis();
+        let count = 1;
+        function main(){
+            $('.menu_bar').click(()=>{
+                if(count == 1){
+                $('nav').animate({
+                    left: '0'
+                });
+            };
+            main();
+        })
+        }
+        if(window.location.pathname=='/CoyoConsultas/'){
+            navPublic('./templates/NavPublico.html')
+        }
+        else{
+            navPublic('./NavPublico.html')
+        }
+    })
+}
+>>>>>>> 548d20b011e53469304ab5cff6120e7cd2e75ca4

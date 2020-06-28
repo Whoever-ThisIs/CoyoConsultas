@@ -75,9 +75,7 @@ if (getCookie("Res_id_form")!="") {
       // Se decodifica el resultado de JSON y genera un objeto
       return response.json();
     }).then((resp) => {
-        console.log(resp);
         for (var i = 0; i < resp.length; i++) {
-          console.log(resp[i]);
            $("#"+resp[i].respuesta)
             $("#"+resp[i].respuesta).prop('checked', true)
             $("#"+resp[i].respuesta).prop('disabled', false)
