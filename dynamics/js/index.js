@@ -15,7 +15,6 @@ function acceso() {
     }).then((response) => {
       return response.text();
     }).then((respuesta) => {
-      console.log(respuesta);
       if (respuesta) {
         let usuario = new FormData();
         let id_us = document.querySelector("input[name='id']")
@@ -78,21 +77,21 @@ formRegistro.addEventListener("click",()=>{
             tipo.value = "alumno"
             id1.placeholder = "Ingrese su Núm. de cuenta"
             id1.maxLength = "9"
-            id1.pattern = "^\d{9}$"
+            id1.pattern = "^\\d{9}$"
             id1.title = "El número de cuenta debe contener 9 números"
             id2.placeholder = "Ingrese su CURP"
             id2.maxLength = "18"
-            id2.pattern = "^(([A-Z]{4})(\d{2})((0[1-9])|(1[0-2]))((0[1-9])|(1[0-9])|(2[0-9])|(3[0-1]))([HM])(AS|BC|BS|CC|CL|CM|CS|CH|DF|DG|GT|GR|HG|JC|MC|MN|MS|NT|NL|OC|PL|QT|QR|SP|SL|SR|TC|TS|TL|VZ|YN|ZS|NE)([A-Z]{2})(([A-Z0-9]{2})))$"
+            id2.pattern = "^(([A-Z]{4})(\\d{2})((0[1-9])|(1[0-2]))((0[1-9])|(1[0-9])|(2[0-9])|(3[0-1]))([HM])(AS|BC|BS|CC|CL|CM|CS|CH|DF|DG|GT|GR|HG|JC|MC|MN|MS|NT|NL|OC|PL|QT|QR|SP|SL|SR|TC|TS|TL|VZ|YN|ZS|NE)([A-Z]{2})(([A-Z0-9]{2})))$"
             id2.title = "Asegurate de que el CURP tenga el formato correcto"
             }
         function profesor(){
             tipo.value = "profesor"
             id1.placeholder = "Ingrese su RFC"
             id1.maxLength = "13"
-            id1.pattern = "^([A-ZÑ&]{3,4}) ?(?:- ?)?(\d{2}(?:0[1-9]|1[0-2])(?:0[1-9]|[12]\d|3[01])) ?(?:- ?)?([A-Z\d]{2})([A\d])$"
+            id1.pattern = "^([A-ZÑ&]{3,4}) ?(?:- ?)?(\\d{2}(?:0[1-9]|1[0-2])(?:0[1-9]|[12]\\d|3[01])) ?(?:- ?)?([A-Z\\d]{2})([A\\d])$"
             id1.title = "Asegurate de que el RFC tenga el formato correcto"
             id2.placeholder = "Ingrese su Núm. de Trab"
-            id2.pattern = "^\d{9}$"
+            id2.pattern = "^\\d{6}$"
             id2.maxLength = "6"
             id2.title = "El número de trabajador debe contener 6 números"
             }
@@ -100,10 +99,10 @@ formRegistro.addEventListener("click",()=>{
             tipo.value = "funcionario"
             id1.placeholder = "Ingrese su RFC"
             id1.maxLength = "13"
-            id1.pattern = "^([A-ZÑ&]{3,4}) ?(?:- ?)?(\d{2}(?:0[1-9]|1[0-2])(?:0[1-9]|[12]\d|3[01])) ?(?:- ?)?([A-Z\d]{2})([A\d])$"
+            id1.pattern = "^([A-ZÑ&]{3,4}) ?(?:- ?)?(\\d{2}(?:0[1-9]|1[0-2])(?:0[1-9]|[12]\\d|3[01])) ?(?:- ?)?([A-Z\\d]{2})([A\\d])$"
             id1.title = "Asegurate de que el RFC tenga el formato correcto"
             id2.placeholder = "Ingrese su Núm. de Trab"
-            id2.pattern = "^\d{9}$"
+            id2.pattern = "^\\d{6}$"
             id2.maxLength = "6"
             id2.title = "El número de trabajador debe contener 6 números"
             }

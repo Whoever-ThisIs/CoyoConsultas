@@ -1,5 +1,3 @@
-console.log($("#Tab_elab"));
-console.log($("#Tab_contest"));
 fetch('../dynamics/php/Perfil_resultados.php')
 .then((response) => {
   // Se decodifica el resultado de JSON y genera un objeto

@@ -46,11 +46,33 @@ function eventlis(){
       //Consulta si ya hay una sesion abierta
       fetch('../dynamics/php/Cerrar_sesion.php')
       .then((respuesta)=>{
-        console.log(respuesta.text());
         console.log("Sesion cerrada");
         window.location.reload()
       })
     })
+    /** Lista de usuarios en caso de ser admin**/
+    fetch('../dynamics/php/Datos_sesion.php')
+      .then((respuesta)=>{
+          return respuesta.json();
+      })
+      .then((text)=>{
+        var datos = text.split("~");
+        //Sustituye el true por : datos[7]=="Admin"
+        //Confirma que quien entro aqui tenga rango admin en su usuario
+        if (datos[7]=="Admin") {
+          document.querySelector(".nav nav ul").style.paddingLeft  = "35%";
+          var liAdmin = document.createElement("li");
+          var aAdmin = document.createElement("a");
+          aAdmin.innerText = "Usuarios";
+          aAdmin.id = "Usuarios";
+          aAdmin.href = "#";
+          liAdmin.appendChild(aAdmin);
+          document.getElementsByTagName("ul")[0].appendChild(liAdmin);
+          liAdmin.addEventListener("click",()=>{
+            window.location = './List_usuarios.html'
+          })
+        }
+      })
 }
 fetch('NavInicio.html')
 .then((respuesta)=>{

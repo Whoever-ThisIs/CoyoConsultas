@@ -53,9 +53,7 @@ if (getCookie("Res_fin_id_form")!="") {
     $("#Nom_form").text(formulario.Titulo)
     $("#Desc_form").text(formulario.Descripcion)
     $("#Tot_form").text(formulario.Total)
-    console.log(formulario.Preguntas);
     for (var i = 0; i < formulario.Preguntas.length; i++) {
-      console.log(formulario.Preguntas[i]);
       var div = $("<div>");
       div.addClass("Grafica");
       var canva = $("<canvas id='P-"+(i+1)+"'></canvas>")

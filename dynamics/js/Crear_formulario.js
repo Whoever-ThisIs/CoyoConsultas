@@ -139,7 +139,7 @@ class Formulario {
       opciones.addClass("Opciones")
       opciones.append(btnAñadirOpc)
       newPreg.append(opciones)
-      $("body").append(newPreg)
+      $("#preguntas").append(newPreg)
       //Se añade las dos primeras respuestas
       for (var i = 0; i < 2; i++) {
         opciones.append(this.preguntas[indexPregunta].addResp())
@@ -160,7 +160,6 @@ class Formulario {
     data.append("categoria", this.categoria);
     data.append("titulo", this.titulo);
     data.append("rango", this.rango);
-    console.log(this.descripcion);
     data.append("descripcion", this.descripcion);
     fetch("../dynamics/php/Guardar-form.php", {
       method: 'POST',
@@ -211,10 +210,6 @@ class Formulario {
         })
       }
     }
-  }
-  // Método para actualizar los registros
-  modForm() {
-    console.log("Do se puede")
   }
 
   ////////*** Configuracion del formulario ***////////
@@ -271,7 +266,6 @@ class Formulario {
     // Asignación de valores pt. 1
     fechaInicio.val(añoInicio+"-"+mesInicio+"-"+diaInicio)
     this.inicioDia = añoInicio + "-" + mesInicio + "-" + diaInicio;
-    console.log(añoInicio+"-"+mesInicio+"-"+diaInicio);
     $('#Form_config').append(fechaInicio)
     //Se agrego el input tyme de Inicio
     let tiempoInicio = $("<input type='time' name='Inicio_hora' id='Inicio_hora' required>");
@@ -288,7 +282,6 @@ class Formulario {
     // Asignación de valores pt. 2
     tiempoInicio.val(horaInicio+":"+minutosInicio)
     this.inicioHora = horaInicio + ":" + minutosInicio;
-    console.log(horaInicio+":"+minutosInicio);
     $('#Form_config').append(tiempoInicio)
     //Dia y Hora de cierre de formulario
     $('#Form_config').append("Fin: ")
@@ -341,7 +334,6 @@ btnCrear.click(()=>{
 })
 let buttonGuardar = $("<button id='Guardar'>Guardar formulario</button>");
 buttonGuardar.click(()=>{
-  console.log(form);
   form.guardarForm();
   form.guardarPregunta();
   form.guardarPregunta();
