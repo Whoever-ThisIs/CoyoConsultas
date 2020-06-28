@@ -39,6 +39,7 @@ fetch(path)
     return response.text();
 })
 .then((text)=>{
+    console.log(text);
     let header = document.querySelector(".publicNav")
     header.innerHTML = text;
     eventlis();
