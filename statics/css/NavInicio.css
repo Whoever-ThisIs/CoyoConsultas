@@ -135,6 +135,13 @@ body{
   padding: 20px;
 }
 
+#tituloForm{
+  background-color: transparent;
+	border:none;
+	border-bottom: 3px solid #fff;
+	width:80%;
+}
+
 /*Footer*/
 footer{
 	background-color: #202020;
