@@ -56,11 +56,11 @@ function navPublic(path){
             main();
         })
         }
-        if(window.location.pathname=='/CoyoConsultas/'){
-            navPublic('./templates/NavPublico.html')
-        }
-        else{
-            navPublic('./NavPublico.html')
-        }
     })
+}
+if(window.location.pathname=='/CoyoConsultas/'){
+  navPublic('./templates/NavPublico.html')
+}
+else{
+  navPublic('./NavPublico.html')
 }
