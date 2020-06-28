@@ -92,12 +92,15 @@ else{
             main();
         })
         }
-        if(window.location.pathname=='/CoyoConsultas/'){
-            navPublic('./templates/NavPublico.html')
-        }
-        else{
-            navPublic('./NavPublico.html')
-        }
     })
 }
+<<<<<<< HEAD
 >>>>>>> 548d20b011e53469304ab5cff6120e7cd2e75ca4
+=======
+if(window.location.pathname=='/CoyoConsultas/'){
+  navPublic('./templates/NavPublico.html')
+}
+else{
+  navPublic('./NavPublico.html')
+}
+>>>>>>> 1194c47573b1e651df8ee7a2d0b91fddb02d2fde
