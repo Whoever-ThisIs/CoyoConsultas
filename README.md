@@ -39,3 +39,17 @@ Sitio Web para crear y responder formularios hecho por **NEMPP10**.
 | Mariana Melo       | Desarrolladora frontend, líder del departamento de animación y asistente en backend (JS) |
 | Lenin Pavón        | Desarrollador backend (PHP/SQL/JS)                                                       |
 | Carlos Villafranca | Desarrollador backend (PHP/JS)                                                           |
+
+
+## Comentarios adicionales
+* Teóricamente es posible que si un usuario sin iniciar sesión entra a encuestas e intenta responder una encuesta de rango público puede que se guarde su resultado, mas no ha sido probado.
+* Los compañeros que sacamos 3.5 en el primer proyecto agradecemos eternamente el tener la oportunidad de trabajar con un equipo tan talentoso, inteligente, creativo y capaz como lo es éste, y de igual forma agradecemos a los instructores por asignarnos estos compañeros.
+* Hay diversos programas sin comentarios o sin comentarios de la calidad necesaria, esperamos que no dificulte el entendimiento el código
+* Agradecemos a los mentores del Curso Web 2020 por su incansable esfuerzo, su apoyo y el habernos podido dar este espacio de crecimiento personal y grupal. En serio, muchísimas gracias.
+
+
+
+
+
+
+
