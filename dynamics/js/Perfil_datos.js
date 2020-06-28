@@ -40,7 +40,7 @@ function editar(){
   $("#profileMail").html("<input type='text' id='edcorreo' name='edcorreo' placeholder='Nuevo correo'></input>")
   $(".profile").html("<span class='fa fa-camera'></span><br><input type='file' name='edimg'></input><br>")//Tomar foto<br><input type='file' name='newimg'></input>")
   $(".bearbeiten").html("<input type='text' id='oldPass' name='oldPass' placeholder='Contraseña anterior'></input><br>"+
-  "<input type='text' id='newPass' name='newPass' placeholder='Contraseña nueva'  title='La contraseña debe de contener más de 8 carácteres, al menos una mayuscula, una minúscula y un número' pattern='/^(?=\P{Ll}*\p{Ll})(?=\P{Lu}*\p{Lu})(?=\P{N}*\p{N})(?=[\p{L}\p{N}]*[^\p{L}\p{N}])[\s\S]{8,}$/'></input><br>"+
+  "<input type='text' id='newPass' name='newPass' placeholder='Contraseña nueva'  title='La contraseña debe de contener más de 8 carácteres, al menos una mayuscula, una minúscula y un número' pattern='^(?=\P{Ll}*\p{Ll})(?=\P{Lu}*\p{Lu})(?=\P{N}*\p{N})(?=[\p{L}\p{N}]*[^\p{L}\p{N}])[\s\S]{8,}$'></input><br>"+
   "<input type='submit' id='save' value='Guardar Cambios'></input>")
   //Al presionar submit
   document.getElementById('formy').addEventListener('submit', (e) => {

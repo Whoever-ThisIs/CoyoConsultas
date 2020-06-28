@@ -29,7 +29,7 @@ function eventlis(){
             window.location = './EncuestasPublico.html'
         })
         resultadosP.addEventListener("click",()=>{
-            window.location = '../index.html'
+            window.location = '../'
         })
     }
 }

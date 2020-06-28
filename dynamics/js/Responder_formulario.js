@@ -61,14 +61,17 @@ if(id_formu != false){
           var divOpc = $("<div>")
           // Imprimo todas las opciones de cada pregunta en input radio
           for (var i = 0; i < opciones.length; i++) {
+            var divDelOpc = $("<div>")
+            divDelOpc.addClass("Opc")
             var opc = $("<input type='radio' id='"+opciones[i].id_opc+"' name='"+id_preg+"' value='"+i+"'>");
             // Si es la primera opcion la preseleciona
             if (i==0) {
               opc.prop('checked', true)
             }
-            divOpc.append(opc)
+            divDelOpc.append(opc)
             // La respuesta (el texto que el usuario ve) de la pregunta
-            divOpc.append("<label for='"+opciones[i].id_opc+"'>"+opciones[i].valor+"</label><br>")
+            divDelOpc.append("<label for='"+opciones[i].id_opc+"'>"+opciones[i].valor+"</label><br>")
+            divOpc.append(divDelOpc)
           }
           // Se imprime esa pregunta
           $("#Preguntas").append(divOpc)
