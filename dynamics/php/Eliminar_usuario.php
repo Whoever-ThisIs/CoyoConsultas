@@ -1,7 +1,7 @@
 <?php
   //Inicio Session
   session_start();
-  include("Des-crifrado.php");
+  include("Des-cifrado.php");
   //Me conecto con la base de datos
   if ($_SESSION["tipo"]=="Alumno") {
     $id_usu = escapeAll($_POST['id_us']);
@@ -63,6 +63,6 @@
       echo ("Ocurrio un error");
     }
   }else{
-    echo "No tiene acesso a esta página";
+    echo "No tiene acesso a esta p&#225;gina";
   }
  ?>

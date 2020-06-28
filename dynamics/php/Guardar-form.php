@@ -14,12 +14,12 @@
     echo mysqli_connect_errno()."<br>";
     exit();
   }else{
-    $tipo = escapeAll(escapeAll($_POST["tipo"]);
+    $tipo = escapeAll($_POST["tipo"]);
     // $tipo = 4;
     if ($tipo == 1) {
-      $id = escapeAll(escapeAll($_POST['idForm']);
-      $categoria = escapeAll(escapeAll($_POST['categoria']);
-      $titulo = escapeAll(escapeAll($_POST['titulo']);
+      $id = escapeAll($_POST['idForm']);
+      $categoria = escapeAll($_POST['categoria']);
+      $titulo = escapeAll($_POST['titulo']);
       $rango = escapeAll($_POST['rango']);
       $descripcion = escapeAll($_POST['descripcion']);
       $usuario = $_SESSION['id'];
